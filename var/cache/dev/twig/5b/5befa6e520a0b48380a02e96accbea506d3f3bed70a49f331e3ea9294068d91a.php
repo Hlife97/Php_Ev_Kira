@@ -62,7 +62,7 @@ class __TwigTemplate_d4895496855db144e03d69b9b846dfc1c6f8b543fb2c67b6b5148684367
                 <!-- ============================================================== -->
                 <!-- Logo -->
                 <!-- ============================================================== -->
-                <a class=\"navbar-brand\" href=\"index.html\">
+                <a class=\"navbar-brand\" href=\"/admin\">
                     <!-- Logo icon -->
                     <b class=\"logo-icon p-l-10\">
                         <!--You can put here icon as well // <i class=\"wi wi-sunset\"></i> //-->
@@ -309,7 +309,7 @@ class __TwigTemplate_d4895496855db144e03d69b9b846dfc1c6f8b543fb2c67b6b5148684367
                 <!-- ============================================================== -->
                 <!-- Logo -->
                 <!-- ============================================================== -->
-                <a class=\"navbar-brand\" href=\"index.html\">
+                <a class=\"navbar-brand\" href=\"/admin\">
                     <!-- Logo icon -->
                     <b class=\"logo-icon p-l-10\">
                         <!--You can put here icon as well // <i class=\"wi wi-sunset\"></i> //-->

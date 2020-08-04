@@ -85,17 +85,9 @@ class __TwigTemplate_a18efd55554bbb2e3f8b6a2710bb179977021ab23a15969ec01d91332f3
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "<!-- Container fluid  -->
-<!-- ============================================================== -->
+        echo "
 <div class=\"container-fluid\">
-    <!-- ============================================================== -->
-    <!-- Start Page Content -->
-    <!-- ============================================================== -->
-
     <div class=\"page-wrapper\">
-        <!-- ============================================================== -->
-        <!-- Bread crumb and right sidebar toggle -->
-        <!-- ============================================================== -->
         <div class=\"page-breadcrumb\">
             <div class=\"row\">
                 <div class=\"col-12 d-flex no-block align-items-center\">
@@ -129,153 +121,11 @@ class __TwigTemplate_a18efd55554bbb2e3f8b6a2710bb179977021ab23a15969ec01d91332f3
                         </div>
                     </div>
                 </div>
-                <div class=\"col-md-6\">
-                    <div class=\"card\">
-                        <div class=\"card-body\">
-                            <h5 class=\"card-title\">Half Width</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class=\"col-md-6\">
-                    <div class=\"card\">
-                        <div class=\"card-body\">
-                            <h5 class=\"card-title\">Half Width</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class=\"col-md-4\">
-                    <div class=\"card\">
-                        <div class=\"card-body\">
-                            <h5 class=\"card-title\">One third width</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class=\"col-md-4\">
-                    <div class=\"card\">
-                        <div class=\"card-body\">
-                            <h5 class=\"card-title\">One third width</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class=\"col-md-4\">
-                    <div class=\"card\">
-                        <div class=\"card-body\">
-                            <h5 class=\"card-title\">One third width</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class=\"col-md-8\">
-                    <div class=\"card\">
-                        <div class=\"card-body\">
-                            <h5 class=\"card-title\">One third width</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class=\"col-md-4\">
-                    <div class=\"card\">
-                        <div class=\"card-body\">
-                            <h5 class=\"card-title\">One third width</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut
-                                labore et dolore magna aliqua.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class=\"col-md-3\">
-                    <div class=\"card\">
-                        <div class=\"card-body\">
-                            <h5 class=\"card-title\">One third width</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class=\"col-md-3\">
-                    <div class=\"card\">
-                        <div class=\"card-body\">
-                            <h5 class=\"card-title\">One third width</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class=\"col-md-3\">
-                    <div class=\"card\">
-                        <div class=\"card-body\">
-                            <h5 class=\"card-title\">One third width</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class=\"col-md-3\">
-                    <div class=\"card\">
-                        <div class=\"card-body\">
-                            <h5 class=\"card-title\">One third width</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
-                        </div>
-                    </div>
-                </div>
             </div>
-            <!-- ============================================================== -->
-            <!-- End PAge Content -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- Right sidebar -->
-            <!-- ============================================================== -->
-            <!-- .right-sidebar -->
-            <!-- ============================================================== -->
-            <!-- End Right sidebar -->
-            <!-- ============================================================== -->
         </div>
-        <!-- ============================================================== -->
-        <!-- End Container fluid  -->
-
-
-        ";
+    </div>
+</div>
+";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -306,17 +156,9 @@ class __TwigTemplate_a18efd55554bbb2e3f8b6a2710bb179977021ab23a15969ec01d91332f3
 {% block title %}Hello AdminController!{% endblock %}
 
 {% block body %}
-<!-- Container fluid  -->
-<!-- ============================================================== -->
-<div class=\"container-fluid\">
-    <!-- ============================================================== -->
-    <!-- Start Page Content -->
-    <!-- ============================================================== -->
 
+<div class=\"container-fluid\">
     <div class=\"page-wrapper\">
-        <!-- ============================================================== -->
-        <!-- Bread crumb and right sidebar toggle -->
-        <!-- ============================================================== -->
         <div class=\"page-breadcrumb\">
             <div class=\"row\">
                 <div class=\"col-12 d-flex no-block align-items-center\">
@@ -350,152 +192,10 @@ class __TwigTemplate_a18efd55554bbb2e3f8b6a2710bb179977021ab23a15969ec01d91332f3
                         </div>
                     </div>
                 </div>
-                <div class=\"col-md-6\">
-                    <div class=\"card\">
-                        <div class=\"card-body\">
-                            <h5 class=\"card-title\">Half Width</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class=\"col-md-6\">
-                    <div class=\"card\">
-                        <div class=\"card-body\">
-                            <h5 class=\"card-title\">Half Width</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class=\"col-md-4\">
-                    <div class=\"card\">
-                        <div class=\"card-body\">
-                            <h5 class=\"card-title\">One third width</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class=\"col-md-4\">
-                    <div class=\"card\">
-                        <div class=\"card-body\">
-                            <h5 class=\"card-title\">One third width</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class=\"col-md-4\">
-                    <div class=\"card\">
-                        <div class=\"card-body\">
-                            <h5 class=\"card-title\">One third width</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class=\"col-md-8\">
-                    <div class=\"card\">
-                        <div class=\"card-body\">
-                            <h5 class=\"card-title\">One third width</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class=\"col-md-4\">
-                    <div class=\"card\">
-                        <div class=\"card-body\">
-                            <h5 class=\"card-title\">One third width</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut
-                                labore et dolore magna aliqua.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class=\"col-md-3\">
-                    <div class=\"card\">
-                        <div class=\"card-body\">
-                            <h5 class=\"card-title\">One third width</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class=\"col-md-3\">
-                    <div class=\"card\">
-                        <div class=\"card-body\">
-                            <h5 class=\"card-title\">One third width</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class=\"col-md-3\">
-                    <div class=\"card\">
-                        <div class=\"card-body\">
-                            <h5 class=\"card-title\">One third width</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class=\"col-md-3\">
-                    <div class=\"card\">
-                        <div class=\"card-body\">
-                            <h5 class=\"card-title\">One third width</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
-                        </div>
-                    </div>
-                </div>
             </div>
-            <!-- ============================================================== -->
-            <!-- End PAge Content -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- Right sidebar -->
-            <!-- ============================================================== -->
-            <!-- .right-sidebar -->
-            <!-- ============================================================== -->
-            <!-- End Right sidebar -->
-            <!-- ============================================================== -->
         </div>
-        <!-- ============================================================== -->
-        <!-- End Container fluid  -->
-
-
-        {% endblock %}", "admin/admin/index.html.twig", "C:\\xampp\\htdocs\\ev_kira\\templates\\admin\\admin\\index.html.twig");
+    </div>
+</div>
+{% endblock %}", "admin/admin/index.html.twig", "C:\\xampp\\htdocs\\ev_kira\\templates\\admin\\admin\\index.html.twig");
     }
 }

@@ -90,7 +90,7 @@ class __TwigTemplate_ba73f8f4f181e378457e3b38463238cdf35d3d9ea3aa4d18f0847103163
         <div class=\"page-breadcrumb\">
             <div class=\"row\">
                 <div class=\"col-12 d-flex no-block align-items-center\">
-                    <h4 class=\"page-title\">Full Width</h4>
+                    <h4 class=\"page-title\">Category</h4>
                     <div class=\"ml-auto text-right\">
                         <nav aria-label=\"breadcrumb\">
                             <ol class=\"breadcrumb\">
@@ -114,7 +114,7 @@ class __TwigTemplate_ba73f8f4f181e378457e3b38463238cdf35d3d9ea3aa4d18f0847103163
         echo "
                             <a href=\"";
         // line 30
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("category_index");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_category_index");
         echo "\">back to list</a>
                         </div>
                     </div>
@@ -159,7 +159,7 @@ class __TwigTemplate_ba73f8f4f181e378457e3b38463238cdf35d3d9ea3aa4d18f0847103163
         <div class=\"page-breadcrumb\">
             <div class=\"row\">
                 <div class=\"col-12 d-flex no-block align-items-center\">
-                    <h4 class=\"page-title\">Full Width</h4>
+                    <h4 class=\"page-title\">Category</h4>
                     <div class=\"ml-auto text-right\">
                         <nav aria-label=\"breadcrumb\">
                             <ol class=\"breadcrumb\">
@@ -178,7 +178,7 @@ class __TwigTemplate_ba73f8f4f181e378457e3b38463238cdf35d3d9ea3aa4d18f0847103163
                         <div class=\"card-body\">
                             <h1>Create new Category</h1>
                             {{ include('admin/category/_form.html.twig') }}
-                            <a href=\"{{ path('category_index') }}\">back to list</a>
+                            <a href=\"{{ path('admin_category_index') }}\">back to list</a>
                         </div>
                     </div>
                 </div>

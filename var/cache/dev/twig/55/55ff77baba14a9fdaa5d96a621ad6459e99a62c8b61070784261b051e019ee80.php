@@ -172,11 +172,11 @@ class __TwigTemplate_453f66dd1031e1952110428929633b9cb9b81375a46adda7144d6e6c897
                                         <td>
                                             <a href=\"";
             // line 58
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("category_show", ["id" => twig_get_attribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 58)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_category_show", ["id" => twig_get_attribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 58)]), "html", null, true);
             echo "\">show</a>
                                             <a href=\"";
             // line 59
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("category_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 59)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_category_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 59)]), "html", null, true);
             echo "\">edit</a>
                                         </td>
                                     </tr>
@@ -199,7 +199,7 @@ class __TwigTemplate_453f66dd1031e1952110428929633b9cb9b81375a46adda7144d6e6c897
 
                             <a href=\"";
         // line 70
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("category_new");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_category_new");
         echo "\">Create new</a>
 
                         </div>
@@ -292,8 +292,8 @@ class __TwigTemplate_453f66dd1031e1952110428929633b9cb9b81375a46adda7144d6e6c897
                                         <td>{{ category.createdAt ? category.createdAt|date('Y-m-d H:i:s') : '' }}</td>
                                         <td>{{ category.updatedAt ? category.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
                                         <td>
-                                            <a href=\"{{ path('category_show', {'id': category.id}) }}\">show</a>
-                                            <a href=\"{{ path('category_edit', {'id': category.id}) }}\">edit</a>
+                                            <a href=\"{{ path('admin_category_show', {'id': category.id}) }}\">show</a>
+                                            <a href=\"{{ path('admin_category_edit', {'id': category.id}) }}\">edit</a>
                                         </td>
                                     </tr>
                                     {% else %}
@@ -304,7 +304,7 @@ class __TwigTemplate_453f66dd1031e1952110428929633b9cb9b81375a46adda7144d6e6c897
                                 </tbody>
                             </table>
 
-                            <a href=\"{{ path('category_new') }}\">Create new</a>
+                            <a href=\"{{ path('admin_category_new') }}\">Create new</a>
 
                         </div>
                     </div>

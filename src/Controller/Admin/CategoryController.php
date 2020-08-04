@@ -16,7 +16,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class CategoryController extends AbstractController
 {
     /**
-     * @Route("/", name="category_index", methods={"GET"})
+     * @Route("/", name="admin_category_index", methods={"GET"})
      */
     public function index(CategoryRepository $categoryRepository): Response
     {
@@ -26,9 +26,9 @@ class CategoryController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="category_new", methods={"GET","POST"})
+     * @Route("/new", name="admin_category_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, CategoryRepository $categoryRepository): Response
     {
         $category = new Category();
         $form = $this->createForm(CategoryType::class, $category);
@@ -39,17 +39,19 @@ class CategoryController extends AbstractController
             $entityManager->persist($category);
             $entityManager->flush();
 
-            return $this->redirectToRoute('category_index');
+            return $this->redirectToRoute('admin_category_index');
         }
+        $categories = $categoryRepository->findAll();
 
         return $this->render('admin/category/new.html.twig', [
+            'categories' => $categories,
             'category' => $category,
             'form' => $form->createView(),
         ]);
     }
 
     /**
-     * @Route("/{id}", name="category_show", methods={"GET"})
+     * @Route("/{id}", name="admin_category_show", methods={"GET"})
      */
     public function show(Category $category): Response
     {
@@ -59,9 +61,9 @@ class CategoryController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="category_edit", methods={"GET","POST"})
+     * @Route("/{id}/edit", name="admin_category_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Category $category): Response
+    public function edit(Request $request, Category $category, CategoryRepository $categoryRepository): Response
     {
         $form = $this->createForm(CategoryType::class, $category);
         $form->handleRequest($request);
@@ -69,17 +71,18 @@ class CategoryController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('category_index');
+            return $this->redirectToRoute('admin_category_index');
         }
-
+        $categories = $categoryRepository->findAll();
         return $this->render('admin/category/edit.html.twig', [
+            'categories' => $categories,
             'category' => $category,
             'form' => $form->createView(),
         ]);
     }
 
     /**
-     * @Route("/{id}", name="category_delete", methods={"DELETE"})
+     * @Route("/{id}", name="admin_category_delete", methods={"DELETE"})
      */
     public function delete(Request $request, Category $category): Response
     {
@@ -89,6 +92,6 @@ class CategoryController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('category_index');
+        return $this->redirectToRoute('admin_category_index');
     }
 }

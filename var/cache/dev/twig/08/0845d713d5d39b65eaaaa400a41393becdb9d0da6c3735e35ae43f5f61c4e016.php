@@ -179,12 +179,12 @@ class __TwigTemplate_1cb771426b5c4fc3a106922c9b4f50821568d93a0d6d3b7606b15d4c66d
 
                             <a href=\"";
         // line 71
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("category_index");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_category_index");
         echo "\">back to list</a>
 
                             <a href=\"";
         // line 73
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("category_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["category"]) || array_key_exists("category", $context) ? $context["category"] : (function () { throw new RuntimeError('Variable "category" does not exist.', 73, $this->source); })()), "id", [], "any", false, false, false, 73)]), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_category_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["category"]) || array_key_exists("category", $context) ? $context["category"] : (function () { throw new RuntimeError('Variable "category" does not exist.', 73, $this->source); })()), "id", [], "any", false, false, false, 73)]), "html", null, true);
         echo "\">edit</a>
 
                             ";
@@ -294,9 +294,9 @@ class __TwigTemplate_1cb771426b5c4fc3a106922c9b4f50821568d93a0d6d3b7606b15d4c66d
                                 </tbody>
                             </table>
 
-                            <a href=\"{{ path('category_index') }}\">back to list</a>
+                            <a href=\"{{ path('admin_category_index') }}\">back to list</a>
 
-                            <a href=\"{{ path('category_edit', {'id': category.id}) }}\">edit</a>
+                            <a href=\"{{ path('admin_category_edit', {'id': category.id}) }}\">edit</a>
 
                             {{ include('admin/category/_delete_form.html.twig') }}
                         </div>

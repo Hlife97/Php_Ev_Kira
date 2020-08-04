@@ -116,7 +116,7 @@ class __TwigTemplate_6ed9ae10dd22425852146d8284769b438a45ece1ff51f06f3948f33044e
 
                             <a href=\"";
         // line 32
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("category_index");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_category_index");
         echo "\">back to list</a>
 
                             ";
@@ -187,7 +187,7 @@ class __TwigTemplate_6ed9ae10dd22425852146d8284769b438a45ece1ff51f06f3948f33044e
 
                             {{ include('admin/category/_form.html.twig', {'button_label': 'Update'}) }}
 
-                            <a href=\"{{ path('category_index') }}\">back to list</a>
+                            <a href=\"{{ path('admin_category_index') }}\">back to list</a>
 
                             {{ include('admin/category/_delete_form.html.twig') }}
                         </div>

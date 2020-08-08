@@ -21,6 +21,11 @@ return [
     'admin_category_show' => [['id'], ['_controller' => 'App\\Controller\\Admin\\CategoryController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/category']], [], []],
     'admin_category_edit' => [['id'], ['_controller' => 'App\\Controller\\Admin\\CategoryController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/admin/category']], [], []],
     'admin_category_delete' => [['id'], ['_controller' => 'App\\Controller\\Admin\\CategoryController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/category']], [], []],
+    'admin_ev_index' => [[], ['_controller' => 'App\\Controller\\Admin\\EvController::index'], [], [['text', '/admin/ev/']], [], []],
+    'admin_ev_new' => [[], ['_controller' => 'App\\Controller\\Admin\\EvController::new'], [], [['text', '/admin/ev/new']], [], []],
+    'admin_ev_show' => [['id'], ['_controller' => 'App\\Controller\\Admin\\EvController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/ev']], [], []],
+    'admin_ev_edit' => [['id'], ['_controller' => 'App\\Controller\\Admin\\EvController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/admin/ev']], [], []],
+    'admin_ev_delete' => [['id'], ['_controller' => 'App\\Controller\\Admin\\EvController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/ev']], [], []],
     'home' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], []],
     'sample' => [[], ['_controller' => 'App\\Controller\\SampleController::index'], [], [['text', '/sample']], [], []],
 ];

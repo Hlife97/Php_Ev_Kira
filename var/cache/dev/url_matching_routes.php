@@ -16,6 +16,8 @@ return [
         '/admin' => [[['_route' => 'admin_admin', '_controller' => 'App\\Controller\\Admin\\AdminController::index'], null, null, null, false, false, null]],
         '/admin/category' => [[['_route' => 'admin_category_index', '_controller' => 'App\\Controller\\Admin\\CategoryController::index'], null, ['GET' => 0], null, true, false, null]],
         '/admin/category/new' => [[['_route' => 'admin_category_new', '_controller' => 'App\\Controller\\Admin\\CategoryController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/admin/ev' => [[['_route' => 'admin_ev_index', '_controller' => 'App\\Controller\\Admin\\EvController::index'], null, ['GET' => 0], null, true, false, null]],
+        '/admin/ev/new' => [[['_route' => 'admin_ev_new', '_controller' => 'App\\Controller\\Admin\\EvController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/' => [[['_route' => 'home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
         '/sample' => [[['_route' => 'sample', '_controller' => 'App\\Controller\\SampleController::index'], null, null, null, false, false, null]],
     ],
@@ -36,10 +38,17 @@ return [
                         .'|(*:159)'
                     .')'
                 .')'
-                .'|/admin/category/([^/]++)(?'
-                    .'|(*:196)'
-                    .'|/edit(*:209)'
-                    .'|(*:217)'
+                .'|/admin/(?'
+                    .'|category/([^/]++)(?'
+                        .'|(*:199)'
+                        .'|/edit(*:212)'
+                        .'|(*:220)'
+                    .')'
+                    .'|ev/([^/]++)(?'
+                        .'|(*:243)'
+                        .'|/edit(*:256)'
+                        .'|(*:264)'
+                    .')'
                 .')'
             .')/?$}sDu',
     ],
@@ -51,10 +60,13 @@ return [
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        196 => [[['_route' => 'admin_category_show', '_controller' => 'App\\Controller\\Admin\\CategoryController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        209 => [[['_route' => 'admin_category_edit', '_controller' => 'App\\Controller\\Admin\\CategoryController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        217 => [
-            [['_route' => 'admin_category_delete', '_controller' => 'App\\Controller\\Admin\\CategoryController::delete'], ['id'], ['DELETE' => 0], null, false, true, null],
+        199 => [[['_route' => 'admin_category_show', '_controller' => 'App\\Controller\\Admin\\CategoryController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        212 => [[['_route' => 'admin_category_edit', '_controller' => 'App\\Controller\\Admin\\CategoryController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        220 => [[['_route' => 'admin_category_delete', '_controller' => 'App\\Controller\\Admin\\CategoryController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
+        243 => [[['_route' => 'admin_ev_show', '_controller' => 'App\\Controller\\Admin\\EvController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        256 => [[['_route' => 'admin_ev_edit', '_controller' => 'App\\Controller\\Admin\\EvController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        264 => [
+            [['_route' => 'admin_ev_delete', '_controller' => 'App\\Controller\\Admin\\EvController::delete'], ['id'], ['DELETE' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

@@ -1,0 +1,85 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block title %}Ev index{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+    <div class="page-wrapper">
+        <div class="page-breadcrumb">
+            <div class="row">
+                <div class="col-12 d-flex no-block align-items-center">
+                    <h4 class="page-title">Kira Listesi</h4>
+                    <div class="ml-auto text-right">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Category</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <h3>Evini Kirala</h3>
+
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Title</th>
+                                        <th>Keywords</th>
+                                        <th>Description</th>
+                                        <th>Image</th>
+                                        <th>Star</th>
+                                        <th>Address</th>
+                                        <th>Phone</th>
+                                        <th>Email</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for ev in evs %}
+                                    <tr>
+                                        <td>{{ ev.id }}</td>
+                                        <td>{{ ev.title }}</td>
+                                        <td>{{ ev.keywords }}</td>
+                                        <td>{{ ev.description }}</td>
+                                        <td><img src="{{ asset ('uploads/images/' ~ ev.image) }}" height="40"></td>
+                                        <td>{{ ev.star }}</td>
+                                        <td>{{ ev.address }}</td>
+                                        <td>{{ ev.phone }}</td>
+                                        <td>{{ ev.fax }}</td>
+                                        <td>{{ ev.email }}</td>
+                                        <td>{{ ev.city }}</td>
+                                        <td>{{ ev.country }}</td>
+                                        <td>{{ ev.location }}</td>
+                                        <td>{{ ev.status }}</td>
+                                        <td>{{ ev.createdAt ? ev.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                                        <td>{{ ev.updatedAt ? ev.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                                        <td>
+                                            <a href="{{ path('admin_ev_show', {'id': ev.id}) }}">show</a>
+                                            <a href="{{ path('admin_ev_edit', {'id': ev.id}) }}">edit</a>
+                                        </td>
+                                    </tr>
+                                    {% else %}
+                                    <tr>
+                                        <td colspan="17">no records found</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                            <a href="{{ path('admin_ev_new') }}"><button type="button" class="btn btn-success btn-lg">Creat New</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

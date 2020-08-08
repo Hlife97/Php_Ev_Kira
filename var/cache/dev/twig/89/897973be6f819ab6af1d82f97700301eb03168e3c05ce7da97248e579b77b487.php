@@ -113,14 +113,15 @@ class __TwigTemplate_6ed9ae10dd22425852146d8284769b438a45ece1ff51f06f3948f33044e
         // line 30
         echo twig_include($this->env, $context, "admin/category/_form.html.twig", ["button_label" => "Update"]);
         echo "
-
+<div class=\"col-md-2\">
                             <a href=\"";
         // line 32
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_category_index");
-        echo "\">back to list</a>
-
+        echo "\"><button type=\"button\" class=\"btn btn-secondary\">back</button></a>
+</div>
+<br>
                             ";
-        // line 34
+        // line 35
         echo twig_include($this->env, $context, "admin/category/_delete_form.html.twig");
         echo "
                         </div>
@@ -151,7 +152,7 @@ class __TwigTemplate_6ed9ae10dd22425852146d8284769b438a45ece1ff51f06f3948f33044e
 
     public function getDebugInfo()
     {
-        return array (  124 => 34,  119 => 32,  114 => 30,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  125 => 35,  119 => 32,  114 => 30,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -186,9 +187,10 @@ class __TwigTemplate_6ed9ae10dd22425852146d8284769b438a45ece1ff51f06f3948f33044e
                             <h3>Category</h3>
 
                             {{ include('admin/category/_form.html.twig', {'button_label': 'Update'}) }}
-
-                            <a href=\"{{ path('admin_category_index') }}\">back to list</a>
-
+<div class=\"col-md-2\">
+                            <a href=\"{{ path('admin_category_index') }}\"><button type=\"button\" class=\"btn btn-secondary\">back</button></a>
+</div>
+<br>
                             {{ include('admin/category/_delete_form.html.twig') }}
                         </div>
                     </div>

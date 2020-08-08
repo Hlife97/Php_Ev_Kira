@@ -63,7 +63,7 @@ class __TwigTemplate_1105f34a3e6405e537d9ac33ad12567bdfea4d380911289ff0ec61bff3e
                          href=\"/admin/category\" aria-expanded=\"false\"><i class=\"mdi mdi-view-dashboard\"></i><span
                              class=\"hide-menu\">Category</span></a></li>
                  <li class=\"sidebar-item\"> <a class=\"sidebar-link waves-effect waves-dark sidebar-link\"
-                         href=\"/admin/category\" aria-expanded=\"false\"><i class=\"mdi mdi-home\"></i><span
+                         href=\"/admin/ev\" aria-expanded=\"false\"><i class=\"mdi mdi-home\"></i><span
                              class=\"hide-menu\">Kirala</span></a></li>
                  <li class=\"sidebar-item\"> <a class=\"sidebar-link waves-effect waves-dark sidebar-link\"
                          href=\"/admin/category\" aria-expanded=\"false\"><i class=\"mdi mdi-settings\"></i><span
@@ -116,7 +116,7 @@ class __TwigTemplate_1105f34a3e6405e537d9ac33ad12567bdfea4d380911289ff0ec61bff3e
                          href=\"/admin/category\" aria-expanded=\"false\"><i class=\"mdi mdi-view-dashboard\"></i><span
                              class=\"hide-menu\">Category</span></a></li>
                  <li class=\"sidebar-item\"> <a class=\"sidebar-link waves-effect waves-dark sidebar-link\"
-                         href=\"/admin/category\" aria-expanded=\"false\"><i class=\"mdi mdi-home\"></i><span
+                         href=\"/admin/ev\" aria-expanded=\"false\"><i class=\"mdi mdi-home\"></i><span
                              class=\"hide-menu\">Kirala</span></a></li>
                  <li class=\"sidebar-item\"> <a class=\"sidebar-link waves-effect waves-dark sidebar-link\"
                          href=\"/admin/category\" aria-expanded=\"false\"><i class=\"mdi mdi-settings\"></i><span

@@ -148,10 +148,10 @@ class __TwigTemplate_1cb771426b5c4fc3a106922c9b4f50821568d93a0d6d3b7606b15d4c66d
                                     </tr>
                                     <tr>
                                         <th>Image</th>
-                                        <td>";
+                                        <td><img src=\"";
         // line 54
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["category"]) || array_key_exists("category", $context) ? $context["category"] : (function () { throw new RuntimeError('Variable "category" does not exist.', 54, $this->source); })()), "image", [], "any", false, false, false, 54), "html", null, true);
-        echo "</td>
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, (isset($context["category"]) || array_key_exists("category", $context) ? $context["category"] : (function () { throw new RuntimeError('Variable "category" does not exist.', 54, $this->source); })()), "image", [], "any", false, false, false, 54))), "html", null, true);
+        echo "\" height=\"40\"></td>
                                     </tr>
                                     <tr>
                                         <th>Status</th>
@@ -180,13 +180,13 @@ class __TwigTemplate_1cb771426b5c4fc3a106922c9b4f50821568d93a0d6d3b7606b15d4c66d
                             <a href=\"";
         // line 71
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_category_index");
-        echo "\">back to list</a>
+        echo "\"><button type=\"button\" class=\"btn btn-secondary\">back</button></a>
 
                             <a href=\"";
         // line 73
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_category_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["category"]) || array_key_exists("category", $context) ? $context["category"] : (function () { throw new RuntimeError('Variable "category" does not exist.', 73, $this->source); })()), "id", [], "any", false, false, false, 73)]), "html", null, true);
-        echo "\">edit</a>
-
+        echo "\"><button type=\"button\" class=\"btn btn-dark\">edit</button></a><br>
+                            <br>
                             ";
         // line 75
         echo twig_include($this->env, $context, "admin/category/_delete_form.html.twig");
@@ -277,7 +277,7 @@ class __TwigTemplate_1cb771426b5c4fc3a106922c9b4f50821568d93a0d6d3b7606b15d4c66d
                                     </tr>
                                     <tr>
                                         <th>Image</th>
-                                        <td>{{ category.image }}</td>
+                                        <td><img src=\"{{ asset ('uploads/images/' ~ category.image) }}\" height=\"40\"></td>
                                     </tr>
                                     <tr>
                                         <th>Status</th>
@@ -294,10 +294,10 @@ class __TwigTemplate_1cb771426b5c4fc3a106922c9b4f50821568d93a0d6d3b7606b15d4c66d
                                 </tbody>
                             </table>
 
-                            <a href=\"{{ path('admin_category_index') }}\">back to list</a>
+                            <a href=\"{{ path('admin_category_index') }}\"><button type=\"button\" class=\"btn btn-secondary\">back</button></a>
 
-                            <a href=\"{{ path('admin_category_edit', {'id': category.id}) }}\">edit</a>
-
+                            <a href=\"{{ path('admin_category_edit', {'id': category.id}) }}\"><button type=\"button\" class=\"btn btn-dark\">edit</button></a><br>
+                            <br>
                             {{ include('admin/category/_delete_form.html.twig') }}
                         </div>
                     </div>

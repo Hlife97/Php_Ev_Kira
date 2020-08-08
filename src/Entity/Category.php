@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\CategoryRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -10,6 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Category
 {
+    
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -56,6 +59,16 @@ class Category
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $updated_at;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Ev::class, mappedBy="category")
+     */
+    private $evs;
+
+    public function __construct()
+    {
+        $this->evs = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -156,5 +169,39 @@ class Category
         $this->updated_at = $updated_at;
 
         return $this;
+    }
+
+    /**
+     * @return Collection|Ev[]
+     */
+    public function getEvs(): Collection
+    {
+        return $this->evs;
+    }
+
+    public function addEv(Ev $ev): self
+    {
+        if (!$this->evs->contains($ev)) {
+            $this->evs[] = $ev;
+            $ev->setCategory($this);
+        }
+
+        return $this;
+    }
+
+    public function removeEv(Ev $ev): self
+    {
+        if ($this->evs->contains($ev)) {
+            $this->evs->removeElement($ev);
+            // set the owning side to null (unless already changed)
+            if ($ev->getCategory() === $this) {
+                $ev->setCategory(null);
+            }
+        }
+
+        return $this;
+    }
+    public function __toString() {
+        return $this->title;
     }
 }

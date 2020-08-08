@@ -153,10 +153,10 @@ class __TwigTemplate_453f66dd1031e1952110428929633b9cb9b81375a46adda7144d6e6c897
             // line 52
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "description", [], "any", false, false, false, 52), "html", null, true);
             echo "</td>
-                                        <td>";
+                                        <td><img src=\"";
             // line 53
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "image", [], "any", false, false, false, 53), "html", null, true);
-            echo "</td>
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, $context["category"], "image", [], "any", false, false, false, 53))), "html", null, true);
+            echo "\" height=\"40\"></td>
                                         <td>";
             // line 54
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "status", [], "any", false, false, false, 54), "html", null, true);
@@ -173,11 +173,11 @@ class __TwigTemplate_453f66dd1031e1952110428929633b9cb9b81375a46adda7144d6e6c897
                                             <a href=\"";
             // line 58
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_category_show", ["id" => twig_get_attribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 58)]), "html", null, true);
-            echo "\">show</a>
+            echo "\"><button type=\"button\" class=\"btn btn-info\">show</button></a>
                                             <a href=\"";
             // line 59
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_category_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 59)]), "html", null, true);
-            echo "\">edit</a>
+            echo "\"><button type=\"button\" class=\"btn btn-dark\">edit</button></a>
                                         </td>
                                     </tr>
                                     ";
@@ -200,7 +200,7 @@ class __TwigTemplate_453f66dd1031e1952110428929633b9cb9b81375a46adda7144d6e6c897
                             <a href=\"";
         // line 70
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_category_new");
-        echo "\">Create new</a>
+        echo "\"><button type=\"button\" class=\"btn btn-success btn-lg\">Creat New</button></a>
 
                         </div>
                     </div>
@@ -287,13 +287,13 @@ class __TwigTemplate_453f66dd1031e1952110428929633b9cb9b81375a46adda7144d6e6c897
                                         <td>{{ category.title }}</td>
                                         <td>{{ category.keywords }}</td>
                                         <td>{{ category.description }}</td>
-                                        <td>{{ category.image }}</td>
+                                        <td><img src=\"{{ asset ('uploads/images/' ~ category.image) }}\" height=\"40\"></td>
                                         <td>{{ category.status }}</td>
                                         <td>{{ category.createdAt ? category.createdAt|date('Y-m-d H:i:s') : '' }}</td>
                                         <td>{{ category.updatedAt ? category.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
                                         <td>
-                                            <a href=\"{{ path('admin_category_show', {'id': category.id}) }}\">show</a>
-                                            <a href=\"{{ path('admin_category_edit', {'id': category.id}) }}\">edit</a>
+                                            <a href=\"{{ path('admin_category_show', {'id': category.id}) }}\"><button type=\"button\" class=\"btn btn-info\">show</button></a>
+                                            <a href=\"{{ path('admin_category_edit', {'id': category.id}) }}\"><button type=\"button\" class=\"btn btn-dark\">edit</button></a>
                                         </td>
                                     </tr>
                                     {% else %}
@@ -304,7 +304,7 @@ class __TwigTemplate_453f66dd1031e1952110428929633b9cb9b81375a46adda7144d6e6c897
                                 </tbody>
                             </table>
 
-                            <a href=\"{{ path('admin_category_new') }}\">Create new</a>
+                            <a href=\"{{ path('admin_category_new') }}\"><button type=\"button\" class=\"btn btn-success btn-lg\">Creat New</button></a>
 
                         </div>
                     </div>

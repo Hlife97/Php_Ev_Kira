@@ -28,9 +28,11 @@
                             <h3>Category</h3>
 
                             {{ include('admin/category/_form.html.twig', {'button_label': 'Update'}) }}
-
-                            <a href="{{ path('admin_category_index') }}">back to list</a>
-
+                            <div class="col-md-2">
+                                <a href="{{ path('admin_category_index') }}"><button type="button"
+                                        class="btn btn-secondary">back</button></a>
+                            </div>
+                            <br>
                             {{ include('admin/category/_delete_form.html.twig') }}
                         </div>
                     </div>

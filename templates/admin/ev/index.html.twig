@@ -3,6 +3,10 @@
 {% block title %}Ev index{% endblock %}
 
 {% block body %}
+<SCRIPT language="JavaScript" type="text/javascript">
+function openWin( windowURL, windowName, windowFeatures ) { window.open( windowURL, windowName, windowFeatures ); }
+</SCRIPT>
+
 <div class="container-fluid">
     <div class="page-wrapper">
         <div class="page-breadcrumb">
@@ -41,6 +45,9 @@
                                         <th>Phone</th>
                                         <th>Email</th>
                                         <th>Status</th>
+                                        <th>Gallery</th>
+                                        <th>Show</th>
+                                        <th>Edit</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -56,15 +63,25 @@
                                         <td>{{ ev.phone }}</td>
                                         <td>{{ ev.fax }}</td>
                                         <td>{{ ev.email }}</td>
-                                        <td>{{ ev.city }}</td>
-                                        <td>{{ ev.country }}</td>
-                                        <td>{{ ev.location }}</td>
+                                        <!--<td>{{ ev.city }}</td>
+                                        <td>{{ ev.country }}</td>-->
+                                        <td>
+                                            <a
+                                                href="javascript:openWin('{{ path('admin_image_new',{'id':ev.id}) }}','','toolbar=no,location=no, directories=0, status=no, top=50,left=100, menuBar=no, scrollBars=yes,resizable=no, width=900, height=600'); ">
+                                                <img src="{{ asset ('assets/admin/img') }}/gallery.png" height="40"></a>
+                                        </td>
+
+                                        <!--<td>{{ ev.location }}</td>
                                         <td>{{ ev.status }}</td>
                                         <td>{{ ev.createdAt ? ev.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                                        <td>{{ ev.updatedAt ? ev.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                                        <td>{{ ev.updatedAt ? ev.updatedAt|date('Y-m-d H:i:s') : '' }}</td>-->
                                         <td>
-                                            <a href="{{ path('admin_ev_show', {'id': ev.id}) }}">show</a>
-                                            <a href="{{ path('admin_ev_edit', {'id': ev.id}) }}">edit</a>
+                                            <a href="{{ path('admin_ev_show', {'id': ev.id}) }}"><button
+                                                    type="button" class="btn btn-info">show</button></a>
+                                        </td>
+                                        <td>
+                                            <a href="{{ path('admin_ev_edit', {'id': ev.id}) }}"><button
+                                                    type="button" class="btn btn-dark">edit</button></a>
                                         </td>
                                     </tr>
                                     {% else %}
@@ -74,7 +91,8 @@
                                     {% endfor %}
                                 </tbody>
                             </table>
-                            <a href="{{ path('admin_ev_new') }}"><button type="button" class="btn btn-success btn-lg">Creat New</button></a>
+                            <a href="{{ path('admin_ev_new') }}"><button type="button"
+                                    class="btn btn-success btn-lg">Creat New</button></a>
                         </div>
                     </div>
                 </div>

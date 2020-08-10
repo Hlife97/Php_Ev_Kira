@@ -19,7 +19,7 @@ class EvType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add( 'category', EntityType::class, [
+            ->add('category', EntityType::class, [
                 'class' => Category::class,
                 'choice_label' => 'title',
             ])
@@ -27,13 +27,13 @@ class EvType extends AbstractType
             ->add('title')
             ->add('keywords')
             ->add('description')
-            ->add( 'image',  FileType::class, [
+            ->add('image',  FileType::class, [
                 'label' => 'Ev Main Image',      
                 'mapped' => false,
                 'required' => false,
                 
                 'constraints' => [
-                    new File([
+                    new File( [
                         'maxSize' => '1024k',
                         'mimeTypes' => [
                             'image/*',
@@ -41,8 +41,8 @@ class EvType extends AbstractType
                         'mimeTypesMessage' => 'Please upload a valid Image File',
                     ])
                 ],
-            ])
-            ->add( 'star',  ChoiceType::class, [
+            ] )
+            ->add ('star',  ChoiceType::class, [
                 'choices' =>[
                     '1 Star' => '1',
                     '2 Star' => '2',
@@ -50,7 +50,7 @@ class EvType extends AbstractType
                     '4 Star' => '4',
                     '5 Star' => '5',
                 ],
-            ])
+            ] )
 
             ->add('address')
             ->add('phone')
@@ -59,17 +59,17 @@ class EvType extends AbstractType
             ->add('city')
             ->add('country')
             ->add('location')
-            ->add('detail', CKEditorType::class, array (
+            ->add('detail', CKEditorType::class, array(
                 'config' => array(
                     'uiColor' => '#ffffff',
                 ),
-            ))
+            ) )
             ->add('status', ChoiceType::class, [
                 'choices' => [
                     'True' => 'True',
                     'False' => 'False'
                 ]
-            ])
+            ] )
             ->add('created_at')
             ->add('updated_at')
             ->add('category')

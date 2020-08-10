@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 use App\Repository\EvRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -100,6 +102,16 @@ class Ev
      * @ORM\Column(type="text", nullable=true)
      */
     private $detail;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Image::class, mappedBy="ev")
+     */
+    private $images;
+
+    public function __construct()
+    {
+        $this->images = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -309,4 +321,38 @@ class Ev
 
         return $this;
     }
+
+    /**
+     * @return Collection|Image[]
+     */
+    public function getImages(): Collection
+    {
+        return $this->images;
+    }
+
+    public function addImage(Image $image): self
+    {
+        if (!$this->images->contains($image)) {
+            $this->images[] = $image;
+            $image->setEv($this);
+        }
+
+        return $this;
+    }
+
+    public function removeImage(Image $image): self
+    {
+        if ($this->images->contains($image)) {
+            $this->images->removeElement($image);
+            // set the owning side to null (unless already changed)
+            if ($image->getEv() === $this) {
+                $image->setEv(null);
+            }
+        }
+
+        return $this;
+    }
+    public function __toString() {
+        return $this->title;
+}
 }

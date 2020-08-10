@@ -48,20 +48,26 @@ class __TwigTemplate_3d6be65001e0bb55ac5a181d42c4e0e933afa3cdce6b4cd757a282653f2
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets"), "html", null, true);
         echo "/admin/assets/images/favicon.png\">
 
-<div class=\"card\">
+<form class=\"form-horizontal\" role=\"form\" name=\"image\" action=\"";
+        // line 4
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_image_new", ["id" => (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 4, $this->source); })())]), "html", null, true);
+        echo "\" method=\"post\" enctype=\"multipart/form-data\">
     <div class=\"card-body\">
         <div class=\"form-group row\">
-            <label class=\"col-md-3\">Title Name</label>
-            <input class=\"col-md-9 form-control\" type=\"text\" id=\"image_title\" name=\"image[title]\" maxlength=\"50\" placeholder=\"Title Name Here\">
+            <label for=\"fname\" class=\"col-sm-3 text-right control-label col-form-label\">File Name</label>
+            <div class=\"col-sm-9\">
+                <input type=\"text\" class=\"form-control\" id=\"image_title\" name=\"image[title]\" maxlength=\"50\" placeholder=\"File Name Here\">
+                <input type=\"hidden\" class=\"form-control\" id=\"image_ev\" name=\"image[ev]\" value=\"";
+        // line 10
+        echo twig_escape_filter($this->env, (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 10, $this->source); })()), "html", null, true);
+        echo "\">
+            </div>
         </div>
         <div class=\"form-group row\">
-            <label class=\"col-md-3\">File Upload</label>
-            <div class=\"col-md-9\">
-                <div class=\"custom-file\">
-                    <input type=\"file\" class=\"custom-file-input\" id=\"image_image\" name=\"image[image]\" required=\"\">
-                    <label class=\"custom-file-label\" for=\"validatedCustomFile\">Choose file...</label>
-                    <div class=\"invalid-feedback\">Example invalid custom file feedback</div>
-                </div>
+            <label for=\"lname\" class=\"col-sm-3 text-right control-label col-form-label\">Upload Image</label>
+            <div class=\"col-sm-9\">
+\t\t\t\t\t<input type=\"file\" class=\"form-control-file\" id=\"image_image\" name=\"image[image]\">
+\t\t\t\t\t<!--<label class=\"custom-file-label\" for=\"image_image\">Choose File</label>-->
             </div>
         </div>
     </div>
@@ -70,7 +76,7 @@ class __TwigTemplate_3d6be65001e0bb55ac5a181d42c4e0e933afa3cdce6b4cd757a282653f2
             <button type=\"submit\" class=\"btn btn-primary\">Submit</button>
         </div>
     </div>
-</div>
+</form>
 
 <!--start contact contant-->
 
@@ -88,7 +94,7 @@ class __TwigTemplate_3d6be65001e0bb55ac5a181d42c4e0e933afa3cdce6b4cd757a282653f2
             ";
         // line 41
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable($context["image"]);
+        $context['_seq'] = twig_ensure_traversable((isset($context["images"]) || array_key_exists("images", $context) ? $context["images"] : (function () { throw new RuntimeError('Variable "images" does not exist.', 41, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["image"]) {
             // line 42
@@ -110,7 +116,7 @@ class __TwigTemplate_3d6be65001e0bb55ac5a181d42c4e0e933afa3cdce6b4cd757a282653f2
                 <td>
                     <form method=\"post\" action=\"";
             // line 49
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_image_delete", ["id" => twig_get_attribute($this->env, $this->source, $context["image"], "id", [], "any", false, false, false, 49), "id" => (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 49, $this->source); })())]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_image_delete", ["id" => twig_get_attribute($this->env, $this->source, $context["image"], "id", [], "any", false, false, false, 49), "hid" => (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 49, $this->source); })())]), "html", null, true);
             echo "\"
                         onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
                         <input type=\"hidden\" name=\"_method\" value=\"DELETE\">
@@ -159,7 +165,7 @@ class __TwigTemplate_3d6be65001e0bb55ac5a181d42c4e0e933afa3cdce6b4cd757a282653f2
 
     public function getDebugInfo()
     {
-        return array (  139 => 62,  130 => 58,  119 => 52,  113 => 49,  107 => 46,  102 => 44,  98 => 43,  95 => 42,  90 => 41,  48 => 2,  43 => 1,);
+        return array (  145 => 62,  136 => 58,  125 => 52,  119 => 49,  113 => 46,  108 => 44,  104 => 43,  101 => 42,  96 => 41,  62 => 10,  53 => 4,  48 => 2,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -167,20 +173,20 @@ class __TwigTemplate_3d6be65001e0bb55ac5a181d42c4e0e933afa3cdce6b4cd757a282653f2
         return new Source("<link href=\"{{ asset ('assets')}}/admin/dist/css/style.min.css\" rel=\"stylesheet\">
 <link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"{{ asset ('assets')}}/admin/assets/images/favicon.png\">
 
-<div class=\"card\">
+<form class=\"form-horizontal\" role=\"form\" name=\"image\" action=\"{{ path('admin_image_new', {'id':id}) }}\" method=\"post\" enctype=\"multipart/form-data\">
     <div class=\"card-body\">
         <div class=\"form-group row\">
-            <label class=\"col-md-3\">Title Name</label>
-            <input class=\"col-md-9 form-control\" type=\"text\" id=\"image_title\" name=\"image[title]\" maxlength=\"50\" placeholder=\"Title Name Here\">
+            <label for=\"fname\" class=\"col-sm-3 text-right control-label col-form-label\">File Name</label>
+            <div class=\"col-sm-9\">
+                <input type=\"text\" class=\"form-control\" id=\"image_title\" name=\"image[title]\" maxlength=\"50\" placeholder=\"File Name Here\">
+                <input type=\"hidden\" class=\"form-control\" id=\"image_ev\" name=\"image[ev]\" value=\"{{id}}\">
+            </div>
         </div>
         <div class=\"form-group row\">
-            <label class=\"col-md-3\">File Upload</label>
-            <div class=\"col-md-9\">
-                <div class=\"custom-file\">
-                    <input type=\"file\" class=\"custom-file-input\" id=\"image_image\" name=\"image[image]\" required=\"\">
-                    <label class=\"custom-file-label\" for=\"validatedCustomFile\">Choose file...</label>
-                    <div class=\"invalid-feedback\">Example invalid custom file feedback</div>
-                </div>
+            <label for=\"lname\" class=\"col-sm-3 text-right control-label col-form-label\">Upload Image</label>
+            <div class=\"col-sm-9\">
+\t\t\t\t\t<input type=\"file\" class=\"form-control-file\" id=\"image_image\" name=\"image[image]\">
+\t\t\t\t\t<!--<label class=\"custom-file-label\" for=\"image_image\">Choose File</label>-->
             </div>
         </div>
     </div>
@@ -189,7 +195,7 @@ class __TwigTemplate_3d6be65001e0bb55ac5a181d42c4e0e933afa3cdce6b4cd757a282653f2
             <button type=\"submit\" class=\"btn btn-primary\">Submit</button>
         </div>
     </div>
-</div>
+</form>
 
 <!--start contact contant-->
 
@@ -204,7 +210,7 @@ class __TwigTemplate_3d6be65001e0bb55ac5a181d42c4e0e933afa3cdce6b4cd757a282653f2
             </tr>
         </thead>
         <tbody>
-            {% for image in image %}
+            {% for image in images %}
             <tr>
                 <td>{{ image.id }}</td>
                 <td>{{ image.title }}</td>
@@ -212,7 +218,7 @@ class __TwigTemplate_3d6be65001e0bb55ac5a181d42c4e0e933afa3cdce6b4cd757a282653f2
                     <img src=\"{{ asset('uploads/images/' ~ image.image) }}\" height=\"40\">
                 </td>
                 <td>
-                    <form method=\"post\" action=\"{{ path('admin_image_delete', {'id': image.id, 'id': id}) }}\"
+                    <form method=\"post\" action=\"{{ path('admin_image_delete', {'id': image.id, 'hid': id}) }}\"
                         onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
                         <input type=\"hidden\" name=\"_method\" value=\"DELETE\">
                         <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ image.id) }}\">

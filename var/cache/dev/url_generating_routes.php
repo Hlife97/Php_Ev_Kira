@@ -26,6 +26,11 @@ return [
     'admin_ev_show' => [['id'], ['_controller' => 'App\\Controller\\Admin\\EvController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/ev']], [], []],
     'admin_ev_edit' => [['id'], ['_controller' => 'App\\Controller\\Admin\\EvController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/admin/ev']], [], []],
     'admin_ev_delete' => [['id'], ['_controller' => 'App\\Controller\\Admin\\EvController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/ev']], [], []],
+    'admin_image_index' => [[], ['_controller' => 'App\\Controller\\Admin\\ImageController::index'], [], [['text', '/admin/image/']], [], []],
+    'admin_image_new' => [['id'], ['_controller' => 'App\\Controller\\Admin\\ImageController::new'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/image/new']], [], []],
+    'admin_image_show' => [['id'], ['_controller' => 'App\\Controller\\Admin\\ImageController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/image']], [], []],
+    'admin_image_edit' => [['id'], ['_controller' => 'App\\Controller\\Admin\\ImageController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/admin/image']], [], []],
+    'admin_image_delete' => [['id', 'hid'], ['_controller' => 'App\\Controller\\Admin\\ImageController::delete'], [], [['variable', '/', '[^/]++', 'hid', true], ['variable', '/', '[^/]++', 'id', true], ['text', '/admin/image']], [], []],
     'home' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], []],
     'sample' => [[], ['_controller' => 'App\\Controller\\SampleController::index'], [], [['text', '/sample']], [], []],
 ];

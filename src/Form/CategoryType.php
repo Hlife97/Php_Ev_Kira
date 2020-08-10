@@ -6,6 +6,10 @@ use App\Entity\Category;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\File;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+
+
 
 class CategoryType extends AbstractType
 {
@@ -16,7 +20,21 @@ class CategoryType extends AbstractType
             ->add('title')
             ->add('keywords')
             ->add('description')
-            ->add('image')
+            ->add('image',  FileType::class, [
+                'label' => 'Ev Main Image',      
+                'mapped' => false,
+                'required' => false,
+                
+                'constraints' => [
+                    new File( [
+                        'maxSize' => '1024k',
+                        'mimeTypes' => [
+                            'image/*',
+                        ],
+                        'mimeTypesMessage' => 'Please upload a valid Image File',
+                    ])
+                ],
+            ] )
             ->add('status')
             ->add('created_at')
             ->add('updated_at')
@@ -27,6 +45,7 @@ class CategoryType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Category::class,
+            'csrf_protection'=>false,
         ]);
     }
 }

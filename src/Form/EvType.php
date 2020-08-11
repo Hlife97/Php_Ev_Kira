@@ -68,8 +68,8 @@ class EvType extends AbstractType
                 'choices' => [
                     'True' => 'True',
                     'False' => 'False'
-                ]
-            ] )
+                ],
+            ])
             ->add('created_at')
             ->add('updated_at')
             ->add('category')
@@ -80,6 +80,7 @@ class EvType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Ev::class,
+            'csrf_protection'=>false,
         ]);
     }
 }

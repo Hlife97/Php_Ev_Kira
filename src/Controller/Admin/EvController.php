@@ -16,6 +16,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 
 /**
@@ -137,7 +138,7 @@ class EvController extends AbstractController
     /**
      * @Route("/{id}", name="admin_ev_delete", methods={"DELETE"})
      */
-    public function delete(Request $request, Ev $ev): Response
+    public function delete( Request $request, Ev $ev): Response
     {
         if ($this->isCsrfTokenValid('delete'.$ev->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
@@ -147,4 +148,5 @@ class EvController extends AbstractController
 
         return $this->redirectToRoute('admin_ev_index');
     }
+
 }

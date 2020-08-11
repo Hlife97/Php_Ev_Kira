@@ -95,7 +95,7 @@ class __TwigTemplate_1fc57cdf6c3d185e4ca8ed12ba0bd5fcda8fd825c7d2e85a5c02d3ea0ca
                     <div class=\"ml-auto text-right\">
                         <nav aria-label=\"breadcrumb\">
                             <ol class=\"breadcrumb\">
-                                <li class=\"breadcrumb-item\"><a href=\"#\">Home</a></li>
+                                <li class=\"breadcrumb-item\"><a href=\"\\admin\">Home</a></li>
                                 <li class=\"breadcrumb-item active\" aria-current=\"page\">Library</li>
                             </ol>
                         </nav>
@@ -166,7 +166,7 @@ class __TwigTemplate_1fc57cdf6c3d185e4ca8ed12ba0bd5fcda8fd825c7d2e85a5c02d3ea0ca
                     <div class=\"ml-auto text-right\">
                         <nav aria-label=\"breadcrumb\">
                             <ol class=\"breadcrumb\">
-                                <li class=\"breadcrumb-item\"><a href=\"#\">Home</a></li>
+                                <li class=\"breadcrumb-item\"><a href=\"\\admin\">Home</a></li>
                                 <li class=\"breadcrumb-item active\" aria-current=\"page\">Library</li>
                             </ol>
                         </nav>

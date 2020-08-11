@@ -51,9 +51,10 @@ class __TwigTemplate_b9e006c01503ed23c2fc9b4e3c354efa70ad9fefb47cdce0c15b245f32d
         // line 5
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . twig_get_attribute($this->env, $this->source, (isset($context["ev"]) || array_key_exists("ev", $context) ? $context["ev"] : (function () { throw new RuntimeError('Variable "ev" does not exist.', 5, $this->source); })()), "id", [], "any", false, false, false, 5))), "html", null, true);
         echo "\">
-        <button class=\"btn\">Delete</button>
+        <button class=\"btn btn-danger\">Delete</button>
     </form>
-</div>";
+</div>
+";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
@@ -84,8 +85,9 @@ class __TwigTemplate_b9e006c01503ed23c2fc9b4e3c354efa70ad9fefb47cdce0c15b245f32d
         onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
         <input type=\"hidden\" name=\"_method\" value=\"DELETE\">
         <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ ev.id) }}\">
-        <button class=\"btn\">Delete</button>
+        <button class=\"btn btn-danger\">Delete</button>
     </form>
-</div>", "admin/ev/_delete_form.html.twig", "C:\\xampp\\htdocs\\ev_kira\\templates\\admin\\ev\\_delete_form.html.twig");
+</div>
+", "admin/ev/_delete_form.html.twig", "C:\\xampp\\htdocs\\ev_kira\\templates\\admin\\ev\\_delete_form.html.twig");
     }
 }

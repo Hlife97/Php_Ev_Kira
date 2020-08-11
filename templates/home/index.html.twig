@@ -1,8 +1,8 @@
 {% extends 'homebase.html.twig' %}
 
-{% block title %}Evini Buradan Kirala!{% endblock %}
-{% block keywords %}Ev, kira{% endblock %}
-{% block description %}En Uygun Fiyata Bu Siteden Ev'ini Kirala{% endblock %}
+{% block title %}{{setting[0].title}}{% endblock %}
+{% block keywords %}{{setting[0].keywords}}{% endblock %}
+{% block description %}{{setting[0].description}}{% endblock %}
 {% block slider %}{% include('home/slider.html.twig') %}{% endblock %}
 {% block body %}
 

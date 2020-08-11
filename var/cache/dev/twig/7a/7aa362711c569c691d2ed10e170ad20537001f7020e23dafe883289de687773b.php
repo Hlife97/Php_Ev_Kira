@@ -33,7 +33,7 @@ class __TwigTemplate_78d863fd1ff8b58b6f502f21af5b9fc6d23256bafa334e0778bb3e823c9
     protected function doGetParent(array $context)
     {
         // line 1
-        return "adminbase.html.twig";
+        return "base.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -45,7 +45,7 @@ class __TwigTemplate_78d863fd1ff8b58b6f502f21af5b9fc6d23256bafa334e0778bb3e823c9
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "admin/ev/new.html.twig"));
 
-        $this->parent = $this->loadTemplate("adminbase.html.twig", "admin/ev/new.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", "admin/ev/new.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -151,7 +151,7 @@ class __TwigTemplate_78d863fd1ff8b58b6f502f21af5b9fc6d23256bafa334e0778bb3e823c9
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'adminbase.html.twig' %}
+        return new Source("{% extends 'base.html.twig' %}
 
 {% block title %}New Ev{% endblock %}
 

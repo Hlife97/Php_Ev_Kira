@@ -229,12 +229,12 @@ class __TwigTemplate_68215a21c632fb75fc998e9c75632bf051c724c63be73e65f14d52f97a2
                             <a href=\"";
         // line 99
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_ev_index");
-        echo "\">back to list</a>
+        echo "\"><button type=\"button\" class=\"btn btn-secondary\">back</button></a>
 
                             <a href=\"";
         // line 101
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_ev_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["ev"]) || array_key_exists("ev", $context) ? $context["ev"] : (function () { throw new RuntimeError('Variable "ev" does not exist.', 101, $this->source); })()), "id", [], "any", false, false, false, 101)]), "html", null, true);
-        echo "\">edit</a>
+        echo "\"><button type=\"button\" class=\"btn btn-dark\">edit</button></a>
 
                             ";
         // line 103
@@ -371,9 +371,9 @@ class __TwigTemplate_68215a21c632fb75fc998e9c75632bf051c724c63be73e65f14d52f97a2
                                 </tbody>
                             </table>
 
-                            <a href=\"{{ path('admin_ev_index') }}\">back to list</a>
+                            <a href=\"{{ path('admin_ev_index') }}\"><button type=\"button\" class=\"btn btn-secondary\">back</button></a>
 
-                            <a href=\"{{ path('admin_ev_edit', {'id': ev.id}) }}\">edit</a>
+                            <a href=\"{{ path('admin_ev_edit', {'id': ev.id}) }}\"><button type=\"button\" class=\"btn btn-dark\">edit</button></a>
 
                             {{ include('admin/ev/_delete_form.html.twig') }}
                         </div>

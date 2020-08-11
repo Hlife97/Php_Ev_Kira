@@ -96,9 +96,9 @@
                                 </tbody>
                             </table>
 
-                            <a href="{{ path('admin_ev_index') }}">back to list</a>
+                            <a href="{{ path('admin_ev_index') }}"><button type="button" class="btn btn-secondary">back</button></a>
 
-                            <a href="{{ path('admin_ev_edit', {'id': ev.id}) }}">edit</a>
+                            <a href="{{ path('admin_ev_edit', {'id': ev.id}) }}"><button type="button" class="btn btn-dark">edit</button></a>
 
                             {{ include('admin/ev/_delete_form.html.twig') }}
                         </div>

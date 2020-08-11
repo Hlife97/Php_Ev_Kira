@@ -66,7 +66,7 @@ class __TwigTemplate_805c032e97d0a6cafb850e4df3e9b0a62f4bab719d890fcebe369f5ade5
                          href=\"/admin/ev\" aria-expanded=\"false\"><i class=\"mdi mdi-home\"></i><span
                              class=\"hide-menu\">Kirala</span></a></li>
                  <li class=\"sidebar-item\"> <a class=\"sidebar-link waves-effect waves-dark sidebar-link\"
-                         href=\"/admin/category\" aria-expanded=\"false\"><i class=\"mdi mdi-settings\"></i><span
+                         href=\"/admin/setting\" aria-expanded=\"false\"><i class=\"mdi mdi-settings\"></i><span
                              class=\"hide-menu\">Settings</span></a></li>
              </ul>
          </nav>
@@ -119,7 +119,7 @@ class __TwigTemplate_805c032e97d0a6cafb850e4df3e9b0a62f4bab719d890fcebe369f5ade5
                          href=\"/admin/ev\" aria-expanded=\"false\"><i class=\"mdi mdi-home\"></i><span
                              class=\"hide-menu\">Kirala</span></a></li>
                  <li class=\"sidebar-item\"> <a class=\"sidebar-link waves-effect waves-dark sidebar-link\"
-                         href=\"/admin/category\" aria-expanded=\"false\"><i class=\"mdi mdi-settings\"></i><span
+                         href=\"/admin/setting\" aria-expanded=\"false\"><i class=\"mdi mdi-settings\"></i><span
                              class=\"hide-menu\">Settings</span></a></li>
              </ul>
          </nav>

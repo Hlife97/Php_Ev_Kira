@@ -1,0 +1,73 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block title %}Settings{% endblock %}
+
+{% block body %}
+
+<div class="container-fluid">
+    <div class="page-wrapper">
+        <div class="page-breadcrumb">
+            <div class="row">
+                <div class="col-12 d-flex no-block align-items-center">
+                    <h4 class="page-title">Admin Settings</h4>
+                    <div class="ml-auto text-right">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="\admin">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Library</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h1>Setting </h1>
+
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Title</th>
+                                        <th>Company</th>
+                                        <th>Email</th>
+                                        <th>Status</th>
+                                        <th>actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for setting in settings %}
+                                    <tr>
+                                        <td>{{ setting.id }}</td>
+                                        <td>{{ setting.title }}</td>
+                                        <td>{{ setting.company }}</td>
+                                        <td>{{ setting.email }}</td>
+                                        <td>{{ setting.status }}</td>
+                                        <td>
+                                            <a href="{{ path('setting_show', {'id': setting.id}) }}"><button
+                                                    type="button" class="btn btn-info">show</button></a>
+                                            <a href="{{ path('setting_edit', {'id': setting.id}) }}"><button
+                                                    type="button" class="btn btn-dark">edit</button></a>
+                                        </td>
+                                    </tr>
+                                    {% else %}
+                                    <tr>
+                                        <td colspan="21">no records found</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                            <a href="{{ path('setting_new') }}"><button type="button"
+                                    class="btn btn-success btn-lg">Creat New</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

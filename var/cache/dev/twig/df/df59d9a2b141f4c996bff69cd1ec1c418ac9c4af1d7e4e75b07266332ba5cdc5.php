@@ -130,11 +130,11 @@ class __TwigTemplate_61eebb377603a96176931ab310891d7bf2e8ec582b2fe4260924d44e740
             <button class=\"btn btn-lg btn-primary\" type=\"submit\">
                 Sign in
             </button>
-            <button class=\"btn btn-lg btn-success\" type=\"\" href=\"/adminregister.html\">
-                Creat Account
-            </button>
-        </form>
 
+        </form>
+            <a href=\"/register\"><button class=\"btn btn-lg btn-success\">
+                Creat Account
+            </button></a>
     </div>
 
     <script src=\"";
@@ -228,11 +228,11 @@ class __TwigTemplate_61eebb377603a96176931ab310891d7bf2e8ec582b2fe4260924d44e740
             <button class=\"btn btn-lg btn-primary\" type=\"submit\">
                 Sign in
             </button>
-            <button class=\"btn btn-lg btn-success\" type=\"\" href=\"/adminregister.html\">
-                Creat Account
-            </button>
-        </form>
 
+        </form>
+            <a href=\"/register\"><button class=\"btn btn-lg btn-success\">
+                Creat Account
+            </button></a>
     </div>
 
     <script src=\"{{ asset ('assets')}}/admin/assets/libs/jquery/dist/jquery.min.js\"></script>

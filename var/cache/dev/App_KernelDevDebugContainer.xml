@@ -221,7 +221,7 @@
     <parameter key="doctrine.migrations.preferred_em">null</parameter>
     <parameter key="doctrine.migrations.preferred_connection">null</parameter>
     <parameter key="security.role_hierarchy.roles" type="collection"/>
-    <parameter key="security.access.denied_url">null</parameter>
+    <parameter key="security.access.denied_url">/login</parameter>
     <parameter key="security.authentication.manager.erase_credentials">true</parameter>
     <parameter key="security.authentication.session_strategy.strategy">migrate</parameter>
     <parameter key="security.access.always_authenticate_before_granting">false</parameter>
@@ -370,6 +370,13 @@
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.g9CqTPp.App\Controller\Admin\SettingController"/>
+      </call>
+    </service>
+    <service id="App\Controller\Admin\UserController" class="App\Controller\Admin\UserController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.g9CqTPp.App\Controller\Admin\UserController"/>
       </call>
     </service>
     <service id="App\Controller\HomeController" class="App\Controller\HomeController" public="true" autowire="true" autoconfigure="true">
@@ -4433,7 +4440,7 @@
       <argument type="service" id="security.http_utils"/>
       <argument></argument>
       <argument type="service" id="security.authentication.entry_point" on-invalid="null"/>
-      <argument>null</argument>
+      <argument>/login</argument>
       <argument type="service" id="security.access.denied_handler" on-invalid="null"/>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
       <argument>false</argument>
@@ -4702,7 +4709,7 @@
       <argument type="service" id="security.http_utils"/>
       <argument>main</argument>
       <argument type="service" id="App\Security\AppCustomAuthenticator"/>
-      <argument>null</argument>
+      <argument>/login</argument>
       <argument>null</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
       <argument>false</argument>
@@ -5180,6 +5187,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\SettingController" class="App\Controller\Admin\SettingController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\SettingController" class="App\Controller\Admin\SettingController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\SettingController" class="App\Controller\Admin\SettingController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\UserController" class="App\Controller\Admin\UserController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\UserController" class="App\Controller\Admin\UserController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Admin\UserController" class="App\Controller\Admin\UserController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5525,20 +5535,6 @@
         <argument key="setting" type="service" id=".errored..service_locator.m5TRjON.App\Entity\Setting"/>
       </argument>
     </service>
-    <service id=".service_locator.nld8pAv" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="authenticator" type="service" id="App\Security\AppCustomAuthenticator"/>
-        <argument key="guardHandler" type="service" id="security.authentication.guard_handler"/>
-        <argument key="passwordEncoder" type="service" id="security.user_password_encoder.generic"/>
-      </argument>
-    </service>
-    <service id=".service_locator.xA8Fw_." class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="authenticationUtils" type="service" id="security.authentication_utils"/>
-      </argument>
-    </service>
     <service id=".service_locator.FXD6KYr" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5564,7 +5560,21 @@
         <argument key="user" type="service" id=".errored..service_locator.HXUxGRH.App\Entity\User"/>
       </argument>
     </service>
-    <service id=".service_locator.hL66Mm7" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.nld8pAv" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="authenticator" type="service" id="App\Security\AppCustomAuthenticator"/>
+        <argument key="guardHandler" type="service" id="security.authentication.guard_handler"/>
+        <argument key="passwordEncoder" type="service" id="security.user_password_encoder.generic"/>
+      </argument>
+    </service>
+    <service id=".service_locator.xA8Fw_." class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="authenticationUtils" type="service" id="security.authentication_utils"/>
+      </argument>
+    </service>
+    <service id=".service_locator.gD9.bBG" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\Admin\CategoryController::delete" type="service" id=".service_locator.wNIwF8O"/>
@@ -5585,6 +5595,11 @@
         <argument key="App\Controller\Admin\SettingController::edit" type="service" id=".service_locator.m5TRjON"/>
         <argument key="App\Controller\Admin\SettingController::index" type="service" id=".service_locator.3p6kP69"/>
         <argument key="App\Controller\Admin\SettingController::show" type="service" id=".service_locator.m5TRjON"/>
+        <argument key="App\Controller\Admin\UserController::delete" type="service" id=".service_locator.hEwcf7A"/>
+        <argument key="App\Controller\Admin\UserController::edit" type="service" id=".service_locator.HXUxGRH"/>
+        <argument key="App\Controller\Admin\UserController::index" type="service" id=".service_locator.FXD6KYr"/>
+        <argument key="App\Controller\Admin\UserController::new" type="service" id=".service_locator.j5_bHjD"/>
+        <argument key="App\Controller\Admin\UserController::show" type="service" id=".service_locator.hEwcf7A"/>
         <argument key="App\Controller\HomeController::index" type="service" id=".service_locator.3p6kP69"/>
         <argument key="App\Controller\RegistrationController::register" type="service" id=".service_locator.nld8pAv"/>
         <argument key="App\Controller\SecurityController::login" type="service" id=".service_locator.xA8Fw_."/>
@@ -5618,6 +5633,11 @@
         <argument key="App\Controller\Admin\SettingController:edit" type="service" id=".service_locator.m5TRjON"/>
         <argument key="App\Controller\Admin\SettingController:index" type="service" id=".service_locator.3p6kP69"/>
         <argument key="App\Controller\Admin\SettingController:show" type="service" id=".service_locator.m5TRjON"/>
+        <argument key="App\Controller\Admin\UserController:delete" type="service" id=".service_locator.hEwcf7A"/>
+        <argument key="App\Controller\Admin\UserController:edit" type="service" id=".service_locator.HXUxGRH"/>
+        <argument key="App\Controller\Admin\UserController:index" type="service" id=".service_locator.FXD6KYr"/>
+        <argument key="App\Controller\Admin\UserController:new" type="service" id=".service_locator.j5_bHjD"/>
+        <argument key="App\Controller\Admin\UserController:show" type="service" id=".service_locator.hEwcf7A"/>
         <argument key="App\Controller\HomeController:index" type="service" id=".service_locator.3p6kP69"/>
         <argument key="App\Controller\RegistrationController:register" type="service" id=".service_locator.nld8pAv"/>
         <argument key="App\Controller\SecurityController:login" type="service" id=".service_locator.xA8Fw_."/>
@@ -5959,6 +5979,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.g9CqTPp" method="withContext"/>
     </service>
+    <service id=".service_locator.g9CqTPp.App\Controller\Admin\UserController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\UserController"/>
+      <argument>App\Controller\Admin\UserController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.g9CqTPp" method="withContext"/>
+    </service>
     <service id=".service_locator.g9CqTPp.App\Controller\HomeController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\HomeController"/>
       <argument>App\Controller\HomeController</argument>
@@ -6150,12 +6176,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.hL66Mm7"/>
+      <argument type="service" id=".service_locator.gD9.bBG"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.hL66Mm7"/>
+      <argument type="service" id=".service_locator.gD9.bBG"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -6563,7 +6589,7 @@
     <service id="SymfonyCasts\Bundle\VerifyEmail\VerifyEmailHelperInterface" alias="symfonycasts.verify_email.helper"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.WaGDpDt" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.hL66Mm7"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.gD9.bBG"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

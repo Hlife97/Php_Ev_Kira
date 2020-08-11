@@ -86,24 +86,28 @@ class __TwigTemplate_108e7146343e500a02892e124c491b36715235a7f7557b8e52491eaae3e
         // line 23
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 23, $this->source); })()), 'form_start');
         echo "
-
-
-
         ";
-        // line 27
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 27, $this->source); })()), 'form_end');
+        // line 24
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 24, $this->source); })()), 'widget');
+        echo "
+        <button class=\"btn btn-primary\">";
+        // line 25
+        echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 25, $this->source); })()), "Save")) : ("Save")), "html", null, true);
+        echo "</button>
+        ";
+        // line 26
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 26, $this->source); })()), 'form_end');
         echo "
     </div>
 
     <script src=\"";
-        // line 30
+        // line 29
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets"), "html", null, true);
         echo "/admin/assets/libs/jquery/dist/jquery.min.js\"></script>
     <script src=\"";
-        // line 31
+        // line 30
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets"), "html", null, true);
         echo "/js/matrix.login.js\"></script>
-    <button position:center type=\"submit\" class=\"btn btn-success\">Register</button>
 </body>
 
 </html>";
@@ -127,7 +131,7 @@ class __TwigTemplate_108e7146343e500a02892e124c491b36715235a7f7557b8e52491eaae3e
 
     public function getDebugInfo()
     {
-        return array (  104 => 31,  100 => 30,  94 => 27,  87 => 23,  76 => 15,  72 => 14,  68 => 13,  63 => 12,  61 => 11,  57 => 10,  53 => 9,  43 => 1,);
+        return array (  109 => 30,  105 => 29,  99 => 26,  95 => 25,  91 => 24,  87 => 23,  76 => 15,  72 => 14,  68 => 13,  63 => 12,  61 => 11,  57 => 10,  53 => 9,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -155,15 +159,13 @@ class __TwigTemplate_108e7146343e500a02892e124c491b36715235a7f7557b8e52491eaae3e
     <div id=\"loginbox\">
 
         {{ form_start(registrationForm) }}
-
-
-
+        {{ form_widget(registrationForm) }}
+        <button class=\"btn btn-primary\">{{ button_label|default('Save') }}</button>
         {{ form_end(registrationForm) }}
     </div>
 
     <script src=\"{{ asset ('assets')}}/admin/assets/libs/jquery/dist/jquery.min.js\"></script>
     <script src=\"{{ asset ('assets')}}/js/matrix.login.js\"></script>
-    <button position:center type=\"submit\" class=\"btn btn-success\">Register</button>
 </body>
 
 </html>", "registration/adminregister.html.twig", "C:\\xampp\\htdocs\\ev_kira\\templates\\registration\\adminregister.html.twig");

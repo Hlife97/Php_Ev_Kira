@@ -21,15 +21,13 @@
     <div id="loginbox">
 
         {{ form_start(registrationForm) }}
-
-
-
+        {{ form_widget(registrationForm) }}
+        <button class="btn btn-primary">{{ button_label|default('Save') }}</button>
         {{ form_end(registrationForm) }}
     </div>
 
     <script src="{{ asset ('assets')}}/admin/assets/libs/jquery/dist/jquery.min.js"></script>
     <script src="{{ asset ('assets')}}/js/matrix.login.js"></script>
-    <button type="submit" class="btn btn-success">Register</button>
 </body>
 
 </html>

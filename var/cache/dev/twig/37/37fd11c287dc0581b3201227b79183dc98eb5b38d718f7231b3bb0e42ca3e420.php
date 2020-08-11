@@ -200,34 +200,17 @@ function openWin( windowURL, windowName, windowFeatures ) { window.open( windowU
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/admin/img"), "html", null, true);
             echo "/gallery.png\" height=\"40\"></a>
                                         </td>
-
-                                        <!--<td>";
-            // line 74
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ev"], "location", [], "any", false, false, false, 74), "html", null, true);
-            echo "</td>
-                                        <td>";
-            // line 75
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ev"], "status", [], "any", false, false, false, 75), "html", null, true);
-            echo "</td>
-                                        <td>";
-            // line 76
-            ((twig_get_attribute($this->env, $this->source, $context["ev"], "createdAt", [], "any", false, false, false, 76)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ev"], "createdAt", [], "any", false, false, false, 76), "Y-m-d H:i:s"), "html", null, true))) : (print ("")));
-            echo "</td>
-                                        <td>";
-            // line 77
-            ((twig_get_attribute($this->env, $this->source, $context["ev"], "updatedAt", [], "any", false, false, false, 77)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ev"], "updatedAt", [], "any", false, false, false, 77), "Y-m-d H:i:s"), "html", null, true))) : (print ("")));
-            echo "</td>-->
                                         <td>
                                             <a href=\"";
-            // line 79
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_ev_show", ["id" => twig_get_attribute($this->env, $this->source, $context["ev"], "id", [], "any", false, false, false, 79)]), "html", null, true);
+            // line 74
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_ev_show", ["id" => twig_get_attribute($this->env, $this->source, $context["ev"], "id", [], "any", false, false, false, 74)]), "html", null, true);
             echo "\"><button
                                                     type=\"button\" class=\"btn btn-info\">show</button></a>
                                         </td>
                                         <td>
                                             <a href=\"";
-            // line 83
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_ev_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["ev"], "id", [], "any", false, false, false, 83)]), "html", null, true);
+            // line 78
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_ev_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["ev"], "id", [], "any", false, false, false, 78)]), "html", null, true);
             echo "\"><button
                                                     type=\"button\" class=\"btn btn-dark\">edit</button></a>
                                         </td>
@@ -236,7 +219,7 @@ function openWin( windowURL, windowName, windowFeatures ) { window.open( windowU
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 88
+            // line 83
             echo "                                    <tr>
                                         <td colspan=\"17\">no records found</td>
                                     </tr>
@@ -245,11 +228,11 @@ function openWin( windowURL, windowName, windowFeatures ) { window.open( windowU
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['ev'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 92
+        // line 87
         echo "                                </tbody>
                             </table>
                             <a href=\"";
-        // line 94
+        // line 89
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_ev_new");
         echo "\"><button type=\"button\"
                                     class=\"btn btn-success btn-lg\">Creat New</button></a>
@@ -281,7 +264,7 @@ function openWin( windowURL, windowName, windowFeatures ) { window.open( windowU
 
     public function getDebugInfo()
     {
-        return array (  253 => 94,  249 => 92,  240 => 88,  230 => 83,  223 => 79,  218 => 77,  214 => 76,  210 => 75,  206 => 74,  200 => 71,  196 => 70,  190 => 67,  186 => 66,  182 => 65,  178 => 64,  174 => 63,  170 => 62,  166 => 61,  162 => 60,  158 => 59,  154 => 58,  150 => 57,  146 => 56,  143 => 55,  138 => 54,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  236 => 89,  232 => 87,  223 => 83,  213 => 78,  206 => 74,  200 => 71,  196 => 70,  190 => 67,  186 => 66,  182 => 65,  178 => 64,  174 => 63,  170 => 62,  166 => 61,  162 => 60,  158 => 59,  154 => 58,  150 => 57,  146 => 56,  143 => 55,  138 => 54,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -358,11 +341,6 @@ function openWin( windowURL, windowName, windowFeatures ) { window.open( windowU
                                                 href=\"javascript:openWin('{{ path('admin_image_new',{'id':ev.id}) }}','','toolbar=no,location=no, directories=0, status=no, top=50,left=100, menuBar=no, scrollBars=yes,resizable=no, width=900, height=600'); \">
                                                 <img src=\"{{ asset ('assets/admin/img') }}/gallery.png\" height=\"40\"></a>
                                         </td>
-
-                                        <!--<td>{{ ev.location }}</td>
-                                        <td>{{ ev.status }}</td>
-                                        <td>{{ ev.createdAt ? ev.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                                        <td>{{ ev.updatedAt ? ev.updatedAt|date('Y-m-d H:i:s') : '' }}</td>-->
                                         <td>
                                             <a href=\"{{ path('admin_ev_show', {'id': ev.id}) }}\"><button
                                                     type=\"button\" class=\"btn btn-info\">show</button></a>

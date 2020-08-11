@@ -40,39 +40,69 @@ class __TwigTemplate_805c032e97d0a6cafb850e4df3e9b0a62f4bab719d890fcebe369f5ade5
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "admin/sidebar.html.twig"));
 
         // line 1
-        echo "<aside class=\"left-sidebar\" data-sidebarbg=\"skin5\">
-     <!-- Sidebar scroll-->
-     <div class=\"scroll-sidebar\">
-         <!-- Sidebar navigation-->
-         <nav class=\"sidebar-nav\">
-             <ul id=\"sidebarnav\" class=\"p-t-30\">
+        echo "      <style type=\"text/css\">
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+    text-align:center;
+}
+      </style>
 
-                 <li class=\"sidebar-item\"> <a class=\"sidebar-link has-arrow waves-effect waves-dark\"
-                         href=\"javascript:void(0)\" aria-expanded=\"false\"><i class=\"mdi mdi-receipt\"></i><span
-                             class=\"hide-menu\">Kiralanan </span></a>
-                     <ul aria-expanded=\"false\" class=\"collapse  first-level\">
-                         <li class=\"sidebar-item\"><a href=\"form-basic.html\" class=\"sidebar-link\"><i
-                                     class=\"mdi mdi-note-outline\"></i><span class=\"hide-menu\"> Yeni </span></a>
-                         </li>
-                         <li class=\"sidebar-item\"><a href=\"form-wizard.html\" class=\"sidebar-link\"><i
-                                     class=\"mdi mdi-note-plus\"></i><span class=\"hide-menu\"> Kabul Edilen </span></a>
-                         </li>
-                     </ul>
-                 </li>
-                 <li class=\"sidebar-item\"> <a class=\"sidebar-link waves-effect waves-dark sidebar-link\"
-                         href=\"/admin/category\" aria-expanded=\"false\"><i class=\"mdi mdi-view-dashboard\"></i><span
-                             class=\"hide-menu\">Category</span></a></li>
-                 <li class=\"sidebar-item\"> <a class=\"sidebar-link waves-effect waves-dark sidebar-link\"
-                         href=\"/admin/ev\" aria-expanded=\"false\"><i class=\"mdi mdi-home\"></i><span
-                             class=\"hide-menu\">Kirala</span></a></li>
-                 <li class=\"sidebar-item\"> <a class=\"sidebar-link waves-effect waves-dark sidebar-link\"
-                         href=\"/admin/setting\" aria-expanded=\"false\"><i class=\"mdi mdi-settings\"></i><span
-                             class=\"hide-menu\">Settings</span></a></li>
-             </ul>
-         </nav>
-     </div>
- </aside>
-";
+<aside class=\"left-sidebar\" data-sidebarbg=\"skin5\">
+    <!-- Sidebar scroll-->
+    <div class=\"scroll-sidebar\">
+        <!-- Sidebar navigation-->
+        <div class=\"image\">
+            <img src=\"";
+        // line 15
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 15, $this->source); })()), "user", [], "any", false, false, false, 15), "image", [], "any", false, false, false, 15))), "html", null, true);
+        echo "\" class=\"center\" alt=\"User Image\" width=\"50\" >
+        </div>
+        <div class=\"info\">
+            <a href=\"/admin/user\" class=\"center\">";
+        // line 18
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 18, $this->source); })()), "user", [], "any", false, false, false, 18), "name", [], "any", false, false, false, 18), "html", null, true);
+        echo " ";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 18, $this->source); })()), "user", [], "any", false, false, false, 18), "surname", [], "any", false, false, false, 18), "html", null, true);
+        echo "</a>
+        </div>
+        <nav class=\"sidebar-nav\">
+            <ul id=\"sidebarnav\" class=\"p-t-30\">
+
+                <li class=\"sidebar-item\"> <a class=\"sidebar-link has-arrow waves-effect waves-dark\"
+                        href=\"javascript:void(0)\" aria-expanded=\"false\"><i class=\"mdi mdi-receipt\"></i><span
+                            class=\"hide-menu\">Kiralanan </span></a>
+                    <ul aria-expanded=\"false\" class=\"collapse  first-level\">
+                        <li class=\"sidebar-item\"><a href=\"form-basic.html\" class=\"sidebar-link\"><i
+                                    class=\"mdi mdi-note-outline\"></i><span class=\"hide-menu\"> Yeni </span></a>
+                        </li>
+                        <li class=\"sidebar-item\"><a href=\"form-wizard.html\" class=\"sidebar-link\"><i
+                                    class=\"mdi mdi-note-plus\"></i><span class=\"hide-menu\"> Kabul Edilen </span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=\"sidebar-item\"> <a class=\"sidebar-link waves-effect waves-dark sidebar-link\"
+                        href=\"/admin/category\" aria-expanded=\"false\"><i class=\"mdi mdi-view-dashboard\"></i><span
+                            class=\"hide-menu\">Category</span></a></li>
+                <li class=\"sidebar-item\"> <a class=\"sidebar-link waves-effect waves-dark sidebar-link\" href=\"/admin/ev\"
+                        aria-expanded=\"false\"><i class=\"mdi mdi-home\"></i><span class=\"hide-menu\">Kirala</span></a></li>
+                <li class=\"sidebar-item\"> <a class=\"sidebar-link waves-effect waves-dark sidebar-link\"
+                        href=\"/admin/setting\" aria-expanded=\"false\"><i class=\"mdi mdi-settings\"></i><span
+                            class=\"hide-menu\">Settings</span></a></li>
+                <li class=\"sidebar-item\"> <a class=\"sidebar-link waves-effect waves-dark sidebar-link\"
+                        href=\"/admin/user\" aria-expanded=\"false\"><i class=\"mdi mdi- fas fa-user\"></i><span
+                            class=\"hide-menu\">Users</span></a></li>
+                <li class=\"sidebar-item\"> <a class=\"sidebar-link waves-effect waves-dark sidebar-link\"
+                        href=\"";
+        // line 47
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
+        echo "\" aria-expanded=\"false\"><i class=\"mdi mdi-logout-variant\"></i><span
+                            class=\"hide-menu\">Log Out</span></a></li>
+            </ul>
+        </nav>
+    </div>
+</aside>";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
@@ -86,45 +116,69 @@ class __TwigTemplate_805c032e97d0a6cafb850e4df3e9b0a62f4bab719d890fcebe369f5ade5
         return "admin/sidebar.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  43 => 1,);
+        return array (  99 => 47,  65 => 18,  59 => 15,  43 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("<aside class=\"left-sidebar\" data-sidebarbg=\"skin5\">
-     <!-- Sidebar scroll-->
-     <div class=\"scroll-sidebar\">
-         <!-- Sidebar navigation-->
-         <nav class=\"sidebar-nav\">
-             <ul id=\"sidebarnav\" class=\"p-t-30\">
+        return new Source("      <style type=\"text/css\">
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+    text-align:center;
+}
+      </style>
 
-                 <li class=\"sidebar-item\"> <a class=\"sidebar-link has-arrow waves-effect waves-dark\"
-                         href=\"javascript:void(0)\" aria-expanded=\"false\"><i class=\"mdi mdi-receipt\"></i><span
-                             class=\"hide-menu\">Kiralanan </span></a>
-                     <ul aria-expanded=\"false\" class=\"collapse  first-level\">
-                         <li class=\"sidebar-item\"><a href=\"form-basic.html\" class=\"sidebar-link\"><i
-                                     class=\"mdi mdi-note-outline\"></i><span class=\"hide-menu\"> Yeni </span></a>
-                         </li>
-                         <li class=\"sidebar-item\"><a href=\"form-wizard.html\" class=\"sidebar-link\"><i
-                                     class=\"mdi mdi-note-plus\"></i><span class=\"hide-menu\"> Kabul Edilen </span></a>
-                         </li>
-                     </ul>
-                 </li>
-                 <li class=\"sidebar-item\"> <a class=\"sidebar-link waves-effect waves-dark sidebar-link\"
-                         href=\"/admin/category\" aria-expanded=\"false\"><i class=\"mdi mdi-view-dashboard\"></i><span
-                             class=\"hide-menu\">Category</span></a></li>
-                 <li class=\"sidebar-item\"> <a class=\"sidebar-link waves-effect waves-dark sidebar-link\"
-                         href=\"/admin/ev\" aria-expanded=\"false\"><i class=\"mdi mdi-home\"></i><span
-                             class=\"hide-menu\">Kirala</span></a></li>
-                 <li class=\"sidebar-item\"> <a class=\"sidebar-link waves-effect waves-dark sidebar-link\"
-                         href=\"/admin/setting\" aria-expanded=\"false\"><i class=\"mdi mdi-settings\"></i><span
-                             class=\"hide-menu\">Settings</span></a></li>
-             </ul>
-         </nav>
-     </div>
- </aside>
-", "admin/sidebar.html.twig", "C:\\xampp\\htdocs\\ev_kira\\templates\\admin\\sidebar.html.twig");
+<aside class=\"left-sidebar\" data-sidebarbg=\"skin5\">
+    <!-- Sidebar scroll-->
+    <div class=\"scroll-sidebar\">
+        <!-- Sidebar navigation-->
+        <div class=\"image\">
+            <img src=\"{{ asset('uploads/images/' ~ app.user.image) }}\" class=\"center\" alt=\"User Image\" width=\"50\" >
+        </div>
+        <div class=\"info\">
+            <a href=\"/admin/user\" class=\"center\">{{app.user.name}} {{app.user.surname}}</a>
+        </div>
+        <nav class=\"sidebar-nav\">
+            <ul id=\"sidebarnav\" class=\"p-t-30\">
+
+                <li class=\"sidebar-item\"> <a class=\"sidebar-link has-arrow waves-effect waves-dark\"
+                        href=\"javascript:void(0)\" aria-expanded=\"false\"><i class=\"mdi mdi-receipt\"></i><span
+                            class=\"hide-menu\">Kiralanan </span></a>
+                    <ul aria-expanded=\"false\" class=\"collapse  first-level\">
+                        <li class=\"sidebar-item\"><a href=\"form-basic.html\" class=\"sidebar-link\"><i
+                                    class=\"mdi mdi-note-outline\"></i><span class=\"hide-menu\"> Yeni </span></a>
+                        </li>
+                        <li class=\"sidebar-item\"><a href=\"form-wizard.html\" class=\"sidebar-link\"><i
+                                    class=\"mdi mdi-note-plus\"></i><span class=\"hide-menu\"> Kabul Edilen </span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=\"sidebar-item\"> <a class=\"sidebar-link waves-effect waves-dark sidebar-link\"
+                        href=\"/admin/category\" aria-expanded=\"false\"><i class=\"mdi mdi-view-dashboard\"></i><span
+                            class=\"hide-menu\">Category</span></a></li>
+                <li class=\"sidebar-item\"> <a class=\"sidebar-link waves-effect waves-dark sidebar-link\" href=\"/admin/ev\"
+                        aria-expanded=\"false\"><i class=\"mdi mdi-home\"></i><span class=\"hide-menu\">Kirala</span></a></li>
+                <li class=\"sidebar-item\"> <a class=\"sidebar-link waves-effect waves-dark sidebar-link\"
+                        href=\"/admin/setting\" aria-expanded=\"false\"><i class=\"mdi mdi-settings\"></i><span
+                            class=\"hide-menu\">Settings</span></a></li>
+                <li class=\"sidebar-item\"> <a class=\"sidebar-link waves-effect waves-dark sidebar-link\"
+                        href=\"/admin/user\" aria-expanded=\"false\"><i class=\"mdi mdi- fas fa-user\"></i><span
+                            class=\"hide-menu\">Users</span></a></li>
+                <li class=\"sidebar-item\"> <a class=\"sidebar-link waves-effect waves-dark sidebar-link\"
+                        href=\"{{ path('app_logout')}}\" aria-expanded=\"false\"><i class=\"mdi mdi-logout-variant\"></i><span
+                            class=\"hide-menu\">Log Out</span></a></li>
+            </ul>
+        </nav>
+    </div>
+</aside>", "admin/sidebar.html.twig", "C:\\xampp\\htdocs\\ev_kira\\templates\\admin\\sidebar.html.twig");
     }
 }

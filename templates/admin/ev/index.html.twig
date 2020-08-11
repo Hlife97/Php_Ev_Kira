@@ -70,11 +70,6 @@ function openWin( windowURL, windowName, windowFeatures ) { window.open( windowU
                                                 href="javascript:openWin('{{ path('admin_image_new',{'id':ev.id}) }}','','toolbar=no,location=no, directories=0, status=no, top=50,left=100, menuBar=no, scrollBars=yes,resizable=no, width=900, height=600'); ">
                                                 <img src="{{ asset ('assets/admin/img') }}/gallery.png" height="40"></a>
                                         </td>
-
-                                        <!--<td>{{ ev.location }}</td>
-                                        <td>{{ ev.status }}</td>
-                                        <td>{{ ev.createdAt ? ev.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                                        <td>{{ ev.updatedAt ? ev.updatedAt|date('Y-m-d H:i:s') : '' }}</td>-->
                                         <td>
                                             <a href="{{ path('admin_ev_show', {'id': ev.id}) }}"><button
                                                     type="button" class="btn btn-info">show</button></a>

@@ -1,32 +1,52 @@
-<aside class="left-sidebar" data-sidebarbg="skin5">
-     <!-- Sidebar scroll-->
-     <div class="scroll-sidebar">
-         <!-- Sidebar navigation-->
-         <nav class="sidebar-nav">
-             <ul id="sidebarnav" class="p-t-30">
+      <style type="text/css">
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+    text-align:center;
+}
+      </style>
 
-                 <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
-                         href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span
-                             class="hide-menu">Kiralanan </span></a>
-                     <ul aria-expanded="false" class="collapse  first-level">
-                         <li class="sidebar-item"><a href="form-basic.html" class="sidebar-link"><i
-                                     class="mdi mdi-note-outline"></i><span class="hide-menu"> Yeni </span></a>
-                         </li>
-                         <li class="sidebar-item"><a href="form-wizard.html" class="sidebar-link"><i
-                                     class="mdi mdi-note-plus"></i><span class="hide-menu"> Kabul Edilen </span></a>
-                         </li>
-                     </ul>
-                 </li>
-                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                         href="/admin/category" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
-                             class="hide-menu">Category</span></a></li>
-                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                         href="/admin/ev" aria-expanded="false"><i class="mdi mdi-home"></i><span
-                             class="hide-menu">Kirala</span></a></li>
-                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                         href="/admin/setting" aria-expanded="false"><i class="mdi mdi-settings"></i><span
-                             class="hide-menu">Settings</span></a></li>
-             </ul>
-         </nav>
-     </div>
- </aside>
+<aside class="left-sidebar" data-sidebarbg="skin5">
+    <!-- Sidebar scroll-->
+    <div class="scroll-sidebar">
+        <!-- Sidebar navigation-->
+        <div class="image">
+            <img src="{{ asset('uploads/images/' ~ app.user.image) }}" class="center" alt="User Image" width="50" >
+        </div>
+        <div class="info">
+            <a href="/admin/user" class="center">{{app.user.name}} {{app.user.surname}}</a>
+        </div>
+        <nav class="sidebar-nav">
+            <ul id="sidebarnav" class="p-t-30">
+
+                <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
+                        href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span
+                            class="hide-menu">Kiralanan </span></a>
+                    <ul aria-expanded="false" class="collapse  first-level">
+                        <li class="sidebar-item"><a href="form-basic.html" class="sidebar-link"><i
+                                    class="mdi mdi-note-outline"></i><span class="hide-menu"> Yeni </span></a>
+                        </li>
+                        <li class="sidebar-item"><a href="form-wizard.html" class="sidebar-link"><i
+                                    class="mdi mdi-note-plus"></i><span class="hide-menu"> Kabul Edilen </span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                        href="/admin/category" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
+                            class="hide-menu">Category</span></a></li>
+                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin/ev"
+                        aria-expanded="false"><i class="mdi mdi-home"></i><span class="hide-menu">Kirala</span></a></li>
+                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                        href="/admin/setting" aria-expanded="false"><i class="mdi mdi-settings"></i><span
+                            class="hide-menu">Settings</span></a></li>
+                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                        href="/admin/user" aria-expanded="false"><i class="mdi mdi- fas fa-user"></i><span
+                            class="hide-menu">Users</span></a></li>
+                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                        href="{{ path('app_logout')}}" aria-expanded="false"><i class="mdi mdi-logout-variant"></i><span
+                            class="hide-menu">Log Out</span></a></li>
+            </ul>
+        </nav>
+    </div>
+</aside>

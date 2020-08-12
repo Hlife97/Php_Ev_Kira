@@ -23,15 +23,13 @@ class EvType extends AbstractType
                 'class' => Category::class,
                 'choice_label' => 'title',
             ])
-
             ->add('title')
             ->add('keywords')
             ->add('description')
             ->add('image',  FileType::class, [
-                'label' => 'Ev Main Image',      
+                'label' => 'Image',      
                 'mapped' => false,
                 'required' => false,
-                
                 'constraints' => [
                     new File( [
                         'maxSize' => '1024k',
@@ -42,7 +40,7 @@ class EvType extends AbstractType
                     ])
                 ],
             ] )
-            ->add ('star',  ChoiceType::class, [
+            ->add('star',  ChoiceType::class, [
                 'choices' =>[
                     '1 Star' => '1',
                     '2 Star' => '2',
@@ -51,7 +49,6 @@ class EvType extends AbstractType
                     '5 Star' => '5',
                 ],
             ] )
-
             ->add('address')
             ->add('phone')
             ->add('fax')
@@ -73,6 +70,7 @@ class EvType extends AbstractType
             ->add('created_at')
             ->add('updated_at')
             ->add('category')
+            ->add('userid')
         ;
     }
 

@@ -39,11 +39,11 @@ class UserController extends AbstractController
         return $this->render('user/reservations.html.twig');
     }
     /**
-     * @Route("/renthouse", name="user_renthouse", methods={"GET"})
+     * @Route("/ev", name="user_ev", methods={"GET"})
      */
-    public function renthouse(): Response
+    public function ev(): Response
     {
-        return $this->render('user/renthouse.html.twig');
+        return $this->render('user/ev.html.twig');
     }
 
     /**

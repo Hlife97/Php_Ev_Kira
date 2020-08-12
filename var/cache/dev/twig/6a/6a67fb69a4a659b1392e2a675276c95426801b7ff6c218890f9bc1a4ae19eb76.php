@@ -46,7 +46,7 @@ class __TwigTemplate_3f5bfb0aa0489619dafecc2d96256f61d6c7d8b8806639487040fc14abb
     <li class=\"\"><a href=\"/user\">Profile</a></li>
     <li class=\"\"><a href=\"/user/comments\">My Comments</a></li>
     <li class=\"\"><a href=\"/user/reservations\">Reservations</a></li>
-    <li class=\"\"><a href=\"/user/renthouse\">Rent House</a></li>
+    <li class=\"\"><a href=\"/user/ev\">House</a></li>
     <li class=\"\"><a href=\"/logout\">Logout</a></li>
 </ul>";
         
@@ -75,7 +75,7 @@ class __TwigTemplate_3f5bfb0aa0489619dafecc2d96256f61d6c7d8b8806639487040fc14abb
     <li class=\"\"><a href=\"/user\">Profile</a></li>
     <li class=\"\"><a href=\"/user/comments\">My Comments</a></li>
     <li class=\"\"><a href=\"/user/reservations\">Reservations</a></li>
-    <li class=\"\"><a href=\"/user/renthouse\">Rent House</a></li>
+    <li class=\"\"><a href=\"/user/ev\">House</a></li>
     <li class=\"\"><a href=\"/logout\">Logout</a></li>
 </ul>", "user/usermenu.html.twig", "C:\\xampp\\htdocs\\ev_kira\\templates\\user\\usermenu.html.twig");
     }

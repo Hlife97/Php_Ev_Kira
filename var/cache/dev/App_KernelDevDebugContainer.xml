@@ -379,11 +379,25 @@
         <argument type="service" id=".service_locator.g9CqTPp.App\Controller\Admin\UserController"/>
       </call>
     </service>
+    <service id="App\Controller\EvController" class="App\Controller\EvController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.g9CqTPp.App\Controller\EvController"/>
+      </call>
+    </service>
     <service id="App\Controller\HomeController" class="App\Controller\HomeController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.g9CqTPp.App\Controller\HomeController"/>
+      </call>
+    </service>
+    <service id="App\Controller\ImageController" class="App\Controller\ImageController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.g9CqTPp.App\Controller\ImageController"/>
       </call>
     </service>
     <service id="App\Controller\RegistrationController" class="App\Controller\RegistrationController" public="true" autowire="true" autoconfigure="true">
@@ -417,7 +431,13 @@
     <service id="App\Form\CategoryType" class="App\Form\CategoryType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Form\Ev1Type" class="App\Form\Ev1Type" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\EvType" class="App\Form\EvType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\Image1Type" class="App\Form\Image1Type" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Form\ImageType" class="App\Form\ImageType" autowire="true" autoconfigure="true">
@@ -903,7 +923,9 @@
       </argument>
       <argument type="collection">
         <argument>App\Form\CategoryType</argument>
+        <argument>App\Form\Ev1Type</argument>
         <argument>App\Form\EvType</argument>
+        <argument>App\Form\Image1Type</argument>
         <argument>App\Form\ImageType</argument>
         <argument>App\Form\RegistrationFormType</argument>
         <argument>App\Form\SettingType</argument>
@@ -1250,7 +1272,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.Z8GT34Q"/>
+      <argument type="service" id=".service_locator.I187yYg"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -5200,9 +5222,15 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\UserController" class="App\Controller\Admin\UserController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\UserController" class="App\Controller\Admin\UserController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\UserController" class="App\Controller\Admin\UserController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\EvController" class="App\Controller\EvController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\EvController" class="App\Controller\EvController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\EvController" class="App\Controller\EvController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ImageController" class="App\Controller\ImageController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ImageController" class="App\Controller\ImageController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ImageController" class="App\Controller\ImageController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5217,8 +5245,12 @@
     <service id=".abstract.instanceof.App\Controller\UserController" class="App\Controller\UserController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CategoryType" class="App\Form\CategoryType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\CategoryType" class="App\Form\CategoryType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\Ev1Type" class="App\Form\Ev1Type" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\Ev1Type" class="App\Form\Ev1Type" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\EvType" class="App\Form\EvType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\EvType" class="App\Form\EvType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\Image1Type" class="App\Form\Image1Type" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\Image1Type" class="App\Form\Image1Type" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ImageType" class="App\Form\ImageType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ImageType" class="App\Form\ImageType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" abstract="true"/>
@@ -5584,7 +5616,7 @@
         <argument key="authenticationUtils" type="service" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.CvcS4ih" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.TDNI2uS" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\Admin\CategoryController::delete" type="service" id=".service_locator.wNIwF8O"/>
@@ -5610,7 +5642,16 @@
         <argument key="App\Controller\Admin\UserController::index" type="service" id=".service_locator.FXD6KYr"/>
         <argument key="App\Controller\Admin\UserController::new" type="service" id=".service_locator.j5_bHjD"/>
         <argument key="App\Controller\Admin\UserController::show" type="service" id=".service_locator.hEwcf7A"/>
+        <argument key="App\Controller\EvController::delete" type="service" id=".service_locator.qNn3kGW"/>
+        <argument key="App\Controller\EvController::edit" type="service" id=".service_locator.qNn3kGW"/>
+        <argument key="App\Controller\EvController::index" type="service" id=".service_locator.HOg8xP7"/>
+        <argument key="App\Controller\EvController::show" type="service" id=".service_locator.qNn3kGW"/>
         <argument key="App\Controller\HomeController::index" type="service" id=".service_locator.3p6kP69"/>
+        <argument key="App\Controller\ImageController::delete" type="service" id=".service_locator.XFfswMO"/>
+        <argument key="App\Controller\ImageController::edit" type="service" id=".service_locator.XFfswMO"/>
+        <argument key="App\Controller\ImageController::index" type="service" id=".service_locator.cnYEmTx"/>
+        <argument key="App\Controller\ImageController::new" type="service" id=".service_locator.cnYEmTx"/>
+        <argument key="App\Controller\ImageController::show" type="service" id=".service_locator.XFfswMO"/>
         <argument key="App\Controller\RegistrationController::register" type="service" id=".service_locator.nld8pAv"/>
         <argument key="App\Controller\SecurityController::login" type="service" id=".service_locator.xA8Fw_."/>
         <argument key="App\Controller\SecurityController::loginuser" type="service" id=".service_locator.xA8Fw_."/>
@@ -5647,7 +5688,16 @@
         <argument key="App\Controller\Admin\UserController:index" type="service" id=".service_locator.FXD6KYr"/>
         <argument key="App\Controller\Admin\UserController:new" type="service" id=".service_locator.j5_bHjD"/>
         <argument key="App\Controller\Admin\UserController:show" type="service" id=".service_locator.hEwcf7A"/>
+        <argument key="App\Controller\EvController:delete" type="service" id=".service_locator.qNn3kGW"/>
+        <argument key="App\Controller\EvController:edit" type="service" id=".service_locator.qNn3kGW"/>
+        <argument key="App\Controller\EvController:index" type="service" id=".service_locator.HOg8xP7"/>
+        <argument key="App\Controller\EvController:show" type="service" id=".service_locator.qNn3kGW"/>
         <argument key="App\Controller\HomeController:index" type="service" id=".service_locator.3p6kP69"/>
+        <argument key="App\Controller\ImageController:delete" type="service" id=".service_locator.XFfswMO"/>
+        <argument key="App\Controller\ImageController:edit" type="service" id=".service_locator.XFfswMO"/>
+        <argument key="App\Controller\ImageController:index" type="service" id=".service_locator.cnYEmTx"/>
+        <argument key="App\Controller\ImageController:new" type="service" id=".service_locator.cnYEmTx"/>
+        <argument key="App\Controller\ImageController:show" type="service" id=".service_locator.XFfswMO"/>
         <argument key="App\Controller\RegistrationController:register" type="service" id=".service_locator.nld8pAv"/>
         <argument key="App\Controller\SecurityController:login" type="service" id=".service_locator.xA8Fw_."/>
         <argument key="App\Controller\SecurityController:loginuser" type="service" id=".service_locator.xA8Fw_."/>
@@ -5719,11 +5769,13 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.Z8GT34Q" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.I187yYg" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\CategoryType" type="service" id="App\Form\CategoryType"/>
+        <argument key="App\Form\Ev1Type" type="service" id="App\Form\Ev1Type"/>
         <argument key="App\Form\EvType" type="service" id="App\Form\EvType"/>
+        <argument key="App\Form\Image1Type" type="service" id="App\Form\Image1Type"/>
         <argument key="App\Form\ImageType" type="service" id="App\Form\ImageType"/>
         <argument key="App\Form\RegistrationFormType" type="service" id="App\Form\RegistrationFormType"/>
         <argument key="App\Form\SettingType" type="service" id="App\Form\SettingType"/>
@@ -5993,9 +6045,21 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.g9CqTPp" method="withContext"/>
     </service>
+    <service id=".service_locator.g9CqTPp.App\Controller\EvController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\EvController"/>
+      <argument>App\Controller\EvController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.g9CqTPp" method="withContext"/>
+    </service>
     <service id=".service_locator.g9CqTPp.App\Controller\HomeController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\HomeController"/>
       <argument>App\Controller\HomeController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.g9CqTPp" method="withContext"/>
+    </service>
+    <service id=".service_locator.g9CqTPp.App\Controller\ImageController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\ImageController"/>
+      <argument>App\Controller\ImageController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.g9CqTPp" method="withContext"/>
     </service>
@@ -6184,12 +6248,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.CvcS4ih"/>
+      <argument type="service" id=".service_locator.TDNI2uS"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.CvcS4ih"/>
+      <argument type="service" id=".service_locator.TDNI2uS"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -6597,7 +6661,7 @@
     <service id="SymfonyCasts\Bundle\VerifyEmail\VerifyEmailHelperInterface" alias="symfonycasts.verify_email.helper"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.WaGDpDt" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.CvcS4ih"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.TDNI2uS"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

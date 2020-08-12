@@ -1,0 +1,84 @@
+{% extends 'homebase.html.twig' %}
+
+{% block title %}{{ app.user.name }}-Reservations{% endblock %}
+
+{% block body %}
+<SCRIPT language="JavaScript" type="text/javascript">
+function openWin( windowURL, windowName, windowFeatures ) { window.open( windowURL, windowName, windowFeatures ); }
+</SCRIPT>
+<section id="content" class="shortcode-item">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-4 col-sm-2">
+
+                <div class="tab-wrap">
+                    <div align="center" class="media">
+                        {{ include('user/usermenu.html.twig') }}
+
+                        <!--/.media-body-->
+                    </div>
+                    <!--/.media-->
+                </div>
+                <!--/.tab-wrap-->
+            </div>
+            <!--/.col-sm-6-->
+
+            <div align="center" class="col-xs-8 col-sm-10">
+                <h1>Ev index</h1>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Title</th>
+                            <th>Keywords</th>
+                            <th>Description</th>
+                            <th>Image</th>
+                            <th>Star</th>
+                            <th>City</th>
+                            <th>Status</th>
+                            <th>Gallery</th>
+                            <th>actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for ev in evs %}
+                        <tr>
+                            <td>{{ ev.id }}</td>
+                            <td>{{ ev.title }}</td>
+                            <td>{{ ev.keywords }}</td>
+                            <td>{{ ev.description }}</td>
+                            <td><img src="{{ asset ('uploads/images/' ~ ev.image) }}" height="40"></td>
+                            <td>{{ ev.star }}</td>
+                            <td>{{ ev.city }}</td>
+                            <td>{{ ev.status }}</td>
+                            <td>
+                                <a
+                                    href="javascript:openWin('{{ path('user_image_new',{'id':ev.id}) }}','','toolbar=no,location=no, directories=0, status=no, top=50,left=100, menuBar=no, scrollBars=yes,resizable=no, width=900, height=600'); ">
+                                    <img src="{{ asset ('assets/admin/img') }}/gallery.png" height="40"></a>
+                            </td>
+                            <td>
+                                <a href="{{ path('user_ev_show', {'id': ev.id}) }}"><button type="button"
+                                        class="btn btn-info">show</button></a>
+                                <a href="{{ path('user_ev_edit', {'id': ev.id}) }}"><button type="button"
+                                        class="btn btn-info">edit</button></a>
+                            </td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td colspan="19">no records found</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+                <a href="{{ path('user_ev_new') }}"><button type="button" class="btn btn-success btn-lg">Creat
+                        New</button></a>
+            </div>
+        </div>
+        <!--/.row-->
+    </div>
+    <!--/.container-->
+</section>
+<!--/#content-->
+{% endblock %}

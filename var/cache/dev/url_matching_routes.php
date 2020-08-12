@@ -23,7 +23,13 @@ return [
         '/admin/setting/new' => [[['_route' => 'setting_new', '_controller' => 'App\\Controller\\Admin\\SettingController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/admin/user' => [[['_route' => 'admin_user_index', '_controller' => 'App\\Controller\\Admin\\UserController::index'], null, ['GET' => 0], null, true, false, null]],
         '/admin/user/new' => [[['_route' => 'admin_user_new', '_controller' => 'App\\Controller\\Admin\\UserController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/user/ev' => [
+            [['_route' => 'user_ev_index', '_controller' => 'App\\Controller\\EvController::index'], null, ['GET' => 0], null, true, false, null],
+            [['_route' => 'user_ev', '_controller' => 'App\\Controller\\UserController::ev'], null, ['GET' => 0], null, false, false, null],
+        ],
+        '/user/ev/new' => [[['_route' => 'user_ev_new', '_controller' => 'App\\Controller\\EvController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/' => [[['_route' => 'home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
+        '/user/image' => [[['_route' => 'user_image_index', '_controller' => 'App\\Controller\\ImageController::index'], null, ['GET' => 0], null, true, false, null]],
         '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null]],
         '/verify/email' => [[['_route' => 'app_verify_email', '_controller' => 'App\\Controller\\RegistrationController::verifyUserEmail'], null, null, null, false, false, null]],
         '/sample' => [[['_route' => 'sample', '_controller' => 'App\\Controller\\SampleController::index'], null, null, null, false, false, null]],
@@ -33,7 +39,6 @@ return [
         '/user' => [[['_route' => 'user_index', '_controller' => 'App\\Controller\\UserController::index'], null, ['GET' => 0], null, true, false, null]],
         '/user/comments' => [[['_route' => 'user_comments', '_controller' => 'App\\Controller\\UserController::comments'], null, ['GET' => 0], null, false, false, null]],
         '/user/reservations' => [[['_route' => 'user_reservations', '_controller' => 'App\\Controller\\UserController::reservations'], null, ['GET' => 0], null, false, false, null]],
-        '/user/renthouse' => [[['_route' => 'user_renthouse', '_controller' => 'App\\Controller\\UserController::renthouse'], null, ['GET' => 0], null, false, false, null]],
         '/user/new' => [[['_route' => 'user_new', '_controller' => 'App\\Controller\\UserController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
     ],
     [ // $regexpList
@@ -85,10 +90,25 @@ return [
                         .'|(*:442)'
                     .')'
                 .')'
-                .'|/user/([^/]++)(?'
-                    .'|(*:469)'
-                    .'|/edit(*:482)'
-                    .'|(*:490)'
+                .'|/user/(?'
+                    .'|ev/([^/]++)(?'
+                        .'|(*:475)'
+                        .'|/edit(*:488)'
+                        .'|(*:496)'
+                    .')'
+                    .'|image/(?'
+                        .'|new/([^/]++)(*:526)'
+                        .'|([^/]++)(?'
+                            .'|(*:545)'
+                            .'|/edit(*:558)'
+                            .'|(*:566)'
+                        .')'
+                    .')'
+                    .'|([^/]++)(?'
+                        .'|(*:587)'
+                        .'|/edit(*:600)'
+                        .'|(*:608)'
+                    .')'
                 .')'
             .')/?$}sDu',
     ],
@@ -116,9 +136,16 @@ return [
         421 => [[['_route' => 'admin_user_show', '_controller' => 'App\\Controller\\Admin\\UserController::show'], ['id'], ['GET' => 0], null, false, true, null]],
         434 => [[['_route' => 'admin_user_edit', '_controller' => 'App\\Controller\\Admin\\UserController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
         442 => [[['_route' => 'admin_user_delete', '_controller' => 'App\\Controller\\Admin\\UserController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
-        469 => [[['_route' => 'user_show', '_controller' => 'App\\Controller\\UserController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        482 => [[['_route' => 'user_edit', '_controller' => 'App\\Controller\\UserController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        490 => [
+        475 => [[['_route' => 'user_ev_show', '_controller' => 'App\\Controller\\EvController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        488 => [[['_route' => 'user_ev_edit', '_controller' => 'App\\Controller\\EvController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        496 => [[['_route' => 'user_ev_delete', '_controller' => 'App\\Controller\\EvController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
+        526 => [[['_route' => 'user_image_new', '_controller' => 'App\\Controller\\ImageController::new'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        545 => [[['_route' => 'user_image_show', '_controller' => 'App\\Controller\\ImageController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        558 => [[['_route' => 'user_image_edit', '_controller' => 'App\\Controller\\ImageController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        566 => [[['_route' => 'user_image_delete', '_controller' => 'App\\Controller\\ImageController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
+        587 => [[['_route' => 'user_show', '_controller' => 'App\\Controller\\UserController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        600 => [[['_route' => 'user_edit', '_controller' => 'App\\Controller\\UserController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        608 => [
             [['_route' => 'user_delete', '_controller' => 'App\\Controller\\UserController::delete'], ['id'], ['DELETE' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

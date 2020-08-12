@@ -117,7 +117,7 @@ class EvController extends AbstractController
             //------------------Image Upload--------------//
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('ev_index');
+            return $this->redirectToRoute('admin_ev_index');
         }
 
         return $this->render('admin/ev/edit.html.twig', [

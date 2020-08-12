@@ -1,0 +1,114 @@
+{% extends 'homebase.html.twig' %}
+
+{% block title %}{{ app.user.name }}-Reservations{% endblock %}
+
+{% block body %}
+<section id="content" class="shortcode-item">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-4 col-sm-2">
+
+                <div class="tab-wrap">
+                    <div align="center" class="media">
+                        {{ include('user/usermenu.html.twig') }}
+
+                        <!--/.media-body-->
+                    </div>
+                    <!--/.media-->
+                </div>
+                <!--/.tab-wrap-->
+            </div>
+            <!--/.col-sm-6-->
+
+            <div align="center" class="col-xs-8 col-sm-10">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th>Id</th>
+                            <td>{{ ev.id }}</td>
+                        </tr>
+                        <tr>
+                            <th>Title</th>
+                            <td>{{ ev.title }}</td>
+                        </tr>
+                        <tr>
+                            <th>Keywords</th>
+                            <td>{{ ev.keywords }}</td>
+                        </tr>
+                        <tr>
+                            <th>Description</th>
+                            <td>{{ ev.description }}</td>
+                        </tr>
+                        <tr>
+                            <th>Image</th>
+                            <td><img src="{{ asset ('uploads/images/' ~ ev.image) }}" height="40"></td>
+                        </tr>
+                        <tr>
+                            <th>Star</th>
+                            <td>{{ ev.star }}</td>
+                        </tr>
+                        <tr>
+                            <th>Address</th>
+                            <td>{{ ev.address }}</td>
+                        </tr>
+                        <tr>
+                            <th>Phone</th>
+                            <td>{{ ev.phone }}</td>
+                        </tr>
+                        <tr>
+                            <th>Fax</th>
+                            <td>{{ ev.fax }}</td>
+                        </tr>
+                        <tr>
+                            <th>Email</th>
+                            <td>{{ ev.email }}</td>
+                        </tr>
+                        <tr>
+                            <th>City</th>
+                            <td>{{ ev.city }}</td>
+                        </tr>
+                        <tr>
+                            <th>Country</th>
+                            <td>{{ ev.country }}</td>
+                        </tr>
+                        <tr>
+                            <th>Location</th>
+                            <td>{{ ev.location }}</td>
+                        </tr>
+                        <tr>
+                            <th>Status</th>
+                            <td>{{ ev.status }}</td>
+                        </tr>
+                        <tr>
+                            <th>Created_at</th>
+                            <td>{{ ev.createdAt ? ev.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                        </tr>
+                        <tr>
+                            <th>Updated_at</th>
+                            <td>{{ ev.updatedAt ? ev.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                        </tr>
+                        <tr>
+                            <th>Detail</th>
+                            <td>{{ ev.detail }}</td>
+                        </tr>
+                        <tr>
+                            <th>Userid</th>
+                            <td>{{ ev.userid }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <a href="{{ path('user_ev_index') }}"><button type="button" class="btn btn-warning">Back</button></a>
+
+                <a href="{{ path('user_ev_edit', {'id': ev.id}) }}"><button type="button"
+                        class="btn btn-info">edit</button></a>
+
+                {{ include('ev/_delete_form.html.twig') }}
+            </div>
+        </div>
+        <!--/.row-->
+    </div>
+    <!--/.container-->
+</section>
+<!--/#content-->
+{% endblock %}

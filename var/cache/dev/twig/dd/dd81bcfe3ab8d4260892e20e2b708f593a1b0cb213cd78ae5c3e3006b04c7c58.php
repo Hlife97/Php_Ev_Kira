@@ -93,7 +93,7 @@ class __TwigTemplate_67c1d060f87bee4223a15a424571ddca6ba796e46b7eef2ffd3a1a19321
 
                 <div class=\"tab-wrap\">
                     <div align=\"center\" class=\"media\">
-                            ";
+                        ";
         // line 13
         echo twig_include($this->env, $context, "user/usermenu.html.twig");
         echo "
@@ -108,7 +108,7 @@ class __TwigTemplate_67c1d060f87bee4223a15a424571ddca6ba796e46b7eef2ffd3a1a19321
 
             <div align=\"center\" class=\"col-xs-8 col-sm-10\">
                 <h2>Reservations</h2>
-               My reservations
+                My reservations
             </div>
         </div>
         <!--/.row-->
@@ -155,7 +155,7 @@ class __TwigTemplate_67c1d060f87bee4223a15a424571ddca6ba796e46b7eef2ffd3a1a19321
 
                 <div class=\"tab-wrap\">
                     <div align=\"center\" class=\"media\">
-                            {{ include('user/usermenu.html.twig') }}
+                        {{ include('user/usermenu.html.twig') }}
 
                         <!--/.media-body-->
                     </div>
@@ -167,7 +167,7 @@ class __TwigTemplate_67c1d060f87bee4223a15a424571ddca6ba796e46b7eef2ffd3a1a19321
 
             <div align=\"center\" class=\"col-xs-8 col-sm-10\">
                 <h2>Reservations</h2>
-               My reservations
+                My reservations
             </div>
         </div>
         <!--/.row-->

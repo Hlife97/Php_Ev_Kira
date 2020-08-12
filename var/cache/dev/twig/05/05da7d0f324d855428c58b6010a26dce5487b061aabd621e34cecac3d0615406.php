@@ -48,85 +48,55 @@ class __TwigTemplate_6f1b283a2f563343e38e416f85389a63995980110cb749fe844f075184d
                 <li data-target=\"#main-slider\" data-slide-to=\"2\"></li>
             </ol>
             <div class=\"carousel-inner\">
-
-                <div class=\"item active\" style=\"background-image: url(assets/images/slider/bg1.jpg)\">
+                ";
+        // line 9
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["slider"]) || array_key_exists("slider", $context) ? $context["slider"] : (function () { throw new RuntimeError('Variable "slider" does not exist.', 9, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["rs"]) {
+            // line 10
+            echo "                <div class=\"item active\" style=\"background-image: url(";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, $context["rs"], "image", [], "any", false, false, false, 10))), "html", null, true);
+            echo ")\">
                     <div class=\"container\">
                         <div class=\"row slide-margin\">
                             <div class=\"col-sm-6\">
                                 <div class=\"carousel-content\">
-                                    <h1 class=\"animation animated-item-1\">Lorem ipsum dolor sit amet consectetur
-                                        adipisicing elit</h1>
-                                    <h2 class=\"animation animated-item-2\">Accusantium doloremque laudantium totam rem
-                                        aperiam, eaque ipsa...</h2>
+                                    <h1 class=\"animation animated-item-1\">";
+            // line 15
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rs"], "title", [], "any", false, false, false, 15), "html", null, true);
+            echo "</h1>
+                                    <h2 class=\"animation animated-item-2\">";
+            // line 16
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rs"], "description", [], "any", false, false, false, 16), "html", null, true);
+            echo "</h2>
                                     <a class=\"btn-slide animation animated-item-3\" href=\"#\">Read More</a>
                                 </div>
                             </div>
 
                             <div class=\"col-sm-6 hidden-xs animation animated-item-4\">
+                            <a href=\"";
+            // line 22
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ev_show", ["id" => twig_get_attribute($this->env, $this->source, $context["rs"], "id", [], "any", false, false, false, 22)]), "html", null, true);
+            echo "\">
                                 <div class=\"slider-img\">
                                     <img src=\"";
-        // line 25
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets"), "html", null, true);
-        echo "/images/slider/img1.png\" class=\"img-responsive\">
+            // line 24
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, $context["rs"], "image", [], "any", false, false, false, 24))), "html", null, true);
+            echo "\" class=\"img-responsive\">
                                 </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <!--/.item-->
-
-                <div class=\"item\" style=\"background-image: url(assets/images/slider/bg2.jpg)\">
-                    <div class=\"container\">
-                        <div class=\"row slide-margin\">
-                            <div class=\"col-sm-6\">
-                                <div class=\"carousel-content\">
-                                    <h1 class=\"animation animated-item-1\">Lorem ipsum dolor sit amet consectetur
-                                        adipisicing elit</h1>
-                                    <h2 class=\"animation animated-item-2\">Accusantium doloremque laudantium totam rem
-                                        aperiam, eaque ipsa...</h2>
-                                    <a class=\"btn-slide animation animated-item-3\" href=\"#\">Read More</a>
-                                </div>
-                            </div>
-
-                            <div class=\"col-sm-6 hidden-xs animation animated-item-4\">
-                                <div class=\"slider-img\">
-                                    <img src=\"";
-        // line 49
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets"), "html", null, true);
-        echo "/images/slider/img2.png\" class=\"img-responsive\">
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <!--/.item-->
-
-                <div class=\"item\" style=\"background-image: url(assets/images/slider/bg3.jpg)\">
-                    <div class=\"container\">
-                        <div class=\"row slide-margin\">
-                            <div class=\"col-sm-6\">
-                                <div class=\"carousel-content\">
-                                    <h1 class=\"animation animated-item-1\">Lorem ipsum dolor sit amet consectetur
-                                        adipisicing elit</h1>
-                                    <h2 class=\"animation animated-item-2\">Accusantium doloremque laudantium totam rem
-                                        aperiam, eaque ipsa...</h2>
-                                    <a class=\"btn-slide animation animated-item-3\" href=\"#\">Read More</a>
-                                </div>
-                            </div>
-                            <div class=\"col-sm-6 hidden-xs animation animated-item-4\">
-                                <div class=\"slider-img\">
-                                    <img src=\"";
-        // line 72
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets"), "html", null, true);
-        echo "/images/slider/img3.png\" class=\"img-responsive\">
-                                </div>
+                            </a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!--/.item-->
+                ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['rs'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 32
+        echo "
+
             </div>
             <!--/.carousel-inner-->
         </div>
@@ -159,7 +129,7 @@ class __TwigTemplate_6f1b283a2f563343e38e416f85389a63995980110cb749fe844f075184d
 
     public function getDebugInfo()
     {
-        return array (  122 => 72,  96 => 49,  69 => 25,  43 => 1,);
+        return array (  98 => 32,  84 => 24,  79 => 22,  70 => 16,  66 => 15,  57 => 10,  53 => 9,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -172,76 +142,31 @@ class __TwigTemplate_6f1b283a2f563343e38e416f85389a63995980110cb749fe844f075184d
                 <li data-target=\"#main-slider\" data-slide-to=\"2\"></li>
             </ol>
             <div class=\"carousel-inner\">
-
-                <div class=\"item active\" style=\"background-image: url(assets/images/slider/bg1.jpg)\">
+                {% for rs in slider %}
+                <div class=\"item active\" style=\"background-image: url({{ asset ('uploads/images/' ~ rs.image) }})\">
                     <div class=\"container\">
                         <div class=\"row slide-margin\">
                             <div class=\"col-sm-6\">
                                 <div class=\"carousel-content\">
-                                    <h1 class=\"animation animated-item-1\">Lorem ipsum dolor sit amet consectetur
-                                        adipisicing elit</h1>
-                                    <h2 class=\"animation animated-item-2\">Accusantium doloremque laudantium totam rem
-                                        aperiam, eaque ipsa...</h2>
+                                    <h1 class=\"animation animated-item-1\">{{ rs.title}}</h1>
+                                    <h2 class=\"animation animated-item-2\">{{ rs.description }}</h2>
                                     <a class=\"btn-slide animation animated-item-3\" href=\"#\">Read More</a>
                                 </div>
                             </div>
 
                             <div class=\"col-sm-6 hidden-xs animation animated-item-4\">
+                            <a href=\"{{ path('ev_show', {'id': rs.id}) }}\">
                                 <div class=\"slider-img\">
-                                    <img src=\"{{ asset ('assets')}}/images/slider/img1.png\" class=\"img-responsive\">
+                                    <img src=\"{{ asset ('uploads/images/' ~ rs.image) }}\" class=\"img-responsive\">
                                 </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <!--/.item-->
-
-                <div class=\"item\" style=\"background-image: url(assets/images/slider/bg2.jpg)\">
-                    <div class=\"container\">
-                        <div class=\"row slide-margin\">
-                            <div class=\"col-sm-6\">
-                                <div class=\"carousel-content\">
-                                    <h1 class=\"animation animated-item-1\">Lorem ipsum dolor sit amet consectetur
-                                        adipisicing elit</h1>
-                                    <h2 class=\"animation animated-item-2\">Accusantium doloremque laudantium totam rem
-                                        aperiam, eaque ipsa...</h2>
-                                    <a class=\"btn-slide animation animated-item-3\" href=\"#\">Read More</a>
-                                </div>
-                            </div>
-
-                            <div class=\"col-sm-6 hidden-xs animation animated-item-4\">
-                                <div class=\"slider-img\">
-                                    <img src=\"{{ asset ('assets')}}/images/slider/img2.png\" class=\"img-responsive\">
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <!--/.item-->
-
-                <div class=\"item\" style=\"background-image: url(assets/images/slider/bg3.jpg)\">
-                    <div class=\"container\">
-                        <div class=\"row slide-margin\">
-                            <div class=\"col-sm-6\">
-                                <div class=\"carousel-content\">
-                                    <h1 class=\"animation animated-item-1\">Lorem ipsum dolor sit amet consectetur
-                                        adipisicing elit</h1>
-                                    <h2 class=\"animation animated-item-2\">Accusantium doloremque laudantium totam rem
-                                        aperiam, eaque ipsa...</h2>
-                                    <a class=\"btn-slide animation animated-item-3\" href=\"#\">Read More</a>
-                                </div>
-                            </div>
-                            <div class=\"col-sm-6 hidden-xs animation animated-item-4\">
-                                <div class=\"slider-img\">
-                                    <img src=\"{{ asset ('assets')}}/images/slider/img3.png\" class=\"img-responsive\">
-                                </div>
+                            </a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!--/.item-->
+                {% endfor %}
+
+
             </div>
             <!--/.carousel-inner-->
         </div>

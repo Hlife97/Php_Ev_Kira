@@ -1,0 +1,77 @@
+{% extends 'homebase.html.twig' %}
+
+{% block title %}{{ ev.title }}{% endblock %}
+{% block keywords %}{{ ev.keywords }}{% endblock %}
+{% block description %}{{ ev.description }}{% endblock %}
+
+{% block body %}
+<section id="content" class="shortcode-item">
+    <div class="container">
+        <div class="row">
+
+
+            <div align="center" class="col-xs-8 col-sm-10">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th>Title</th>
+                            <td>{{ ev.title }}</td>
+                        </tr>
+                        <tr>
+                            <th>Keywords</th>
+                            <td>{{ ev.keywords }}</td>
+                        </tr>
+                        <tr>
+                            <th>Description</th>
+                            <td>{{ ev.description }}</td>
+                        </tr>
+                        <tr>
+                            <th>Image</th>
+                            <td><img src="{{ asset ('uploads/images/' ~ ev.image) }}" height="40"></td>
+                        </tr>
+                        <tr>
+                            <th>Star</th>
+                            <td>{{ ev.star }}</td>
+                        </tr>
+                        <tr>
+                            <th>Address</th>
+                            <td>{{ ev.address }}</td>
+                        </tr>
+                        <tr>
+                            <th>Phone</th>
+                            <td>{{ ev.phone }}</td>
+                        </tr>
+                        <tr>
+                            <th>Fax</th>
+                            <td>{{ ev.fax }}</td>
+                        </tr>
+                        <tr>
+                            <th>Email</th>
+                            <td>{{ ev.email }}</td>
+                        </tr>
+                        <tr>
+                            <th>City</th>
+                            <td>{{ ev.city }}</td>
+                        </tr>
+                        <tr>
+                            <th>Country</th>
+                            <td>{{ ev.country }}</td>
+                        </tr>
+                        <tr>
+                            <th>Location</th>
+                            <td>{{ ev.location }}</td>
+                        </tr>
+                        <tr>
+                            <th>Detail</th>
+                            <td>{{ ev.detail | raw }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!--/.row-->
+    </div>
+    <!--/.container-->
+</section>
+<!--/#content-->
+{% endblock %}

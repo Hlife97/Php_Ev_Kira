@@ -47,6 +47,7 @@ return [
     'user_ev_edit' => [['id'], ['_controller' => 'App\\Controller\\EvController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/user/ev']], [], []],
     'user_ev_delete' => [['id'], ['_controller' => 'App\\Controller\\EvController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/user/ev']], [], []],
     'home' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], []],
+    'ev_show' => [['id'], ['_controller' => 'App\\Controller\\HomeController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/ev']], [], []],
     'user_image_index' => [[], ['_controller' => 'App\\Controller\\ImageController::index'], [], [['text', '/user/image/']], [], []],
     'user_image_new' => [['id'], ['_controller' => 'App\\Controller\\ImageController::new'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/user/image/new']], [], []],
     'user_image_show' => [['id'], ['_controller' => 'App\\Controller\\ImageController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/user/image']], [], []],

@@ -1,0 +1,34 @@
+{% extends 'homebase.html.twig' %}
+
+{% block title %}{{ app.user.name }}-Rent-House{% endblock %}
+
+{% block body %}
+<section id="content" class="shortcode-item">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-4 col-sm-2">
+
+                <div class="tab-wrap">
+                    <div align="center" class="media">
+                        {{ include('user/usermenu.html.twig') }}
+
+                        <!--/.media-body-->
+                    </div>
+                    <!--/.media-->
+                </div>
+                <!--/.tab-wrap-->
+            </div>
+            <!--/.col-sm-6-->
+
+            <div align="center" class="col-xs-8 col-sm-10">
+                <h2>Rent House</h2>
+                Rent House
+            </div>
+        </div>
+        <!--/.row-->
+    </div>
+    <!--/.container-->
+</section>
+<!--/#content-->
+
+{% endblock %}

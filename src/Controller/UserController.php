@@ -19,11 +19,31 @@ class UserController extends AbstractController
     /**
      * @Route("/", name="user_index", methods={"GET"})
      */
-    public function index(UserRepository $userRepository): Response
+    public function index(): Response
     {
-        return $this->render('user/index.html.twig', [
-            'users' => $userRepository->findAll(),
-        ]);
+        return $this->render('user/show.html.twig');
+    }
+
+    /**
+     * @Route("/comments", name="user_comments", methods={"GET"})
+     */
+    public function comments(): Response
+    {
+        return $this->render('user/comments.html.twig');
+    }
+    /**
+     * @Route("/reservations", name="user_reservations", methods={"GET"})
+     */
+    public function reservations(): Response
+    {
+        return $this->render('user/reservations.html.twig');
+    }
+    /**
+     * @Route("/renthouse", name="user_renthouse", methods={"GET"})
+     */
+    public function renthouse(): Response
+    {
+        return $this->render('user/renthouse.html.twig');
     }
 
     /**
@@ -88,8 +108,14 @@ class UserController extends AbstractController
     /**
      * @Route("/{id}/edit", name="user_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, User $user, UserPasswordEncoderInterface $passwordEncoder): Response
+    public function edit(Request $request, $id, User $user, UserPasswordEncoderInterface $passwordEncoder): Response
     {
+        $user = $this->getUser();
+        if($user->getId() != $id){
+            return $this->redirectToRoute('home');
+
+        }
+        
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 

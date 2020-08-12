@@ -4296,6 +4296,13 @@
         </argument>
         <argument>null</argument>
       </call>
+      <call method="add">
+        <argument type="service" id=".security.request_matcher.KoEpaR_"/>
+        <argument type="collection">
+          <argument>ROLE_USER</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
     </service>
     <service id="security.context_listener" class="Symfony\Component\Security\Http\Firewall\ContextListener" public="false">
       <tag name="monolog.logger" channel="security"/>
@@ -4670,7 +4677,7 @@
     <service id="security.logout.listener.default.main" class="Symfony\Component\Security\Http\EventListener\DefaultLogoutListener" public="false">
       <tag name="kernel.event_subscriber" dispatcher="security.event_dispatcher.main"/>
       <argument type="service" id="security.http_utils"/>
-      <argument>/</argument>
+      <argument>home</argument>
     </service>
     <service id="security.logout.listener.session.main" class="Symfony\Component\Security\Http\EventListener\SessionLogoutListener" public="false">
       <tag name="kernel.event_subscriber" dispatcher="security.event_dispatcher.main"/>
@@ -4736,6 +4743,9 @@
     </service>
     <service id=".security.request_matcher.5dJADCx" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
       <argument>^/admin</argument>
+    </service>
+    <service id=".security.request_matcher.KoEpaR_" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/user</argument>
     </service>
     <service id="security.command.user_password_encoder" class="Symfony\Bundle\SecurityBundle\Command\UserPasswordEncoderCommand" public="false">
       <tag name="console.command" command="security:encode-password"/>
@@ -5574,7 +5584,7 @@
         <argument key="authenticationUtils" type="service" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.gD9.bBG" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.CvcS4ih" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\Admin\CategoryController::delete" type="service" id=".service_locator.wNIwF8O"/>
@@ -5603,10 +5613,9 @@
         <argument key="App\Controller\HomeController::index" type="service" id=".service_locator.3p6kP69"/>
         <argument key="App\Controller\RegistrationController::register" type="service" id=".service_locator.nld8pAv"/>
         <argument key="App\Controller\SecurityController::login" type="service" id=".service_locator.xA8Fw_."/>
-        <argument key="App\Controller\SecurityController::loginadmin" type="service" id=".service_locator.xA8Fw_."/>
+        <argument key="App\Controller\SecurityController::loginuser" type="service" id=".service_locator.xA8Fw_."/>
         <argument key="App\Controller\UserController::delete" type="service" id=".service_locator.hEwcf7A"/>
         <argument key="App\Controller\UserController::edit" type="service" id=".service_locator.HXUxGRH"/>
-        <argument key="App\Controller\UserController::index" type="service" id=".service_locator.FXD6KYr"/>
         <argument key="App\Controller\UserController::new" type="service" id=".service_locator.j5_bHjD"/>
         <argument key="App\Controller\UserController::show" type="service" id=".service_locator.hEwcf7A"/>
         <argument key="App\Kernel::loadRoutes" type="service" id=".service_locator.C9JCBPC"/>
@@ -5641,10 +5650,9 @@
         <argument key="App\Controller\HomeController:index" type="service" id=".service_locator.3p6kP69"/>
         <argument key="App\Controller\RegistrationController:register" type="service" id=".service_locator.nld8pAv"/>
         <argument key="App\Controller\SecurityController:login" type="service" id=".service_locator.xA8Fw_."/>
-        <argument key="App\Controller\SecurityController:loginadmin" type="service" id=".service_locator.xA8Fw_."/>
+        <argument key="App\Controller\SecurityController:loginuser" type="service" id=".service_locator.xA8Fw_."/>
         <argument key="App\Controller\UserController:delete" type="service" id=".service_locator.hEwcf7A"/>
         <argument key="App\Controller\UserController:edit" type="service" id=".service_locator.HXUxGRH"/>
-        <argument key="App\Controller\UserController:index" type="service" id=".service_locator.FXD6KYr"/>
         <argument key="App\Controller\UserController:new" type="service" id=".service_locator.j5_bHjD"/>
         <argument key="App\Controller\UserController:show" type="service" id=".service_locator.hEwcf7A"/>
         <argument key="kernel:loadRoutes" type="service" id=".service_locator.C9JCBPC"/>
@@ -6176,12 +6184,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.gD9.bBG"/>
+      <argument type="service" id=".service_locator.CvcS4ih"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.gD9.bBG"/>
+      <argument type="service" id=".service_locator.CvcS4ih"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -6589,7 +6597,7 @@
     <service id="SymfonyCasts\Bundle\VerifyEmail\VerifyEmailHelperInterface" alias="symfonycasts.verify_email.helper"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.WaGDpDt" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.gD9.bBG"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.CvcS4ih"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

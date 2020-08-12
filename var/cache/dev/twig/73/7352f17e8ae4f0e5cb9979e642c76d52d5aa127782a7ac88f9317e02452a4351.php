@@ -33,7 +33,7 @@ class __TwigTemplate_a646ab22142e96e6a584abab9e2b946bdd05278f4eeb087a570f121dc90
     protected function doGetParent(array $context)
     {
         // line 1
-        return "base.html.twig";
+        return "homebase.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -45,7 +45,7 @@ class __TwigTemplate_a646ab22142e96e6a584abab9e2b946bdd05278f4eeb087a570f121dc90
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "user/edit.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "user/edit.html.twig", 1);
+        $this->parent = $this->loadTemplate("homebase.html.twig", "user/edit.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -65,7 +65,8 @@ class __TwigTemplate_a646ab22142e96e6a584abab9e2b946bdd05278f4eeb087a570f121dc90
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Edit User";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 3, $this->source); })()), "user", [], "any", false, false, false, 3), "name", [], "any", false, false, false, 3), "html", null, true);
+        echo "-Comments";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -85,22 +86,41 @@ class __TwigTemplate_a646ab22142e96e6a584abab9e2b946bdd05278f4eeb087a570f121dc90
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Edit User</h1>
+        echo "<section id=\"content\" class=\"shortcode-item\">
+    <div class=\"container\">
+        <div class=\"row\">
+            <div class=\"col-xs-4 col-sm-2\">
 
-    ";
-        // line 8
+                <div class=\"tab-wrap\">
+                    <div align=\"center\" class=\"media\">
+                        ";
+        // line 13
+        echo twig_include($this->env, $context, "user/usermenu.html.twig");
+        echo "
+
+                        <!--/.media-body-->
+                    </div>
+                    <!--/.media-->
+                </div>
+                <!--/.tab-wrap-->
+            </div>
+            <!--/.col-sm-6-->
+
+            <div align=\"center\" class=\"col-xs-8 col-sm-10\">
+                <h2>Edit My Informations</h2>
+                ";
+        // line 25
         echo twig_include($this->env, $context, "user/_form.html.twig", ["button_label" => "Update"]);
         echo "
 
-    <a href=\"";
-        // line 10
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_index");
-        echo "\">back to list</a>
+            </div>
+        </div>
+        <!--/.row-->
+    </div>
+    <!--/.container-->
+</section>
+<!--/#content-->
 
-    ";
-        // line 12
-        echo twig_include($this->env, $context, "user/_delete_form.html.twig");
-        echo "
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -122,24 +142,45 @@ class __TwigTemplate_a646ab22142e96e6a584abab9e2b946bdd05278f4eeb087a570f121dc90
 
     public function getDebugInfo()
     {
-        return array (  102 => 12,  97 => 10,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  113 => 25,  98 => 13,  89 => 6,  79 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'base.html.twig' %}
+        return new Source("{% extends 'homebase.html.twig' %}
 
-{% block title %}Edit User{% endblock %}
+{% block title %}{{ app.user.name }}-Comments{% endblock %}
 
 {% block body %}
-    <h1>Edit User</h1>
+<section id=\"content\" class=\"shortcode-item\">
+    <div class=\"container\">
+        <div class=\"row\">
+            <div class=\"col-xs-4 col-sm-2\">
 
-    {{ include('user/_form.html.twig', {'button_label': 'Update'}) }}
+                <div class=\"tab-wrap\">
+                    <div align=\"center\" class=\"media\">
+                        {{ include('user/usermenu.html.twig') }}
 
-    <a href=\"{{ path('user_index') }}\">back to list</a>
+                        <!--/.media-body-->
+                    </div>
+                    <!--/.media-->
+                </div>
+                <!--/.tab-wrap-->
+            </div>
+            <!--/.col-sm-6-->
 
-    {{ include('user/_delete_form.html.twig') }}
-{% endblock %}
-", "user/edit.html.twig", "C:\\xampp\\htdocs\\ev_kira\\templates\\user\\edit.html.twig");
+            <div align=\"center\" class=\"col-xs-8 col-sm-10\">
+                <h2>Edit My Informations</h2>
+                {{ include('user/_form.html.twig', {'button_label': 'Update'}) }}
+
+            </div>
+        </div>
+        <!--/.row-->
+    </div>
+    <!--/.container-->
+</section>
+<!--/#content-->
+
+{% endblock %}", "user/edit.html.twig", "C:\\xampp\\htdocs\\ev_kira\\templates\\user\\edit.html.twig");
     }
 }

@@ -84,15 +84,15 @@ class __TwigTemplate_9add630cb6a71c9b1d7a59b506e05ed0f14001adefcc0b26c7e5df75ea5
                     <a class=\"navbar-brand\" href=\"index.html\"><img src=\"";
         // line 42
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets"), "html", null, true);
-        echo "/images/logo.png\" alt=\"logo\"></a>
+        echo "/images/logo.png\"
+                            alt=\"logo\"></a>
                 </div>
 
                 <div class=\"collapse navbar-collapse navbar-right\">
                     <ul class=\"nav navbar-nav\">
-                        <li class=\"active\"><a href=\"index.html\">Home</a></li>
+                        <li class=\"active\"><a href=\"/\">Home</a></li>
                         <li><a href=\"about-us.html\">About Us</a></li>
                         <li><a href=\"services.html\">Services</a></li>
-                        <li><a href=\"portfolio.html\">Portfolio</a></li>
                         <li class=\"dropdown\">
                             <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Pages <i
                                     class=\"fa fa-angle-down\"></i></a>
@@ -105,6 +105,26 @@ class __TwigTemplate_9add630cb6a71c9b1d7a59b506e05ed0f14001adefcc0b26c7e5df75ea5
                         </li>
                         <li><a href=\"blog.html\">Blog</a></li>
                         <li><a href=\"contact-us.html\">Contact</a></li>
+                        ";
+        // line 63
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
+            // line 64
+            echo "                        <li><a href=\"/user\"><img src=\"";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 64, $this->source); })()), "user", [], "any", false, false, false, 64), "image", [], "any", false, false, false, 64))), "html", null, true);
+            echo "\" alt=\"user\"
+                                    class=\"rounded-circle\" width=\"31\">";
+            // line 65
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 65, $this->source); })()), "user", [], "any", false, false, false, 65), "name", [], "any", false, false, false, 65), "html", null, true);
+            echo "</a></li>
+                        <li><a href=\"/logout\">Logout</a></li>
+                        ";
+        } else {
+            // line 68
+            echo "                        <li><a href=\"/loginuser\"><i class=\"icon-lock\"></i>Login</a></li>
+                        ";
+        }
+        // line 70
+        echo "
                     </ul>
                 </div>
             </div>
@@ -134,7 +154,7 @@ class __TwigTemplate_9add630cb6a71c9b1d7a59b506e05ed0f14001adefcc0b26c7e5df75ea5
 
     public function getDebugInfo()
     {
-        return array (  86 => 42,  43 => 1,);
+        return array (  127 => 70,  123 => 68,  117 => 65,  112 => 64,  110 => 63,  86 => 42,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -180,15 +200,15 @@ class __TwigTemplate_9add630cb6a71c9b1d7a59b506e05ed0f14001adefcc0b26c7e5df75ea5
                         <span class=\"icon-bar\"></span>
                         <span class=\"icon-bar\"></span>
                     </button>
-                    <a class=\"navbar-brand\" href=\"index.html\"><img src=\"{{ asset ('assets')}}/images/logo.png\" alt=\"logo\"></a>
+                    <a class=\"navbar-brand\" href=\"index.html\"><img src=\"{{ asset ('assets')}}/images/logo.png\"
+                            alt=\"logo\"></a>
                 </div>
 
                 <div class=\"collapse navbar-collapse navbar-right\">
                     <ul class=\"nav navbar-nav\">
-                        <li class=\"active\"><a href=\"index.html\">Home</a></li>
+                        <li class=\"active\"><a href=\"/\">Home</a></li>
                         <li><a href=\"about-us.html\">About Us</a></li>
                         <li><a href=\"services.html\">Services</a></li>
-                        <li><a href=\"portfolio.html\">Portfolio</a></li>
                         <li class=\"dropdown\">
                             <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Pages <i
                                     class=\"fa fa-angle-down\"></i></a>
@@ -201,6 +221,14 @@ class __TwigTemplate_9add630cb6a71c9b1d7a59b506e05ed0f14001adefcc0b26c7e5df75ea5
                         </li>
                         <li><a href=\"blog.html\">Blog</a></li>
                         <li><a href=\"contact-us.html\">Contact</a></li>
+                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                        <li><a href=\"/user\"><img src=\"{{ asset('uploads/images/' ~ app.user.image) }}\" alt=\"user\"
+                                    class=\"rounded-circle\" width=\"31\">{{ app.user.name }}</a></li>
+                        <li><a href=\"/logout\">Logout</a></li>
+                        {% else  %}
+                        <li><a href=\"/loginuser\"><i class=\"icon-lock\"></i>Login</a></li>
+                        {% endif %}
+
                     </ul>
                 </div>
             </div>

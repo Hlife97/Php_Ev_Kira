@@ -1,13 +1,35 @@
-{% extends 'base.html.twig' %}
+{% extends 'homebase.html.twig' %}
 
-{% block title %}Edit User{% endblock %}
+{% block title %}{{ app.user.name }}-Comments{% endblock %}
 
 {% block body %}
-    <h1>Edit User</h1>
+<section id="content" class="shortcode-item">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-4 col-sm-2">
 
-    {{ include('user/_form.html.twig', {'button_label': 'Update'}) }}
+                <div class="tab-wrap">
+                    <div align="center" class="media">
+                        {{ include('user/usermenu.html.twig') }}
 
-    <a href="{{ path('user_index') }}">back to list</a>
+                        <!--/.media-body-->
+                    </div>
+                    <!--/.media-->
+                </div>
+                <!--/.tab-wrap-->
+            </div>
+            <!--/.col-sm-6-->
 
-    {{ include('user/_delete_form.html.twig') }}
+            <div align="center" class="col-xs-8 col-sm-10">
+                <h2>Edit My Informations</h2>
+                {{ include('user/_form.html.twig', {'button_label': 'Update'}) }}
+
+            </div>
+        </div>
+        <!--/.row-->
+    </div>
+    <!--/.container-->
+</section>
+<!--/#content-->
+
 {% endblock %}

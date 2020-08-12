@@ -91,7 +91,7 @@ class __TwigTemplate_9add630cb6a71c9b1d7a59b506e05ed0f14001adefcc0b26c7e5df75ea5
                 <div class=\"collapse navbar-collapse navbar-right\">
                     <ul class=\"nav navbar-nav\">
                         <li class=\"active\"><a href=\"/\">Home</a></li>
-                        <li><a href=\"about-us.html\">About Us</a></li>
+                        <li><a href=\"/about\">About Us</a></li>
                         <li><a href=\"services.html\">Services</a></li>
                         <li class=\"dropdown\">
                             <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Pages <i
@@ -207,7 +207,7 @@ class __TwigTemplate_9add630cb6a71c9b1d7a59b506e05ed0f14001adefcc0b26c7e5df75ea5
                 <div class=\"collapse navbar-collapse navbar-right\">
                     <ul class=\"nav navbar-nav\">
                         <li class=\"active\"><a href=\"/\">Home</a></li>
-                        <li><a href=\"about-us.html\">About Us</a></li>
+                        <li><a href=\"/about\">About Us</a></li>
                         <li><a href=\"services.html\">Services</a></li>
                         <li class=\"dropdown\">
                             <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Pages <i

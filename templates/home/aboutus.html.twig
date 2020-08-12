@@ -1,0 +1,19 @@
+{% extends 'homebase.html.twig' %}
+
+{% block title %}{{setting[0].title}}{% endblock %}
+{% block keywords %}{{setting[0].keywords}}{% endblock %}
+{% block description %}{{setting[0].description}}{% endblock %}
+
+{% block body %}
+
+<section id="about-us">
+    <div class="container">
+        <div class="row">
+            <div class="center wow fadeInDown">
+                <h2>About Us</h2>
+                {{ setting[0].aboutus | raw }}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

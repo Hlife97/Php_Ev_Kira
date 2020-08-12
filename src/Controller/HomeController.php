@@ -36,4 +36,15 @@ class HomeController extends AbstractController
             'ev' => $ev,
         ]);
     }
+
+    /**
+     * @Route("/about", name="home_about")
+     */
+    public function about(SettingRepository $settingRepository): Response
+    {
+        $setting=$settingRepository->findAll();
+        return $this->render('home/aboutus.html.twig', [
+            'setting'=>$setting,
+        ]);
+    }
 }

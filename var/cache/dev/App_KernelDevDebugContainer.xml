@@ -5623,7 +5623,7 @@
         <argument key="authenticationUtils" type="service" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.ruYsdjH" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.Iq8gZaY" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\Admin\CategoryController::delete" type="service" id=".service_locator.wNIwF8O"/>
@@ -5653,6 +5653,7 @@
         <argument key="App\Controller\EvController::edit" type="service" id=".service_locator.qNn3kGW"/>
         <argument key="App\Controller\EvController::index" type="service" id=".service_locator.HOg8xP7"/>
         <argument key="App\Controller\EvController::show" type="service" id=".service_locator.qNn3kGW"/>
+        <argument key="App\Controller\HomeController::about" type="service" id=".service_locator.3p6kP69"/>
         <argument key="App\Controller\HomeController::index" type="service" id=".service_locator.RbR9ZvW"/>
         <argument key="App\Controller\HomeController::show" type="service" id=".service_locator.qNn3kGW"/>
         <argument key="App\Controller\ImageController::delete" type="service" id=".service_locator.XFfswMO"/>
@@ -5700,6 +5701,7 @@
         <argument key="App\Controller\EvController:edit" type="service" id=".service_locator.qNn3kGW"/>
         <argument key="App\Controller\EvController:index" type="service" id=".service_locator.HOg8xP7"/>
         <argument key="App\Controller\EvController:show" type="service" id=".service_locator.qNn3kGW"/>
+        <argument key="App\Controller\HomeController:about" type="service" id=".service_locator.3p6kP69"/>
         <argument key="App\Controller\HomeController:index" type="service" id=".service_locator.RbR9ZvW"/>
         <argument key="App\Controller\HomeController:show" type="service" id=".service_locator.qNn3kGW"/>
         <argument key="App\Controller\ImageController:delete" type="service" id=".service_locator.XFfswMO"/>
@@ -6257,12 +6259,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.ruYsdjH"/>
+      <argument type="service" id=".service_locator.Iq8gZaY"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.ruYsdjH"/>
+      <argument type="service" id=".service_locator.Iq8gZaY"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -6670,7 +6672,7 @@
     <service id="SymfonyCasts\Bundle\VerifyEmail\VerifyEmailHelperInterface" alias="symfonycasts.verify_email.helper"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.WaGDpDt" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.ruYsdjH"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.Iq8gZaY"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

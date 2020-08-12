@@ -123,4 +123,6 @@ class ImageController extends AbstractController
 
         return $this->redirectToRoute('user_image_index');
     }
+
+
 }

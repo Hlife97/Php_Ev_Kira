@@ -104,7 +104,7 @@ class __TwigTemplate_9add630cb6a71c9b1d7a59b506e05ed0f14001adefcc0b26c7e5df75ea5
                             </ul>
                         </li>
                         <li><a href=\"blog.html\">Blog</a></li>
-                        <li><a href=\"contact-us.html\">Contact</a></li>
+                        <li><a href=\"/contact\">Contact</a></li>
                         ";
         // line 63
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
@@ -220,7 +220,7 @@ class __TwigTemplate_9add630cb6a71c9b1d7a59b506e05ed0f14001adefcc0b26c7e5df75ea5
                             </ul>
                         </li>
                         <li><a href=\"blog.html\">Blog</a></li>
-                        <li><a href=\"contact-us.html\">Contact</a></li>
+                        <li><a href=\"/contact\">Contact</a></li>
                         {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                         <li><a href=\"/user\"><img src=\"{{ asset('uploads/images/' ~ app.user.image) }}\" alt=\"user\"
                                     class=\"rounded-circle\" width=\"31\">{{ app.user.name }}</a></li>

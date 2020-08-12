@@ -59,7 +59,7 @@
                             </ul>
                         </li>
                         <li><a href="blog.html">Blog</a></li>
-                        <li><a href="contact-us.html">Contact</a></li>
+                        <li><a href="/contact">Contact</a></li>
                         {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                         <li><a href="/user"><img src="{{ asset('uploads/images/' ~ app.user.image) }}" alt="user"
                                     class="rounded-circle" width="31">{{ app.user.name }}</a></li>

@@ -47,4 +47,15 @@ class HomeController extends AbstractController
             'setting'=>$setting,
         ]);
     }
+
+    /**
+     * @Route("/contact", name="home_contact")
+     */
+    public function contact(SettingRepository $settingRepository): Response
+    {
+        $setting=$settingRepository->findAll();
+        return $this->render('home/contact.html.twig', [
+            'setting'=>$setting,
+        ]);
+    }
 }

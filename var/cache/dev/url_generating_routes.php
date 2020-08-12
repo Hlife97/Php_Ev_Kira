@@ -49,6 +49,7 @@ return [
     'home' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], []],
     'ev_show' => [['id'], ['_controller' => 'App\\Controller\\HomeController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/ev']], [], []],
     'home_about' => [[], ['_controller' => 'App\\Controller\\HomeController::about'], [], [['text', '/about']], [], []],
+    'home_contact' => [[], ['_controller' => 'App\\Controller\\HomeController::contact'], [], [['text', '/contact']], [], []],
     'user_image_index' => [[], ['_controller' => 'App\\Controller\\ImageController::index'], [], [['text', '/user/image/']], [], []],
     'user_image_new' => [['id'], ['_controller' => 'App\\Controller\\ImageController::new'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/user/image/new']], [], []],
     'user_image_show' => [['id'], ['_controller' => 'App\\Controller\\ImageController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/user/image']], [], []],

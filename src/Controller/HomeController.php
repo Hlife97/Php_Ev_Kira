@@ -25,13 +25,15 @@ class HomeController extends AbstractController
     public function index(SettingRepository $settingRepository, EvRepository $evRepository)
     {
         $setting=$settingRepository->findAll();
-        $slider= $evRepository->findBy([], [], 5);
+        $slider= $evRepository->findBy([], ['title'=>'ASC'], 5);
+        $evs= $evRepository->findBy([], ['title'=>'DESC'], 8);
         //dump($slider);
         //die();
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
             'setting'=>$setting,
             'slider'=>$slider,
+            'evs'=>$evs,
         ]);
     }
 

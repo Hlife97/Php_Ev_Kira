@@ -149,171 +149,52 @@ class __TwigTemplate_95cd0a55d3bfd987ac4eaa1a59bc63a8a939caff3cd9dd02fe14bdc0373
 <section id=\"recent-works\">
     <div class=\"container\">
         <div class=\"center wow fadeInDown\">
-            <h2>Recent Works</h2>
+            <h2>Just Rent House</h2>
             <p class=\"lead\">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
                 ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
         </div>
-
         <div class=\"row\">
+        ";
+        // line 17
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["evs"]) || array_key_exists("evs", $context) ? $context["evs"] : (function () { throw new RuntimeError('Variable "evs" does not exist.', 17, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["rs"]) {
+            // line 18
+            echo "
             <div class=\"col-xs-12 col-sm-4 col-md-3\">
                 <div class=\"recent-work-wrap\">
                     <img class=\"img-responsive\" src=\"";
-        // line 20
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets"), "html", null, true);
-        echo "/images/portfolio/recent/item1.png\" alt=\"\">
+            // line 21
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, $context["rs"], "image", [], "any", false, false, false, 21))), "html", null, true);
+            echo "\"  alt=\"\">
                     <div class=\"overlay\">
                         <div class=\"recent-work-inner\">
-                            <h3><a href=\"#\">Business theme</a> </h3>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
+                            <h3><a href=\"";
+            // line 24
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ev_show", ["id" => twig_get_attribute($this->env, $this->source, $context["rs"], "id", [], "any", false, false, false, 24)]), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rs"], "title", [], "any", false, false, false, 24), "html", null, true);
+            echo "</a> </h3>
+                            <p>";
+            // line 25
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rs"], "description", [], "any", false, false, false, 25), "html", null, true);
+            echo "</p>
                             <a class=\"preview\" href=\"";
-        // line 25
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets"), "html", null, true);
-        echo "/images/portfolio/full/item1.png\" rel=\"prettyPhoto\"><i
+            // line 26
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, $context["rs"], "image", [], "any", false, false, false, 26))), "html", null, true);
+            echo "\" rel=\"prettyPhoto\"><i
                                     class=\"fa fa-eye\"></i> View</a>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class=\"col-xs-12 col-sm-4 col-md-3\">
-                <div class=\"recent-work-wrap\">
-                    <img class=\"img-responsive\" src=\"";
-        // line 34
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets"), "html", null, true);
-        echo "/images/portfolio/recent/item2.png\" alt=\"\">
-                    <div class=\"overlay\">
-                        <div class=\"recent-work-inner\">
-                            <h3><a href=\"#\">Business theme</a></h3>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                            <a class=\"preview\" href=\"";
-        // line 39
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets"), "html", null, true);
-        echo "/images/portfolio/full/item2.png\" rel=\"prettyPhoto\"><i
-                                    class=\"fa fa-eye\"></i> View</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class=\"col-xs-12 col-sm-4 col-md-3\">
-                <div class=\"recent-work-wrap\">
-                    <img class=\"img-responsive\" src=\"";
-        // line 48
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets"), "html", null, true);
-        echo "/images/portfolio/recent/item3.png\" alt=\"\">
-                    <div class=\"overlay\">
-                        <div class=\"recent-work-inner\">
-                            <h3><a href=\"#\">Business theme </a></h3>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                            <a class=\"preview\" href=\"";
-        // line 53
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets"), "html", null, true);
-        echo "/images/portfolio/full/item3.png\" rel=\"prettyPhoto\"><i
-                                    class=\"fa fa-eye\"></i> View</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class=\"col-xs-12 col-sm-4 col-md-3\">
-                <div class=\"recent-work-wrap\">
-                    <img class=\"img-responsive\" src=\"";
-        // line 62
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets"), "html", null, true);
-        echo "/images/portfolio/recent/item4.png\" alt=\"\">
-                    <div class=\"overlay\">
-                        <div class=\"recent-work-inner\">
-                            <h3><a href=\"#\">Business theme </a></h3>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                            <a class=\"preview\" href=\"";
-        // line 67
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets"), "html", null, true);
-        echo "/images/portfolio/full/item4.png\" rel=\"prettyPhoto\"><i
-                                    class=\"fa fa-eye\"></i> View</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class=\"col-xs-12 col-sm-4 col-md-3\">
-                <div class=\"recent-work-wrap\">
-                    <img class=\"img-responsive\" src=\"";
-        // line 76
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets"), "html", null, true);
-        echo "/images/portfolio/recent/item5.png\" alt=\"\">
-                    <div class=\"overlay\">
-                        <div class=\"recent-work-inner\">
-                            <h3><a href=\"#\">Business theme</a></h3>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                            <a class=\"preview\" href=\"";
-        // line 81
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets"), "html", null, true);
-        echo "/images/portfolio/full/item5.png\" rel=\"prettyPhoto\"><i
-                                    class=\"fa fa-eye\"></i> View</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class=\"col-xs-12 col-sm-4 col-md-3\">
-                <div class=\"recent-work-wrap\">
-                    <img class=\"img-responsive\" src=\"";
-        // line 90
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets"), "html", null, true);
-        echo "/images/portfolio/recent/item6.png\" alt=\"\">
-                    <div class=\"overlay\">
-                        <div class=\"recent-work-inner\">
-                            <h3><a href=\"#\">Business theme </a></h3>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                            <a class=\"preview\" href=\"";
-        // line 95
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets"), "html", null, true);
-        echo "/images/portfolio/full/item6.png\" rel=\"prettyPhoto\"><i
-                                    class=\"fa fa-eye\"></i> View</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class=\"col-xs-12 col-sm-4 col-md-3\">
-                <div class=\"recent-work-wrap\">
-                    <img class=\"img-responsive\" src=\"";
-        // line 104
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets"), "html", null, true);
-        echo "/images/portfolio/recent/item7.png\" alt=\"\">
-                    <div class=\"overlay\">
-                        <div class=\"recent-work-inner\">
-                            <h3><a href=\"#\">Business theme </a></h3>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                            <a class=\"preview\" href=\"";
-        // line 109
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets"), "html", null, true);
-        echo "/images/portfolio/full/item7.png\" rel=\"prettyPhoto\"><i
-                                    class=\"fa fa-eye\"></i> View</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class=\"col-xs-12 col-sm-4 col-md-3\">
-                <div class=\"recent-work-wrap\">
-                    <img class=\"img-responsive\" src=\"";
-        // line 118
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets"), "html", null, true);
-        echo "/images/portfolio/recent/item8.png\" alt=\"\">
-                    <div class=\"overlay\">
-                        <div class=\"recent-work-inner\">
-                            <h3><a href=\"#\">Business theme </a></h3>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                            <a class=\"preview\" href=\"";
-        // line 123
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets"), "html", null, true);
-        echo "/images/portfolio/full/item8.png\" rel=\"prettyPhoto\"><i
-                                    class=\"fa fa-eye\"></i> View</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['rs'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 33
+        echo "        
         </div>
         <!--/.row-->
     </div>
@@ -341,7 +222,7 @@ class __TwigTemplate_95cd0a55d3bfd987ac4eaa1a59bc63a8a939caff3cd9dd02fe14bdc0373
 
     public function getDebugInfo()
     {
-        return array (  310 => 123,  302 => 118,  290 => 109,  282 => 104,  270 => 95,  262 => 90,  250 => 81,  242 => 76,  230 => 67,  222 => 62,  210 => 53,  202 => 48,  190 => 39,  182 => 34,  170 => 25,  162 => 20,  148 => 8,  138 => 7,  119 => 6,  100 => 5,  81 => 4,  62 => 3,  39 => 1,);
+        return array (  197 => 33,  184 => 26,  180 => 25,  174 => 24,  168 => 21,  163 => 18,  159 => 17,  148 => 8,  138 => 7,  119 => 6,  100 => 5,  81 => 4,  62 => 3,  39 => 1,);
     }
 
     public function getSourceContext()
@@ -357,123 +238,28 @@ class __TwigTemplate_95cd0a55d3bfd987ac4eaa1a59bc63a8a939caff3cd9dd02fe14bdc0373
 <section id=\"recent-works\">
     <div class=\"container\">
         <div class=\"center wow fadeInDown\">
-            <h2>Recent Works</h2>
+            <h2>Just Rent House</h2>
             <p class=\"lead\">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
                 ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
         </div>
-
         <div class=\"row\">
-            <div class=\"col-xs-12 col-sm-4 col-md-3\">
-                <div class=\"recent-work-wrap\">
-                    <img class=\"img-responsive\" src=\"{{ asset ('assets')}}/images/portfolio/recent/item1.png\" alt=\"\">
-                    <div class=\"overlay\">
-                        <div class=\"recent-work-inner\">
-                            <h3><a href=\"#\">Business theme</a> </h3>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                            <a class=\"preview\" href=\"{{ asset ('assets')}}/images/portfolio/full/item1.png\" rel=\"prettyPhoto\"><i
-                                    class=\"fa fa-eye\"></i> View</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        {% for rs in evs%}
 
             <div class=\"col-xs-12 col-sm-4 col-md-3\">
                 <div class=\"recent-work-wrap\">
-                    <img class=\"img-responsive\" src=\"{{ asset ('assets')}}/images/portfolio/recent/item2.png\" alt=\"\">
+                    <img class=\"img-responsive\" src=\"{{ asset ('uploads/images/' ~ rs.image) }}\"  alt=\"\">
                     <div class=\"overlay\">
                         <div class=\"recent-work-inner\">
-                            <h3><a href=\"#\">Business theme</a></h3>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                            <a class=\"preview\" href=\"{{ asset ('assets')}}/images/portfolio/full/item2.png\" rel=\"prettyPhoto\"><i
+                            <h3><a href=\"{{ path ('ev_show', {'id': rs.id})}}\">{{ rs.title }}</a> </h3>
+                            <p>{{ rs.description }}</p>
+                            <a class=\"preview\" href=\"{{ asset ('uploads/images/' ~ rs.image) }}\" rel=\"prettyPhoto\"><i
                                     class=\"fa fa-eye\"></i> View</a>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class=\"col-xs-12 col-sm-4 col-md-3\">
-                <div class=\"recent-work-wrap\">
-                    <img class=\"img-responsive\" src=\"{{ asset ('assets')}}/images/portfolio/recent/item3.png\" alt=\"\">
-                    <div class=\"overlay\">
-                        <div class=\"recent-work-inner\">
-                            <h3><a href=\"#\">Business theme </a></h3>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                            <a class=\"preview\" href=\"{{ asset ('assets')}}/images/portfolio/full/item3.png\" rel=\"prettyPhoto\"><i
-                                    class=\"fa fa-eye\"></i> View</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class=\"col-xs-12 col-sm-4 col-md-3\">
-                <div class=\"recent-work-wrap\">
-                    <img class=\"img-responsive\" src=\"{{ asset ('assets')}}/images/portfolio/recent/item4.png\" alt=\"\">
-                    <div class=\"overlay\">
-                        <div class=\"recent-work-inner\">
-                            <h3><a href=\"#\">Business theme </a></h3>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                            <a class=\"preview\" href=\"{{ asset ('assets')}}/images/portfolio/full/item4.png\" rel=\"prettyPhoto\"><i
-                                    class=\"fa fa-eye\"></i> View</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class=\"col-xs-12 col-sm-4 col-md-3\">
-                <div class=\"recent-work-wrap\">
-                    <img class=\"img-responsive\" src=\"{{ asset ('assets')}}/images/portfolio/recent/item5.png\" alt=\"\">
-                    <div class=\"overlay\">
-                        <div class=\"recent-work-inner\">
-                            <h3><a href=\"#\">Business theme</a></h3>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                            <a class=\"preview\" href=\"{{ asset ('assets')}}/images/portfolio/full/item5.png\" rel=\"prettyPhoto\"><i
-                                    class=\"fa fa-eye\"></i> View</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class=\"col-xs-12 col-sm-4 col-md-3\">
-                <div class=\"recent-work-wrap\">
-                    <img class=\"img-responsive\" src=\"{{ asset ('assets')}}/images/portfolio/recent/item6.png\" alt=\"\">
-                    <div class=\"overlay\">
-                        <div class=\"recent-work-inner\">
-                            <h3><a href=\"#\">Business theme </a></h3>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                            <a class=\"preview\" href=\"{{ asset ('assets')}}/images/portfolio/full/item6.png\" rel=\"prettyPhoto\"><i
-                                    class=\"fa fa-eye\"></i> View</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class=\"col-xs-12 col-sm-4 col-md-3\">
-                <div class=\"recent-work-wrap\">
-                    <img class=\"img-responsive\" src=\"{{ asset ('assets')}}/images/portfolio/recent/item7.png\" alt=\"\">
-                    <div class=\"overlay\">
-                        <div class=\"recent-work-inner\">
-                            <h3><a href=\"#\">Business theme </a></h3>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                            <a class=\"preview\" href=\"{{ asset ('assets')}}/images/portfolio/full/item7.png\" rel=\"prettyPhoto\"><i
-                                    class=\"fa fa-eye\"></i> View</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class=\"col-xs-12 col-sm-4 col-md-3\">
-                <div class=\"recent-work-wrap\">
-                    <img class=\"img-responsive\" src=\"{{ asset ('assets')}}/images/portfolio/recent/item8.png\" alt=\"\">
-                    <div class=\"overlay\">
-                        <div class=\"recent-work-inner\">
-                            <h3><a href=\"#\">Business theme </a></h3>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                            <a class=\"preview\" href=\"{{ asset ('assets')}}/images/portfolio/full/item8.png\" rel=\"prettyPhoto\"><i
-                                    class=\"fa fa-eye\"></i> View</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        {% endfor %}
+        
         </div>
         <!--/.row-->
     </div>

@@ -21,6 +21,11 @@ return [
     'admin_category_show' => [['id'], ['_controller' => 'App\\Controller\\Admin\\CategoryController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/category']], [], []],
     'admin_category_edit' => [['id'], ['_controller' => 'App\\Controller\\Admin\\CategoryController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/admin/category']], [], []],
     'admin_category_delete' => [['id'], ['_controller' => 'App\\Controller\\Admin\\CategoryController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/category']], [], []],
+    'admin_comment_index' => [[], ['_controller' => 'App\\Controller\\Admin\\CommentController::index'], [], [['text', '/admin/comment/']], [], []],
+    'admin_comment_new' => [[], ['_controller' => 'App\\Controller\\Admin\\CommentController::new'], [], [['text', '/admin/comment/new']], [], []],
+    'admin_comment_show' => [['id'], ['_controller' => 'App\\Controller\\Admin\\CommentController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/comment']], [], []],
+    'admin_comment_edit' => [['id'], ['_controller' => 'App\\Controller\\Admin\\CommentController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/admin/comment']], [], []],
+    'admin_comment_delete' => [['id'], ['_controller' => 'App\\Controller\\Admin\\CommentController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/comment']], [], []],
     'admin_ev_index' => [[], ['_controller' => 'App\\Controller\\Admin\\EvController::index'], [], [['text', '/admin/ev/']], [], []],
     'admin_ev_new' => [[], ['_controller' => 'App\\Controller\\Admin\\EvController::new'], [], [['text', '/admin/ev/new']], [], []],
     'admin_ev_show' => [['id'], ['_controller' => 'App\\Controller\\Admin\\EvController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/ev']], [], []],
@@ -74,4 +79,5 @@ return [
     'user_show' => [['id'], ['_controller' => 'App\\Controller\\UserController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/user']], [], []],
     'user_edit' => [['id'], ['_controller' => 'App\\Controller\\UserController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/user']], [], []],
     'user_delete' => [['id'], ['_controller' => 'App\\Controller\\UserController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/user']], [], []],
+    'user_new_comment' => [['id'], ['_controller' => 'App\\Controller\\UserController::newcomment'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/user/newcomment']], [], []],
 ];

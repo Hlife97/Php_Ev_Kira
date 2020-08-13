@@ -162,7 +162,7 @@ class __TwigTemplate_10f18687f5488bcfd2112cd65f67c89e8fbeaf7bb494345b577f5e3a982
         // line 31
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, (isset($context["ev"]) || array_key_exists("ev", $context) ? $context["ev"] : (function () { throw new RuntimeError('Variable "ev" does not exist.', 31, $this->source); })()), "image", [], "any", false, false, false, 31))), "html", null, true);
         echo "\"
-                                                    rel=\"prettyPhoto\"><i class=\"fa fa-eye\"></i> View</a>  
+                                                    rel=\"prettyPhoto\"><i class=\"fa fa-eye\"></i> View</a>
                                                 <a class=\"btn-slide animation animated-item-3\" href=\"#\">Read More</a>
                                             </div>
                                         </div>
@@ -376,26 +376,87 @@ class __TwigTemplate_10f18687f5488bcfd2112cd65f67c89e8fbeaf7bb494345b577f5e3a982
                             </div>
 
                             <div class=\"tab-pane\" id=\"tab3\">
-                                <p>Comments</p>
-                            </div>
+                                ";
+        // line 188
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["comments"]) || array_key_exists("comments", $context) ? $context["comments"] : (function () { throw new RuntimeError('Variable "comments" does not exist.', 188, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["rs"]) {
+            // line 189
+            echo "                                <h5>";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rs"], "subject", [], "any", false, false, false, 189), "html", null, true);
+            echo " [Rate:";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rs"], "rate", [], "any", false, false, false, 189), "html", null, true);
+            echo "]</h5>
+                                <p>";
+            // line 190
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rs"], "comment", [], "any", false, false, false, 190), "html", null, true);
+            echo " </p>
+                                <hr>
+                                ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['rs'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 193
+        echo "
+                                ";
+        // line 194
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 194, $this->source); })()), "user", [], "any", false, false, false, 194)) {
+            // line 195
+            echo "                                <div class=\"row contact-wrap\">
+                                    <div class=\"status alert alert-success\" style=\"display: none\"></div>
+                                    <form name=\"comment\" method=\"post\"
+                                        action=\"";
+            // line 198
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_new_comment", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["ev"]) || array_key_exists("ev", $context) ? $context["ev"] : (function () { throw new RuntimeError('Variable "ev" does not exist.', 198, $this->source); })()), "id", [], "any", false, false, false, 198)]), "html", null, true);
+            echo "\" class=\"contact-form\"
+                                        role=\"form\">
+                                        <div class=\"col-sm-5 col-sm-offset-1\" id=\"comment\">
 
-                            <div class=\"tab-pane\" id=\"tab4\">
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                                    suffered alteration in some form, by injected humour, or randomised words which
-                                    don't look even slightly believable. If you are going to use a passage of Lorem
-                                    Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of
-                                    text. All the Lorem Ipsum generators on the Internet tend to repeat predefined
-                                    chunks as necessary, making this the first true generator on the Internet. It uses a
-                                    dictionary of over 200 Latin words</p>
-                            </div>
+                                            <div class=\"form-group\">
+                                                <label for=\"comment_subject\">Subject *</label>
+                                                <input type=\"text\" id=\"comment_subject\" name=\"comment[subject]\"
+                                                    class=\"form-control\" required=\"required\">
+                                            </div>
 
-                            <div class=\"tab-pane\" id=\"tab5\">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                                    irure dolor in reprehenderit.</p>
+                                            <div class=\"form-group\">
+                                                <label for=\"comment_subject\">Rate *</label>
+                                                <select id=\"comment_rate\" name=\"comment[rate]\" class=\"form-control\"
+                                                    required=\"required\">
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class=\"col-sm-5\">
+                                            <div class=\"form-group\">
+                                                <label for=\"comment_comment\">Message *</label>
+                                                <textarea id=\"comment_comment\" name=\"comment[comment]\"
+                                                    required=\"required\" class=\"form-control\" rows=\"8\"></textarea>
+                                            </div>
+                                            <div class=\"form-group\">
+                                                <input type=\"hidden\" name=\"token\" value=\"";
+            // line 227
+            echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("comment"), "html", null, true);
+            echo "\" />
+                                                <button type=\"submit\" class=\"btn btn-primary btn-lg\">Send
+                                                    Comment</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
-                        </div>
+                            ";
+        } else {
+            // line 236
+            echo "                            <li><a href=\"/loginuser\"><i class=\"icon-lock\"></i>If you want to add comment please login</a></li>
+                            ";
+        }
+        // line 238
+        echo "                        </div>
                         <!--/.tab-content-->
                     </div>
                     <!--/.media-body-->
@@ -429,7 +490,7 @@ class __TwigTemplate_10f18687f5488bcfd2112cd65f67c89e8fbeaf7bb494345b577f5e3a982
 
     public function getDebugInfo()
     {
-        return array (  372 => 182,  365 => 178,  327 => 142,  325 => 138,  320 => 132,  313 => 128,  306 => 124,  299 => 120,  292 => 116,  285 => 112,  278 => 108,  274 => 106,  269 => 100,  262 => 96,  255 => 92,  232 => 71,  217 => 62,  208 => 56,  204 => 55,  199 => 53,  191 => 48,  188 => 47,  184 => 46,  173 => 38,  163 => 31,  159 => 30,  155 => 29,  147 => 24,  134 => 13,  128 => 8,  118 => 7,  99 => 5,  80 => 4,  61 => 3,  38 => 1,);
+        return array (  459 => 238,  455 => 236,  443 => 227,  411 => 198,  406 => 195,  404 => 194,  401 => 193,  392 => 190,  385 => 189,  381 => 188,  372 => 182,  365 => 178,  327 => 142,  325 => 138,  320 => 132,  313 => 128,  306 => 124,  299 => 120,  292 => 116,  285 => 112,  278 => 108,  274 => 106,  269 => 100,  262 => 96,  255 => 92,  232 => 71,  217 => 62,  208 => 56,  204 => 55,  199 => 53,  191 => 48,  188 => 47,  184 => 46,  173 => 38,  163 => 31,  159 => 30,  155 => 29,  147 => 24,  134 => 13,  128 => 8,  118 => 7,  99 => 5,  80 => 4,  61 => 3,  38 => 1,);
     }
 
     public function getSourceContext()
@@ -465,7 +526,7 @@ class __TwigTemplate_10f18687f5488bcfd2112cd65f67c89e8fbeaf7bb494345b577f5e3a982
                                                 <h1 class=\"animation animated-item-1\">{{ ev.title}}</h1>
                                                 <h2 class=\"animation animated-item-2\">{{ ev.description }}</h2>
                                                 <a class=\"preview\" href=\"{{ asset ('uploads/images/' ~ ev.image) }}\"
-                                                    rel=\"prettyPhoto\"><i class=\"fa fa-eye\"></i> View</a>  
+                                                    rel=\"prettyPhoto\"><i class=\"fa fa-eye\"></i> View</a>
                                                 <a class=\"btn-slide animation animated-item-3\" href=\"#\">Read More</a>
                                             </div>
                                         </div>
@@ -621,25 +682,56 @@ class __TwigTemplate_10f18687f5488bcfd2112cd65f67c89e8fbeaf7bb494345b577f5e3a982
                             </div>
 
                             <div class=\"tab-pane\" id=\"tab3\">
-                                <p>Comments</p>
-                            </div>
+                                {% for rs in comments %}
+                                <h5>{{ rs.subject}} [Rate:{{ rs.rate}}]</h5>
+                                <p>{{ rs.comment}} </p>
+                                <hr>
+                                {% endfor %}
 
-                            <div class=\"tab-pane\" id=\"tab4\">
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                                    suffered alteration in some form, by injected humour, or randomised words which
-                                    don't look even slightly believable. If you are going to use a passage of Lorem
-                                    Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of
-                                    text. All the Lorem Ipsum generators on the Internet tend to repeat predefined
-                                    chunks as necessary, making this the first true generator on the Internet. It uses a
-                                    dictionary of over 200 Latin words</p>
-                            </div>
+                                {% if app.user %}
+                                <div class=\"row contact-wrap\">
+                                    <div class=\"status alert alert-success\" style=\"display: none\"></div>
+                                    <form name=\"comment\" method=\"post\"
+                                        action=\"{{ path('user_new_comment', {'id': ev.id}) }}\" class=\"contact-form\"
+                                        role=\"form\">
+                                        <div class=\"col-sm-5 col-sm-offset-1\" id=\"comment\">
 
-                            <div class=\"tab-pane\" id=\"tab5\">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                                    irure dolor in reprehenderit.</p>
+                                            <div class=\"form-group\">
+                                                <label for=\"comment_subject\">Subject *</label>
+                                                <input type=\"text\" id=\"comment_subject\" name=\"comment[subject]\"
+                                                    class=\"form-control\" required=\"required\">
+                                            </div>
+
+                                            <div class=\"form-group\">
+                                                <label for=\"comment_subject\">Rate *</label>
+                                                <select id=\"comment_rate\" name=\"comment[rate]\" class=\"form-control\"
+                                                    required=\"required\">
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class=\"col-sm-5\">
+                                            <div class=\"form-group\">
+                                                <label for=\"comment_comment\">Message *</label>
+                                                <textarea id=\"comment_comment\" name=\"comment[comment]\"
+                                                    required=\"required\" class=\"form-control\" rows=\"8\"></textarea>
+                                            </div>
+                                            <div class=\"form-group\">
+                                                <input type=\"hidden\" name=\"token\" value=\"{{ csrf_token('comment') }}\" />
+                                                <button type=\"submit\" class=\"btn btn-primary btn-lg\">Send
+                                                    Comment</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
+                            {% else  %}
+                            <li><a href=\"/loginuser\"><i class=\"icon-lock\"></i>If you want to add comment please login</a></li>
+                            {% endif %}
                         </div>
                         <!--/.tab-content-->
                     </div>

@@ -1,0 +1,81 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+
+<div class="container-fluid">
+    <div class="page-wrapper">
+        <div class="page-breadcrumb">
+            <div class="row">
+                <div class="col-12 d-flex no-block align-items-center">
+                    <h4 class="page-title">User Comments</h4>
+                    <div class="ml-auto text-right">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="\admin">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Comments</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h1>Comments</h1>
+
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Subject</th>
+                                        <th>Comment</th>
+                                        <th>Status</th>
+                                        <th>Ip</th>
+                                        <th>Userid</th>
+                                        <th>Evid</th>
+                                        {# <th>Created_at</th>
+                                        <th>Updated_at</th> #}
+                                        <th>Rate</th>
+                                        <th>actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for comment in comments %}
+                                    <tr>
+                                        <td>{{ comment.id }}</td>
+                                        <td>{{ comment.subject }}</td>
+                                        <td>{{ comment.comment }}</td>
+                                        <td>{{ comment.status }}</td>
+                                        <td>{{ comment.ip }}</td>
+                                        <td>{{ comment.userid }}</td>
+                                        <td>{{ comment.evid }}</td>
+                                        {# <td>{{ comment.createdAt ? comment.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                                        <td>{{ comment.updatedAt ? comment.updatedAt|date('Y-m-d H:i:s') : '' }}</td> #}
+                                        <td>{{ comment.rate }}</td>
+                                        <td>
+                                            <a href="{{ path('admin_comment_show', {'id': comment.id}) }}"><button
+                                                    type="button" class="btn btn-info">show</button></a>
+                                            <a href="{{ path('admin_comment_edit', {'id': comment.id}) }}"><button
+                                                    type="button" class="btn btn-dark">edit</button></a>
+                                        </td>
+                                    </tr>
+                                    {% else %}
+                                    <tr>
+                                        <td colspan="10">no records found</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

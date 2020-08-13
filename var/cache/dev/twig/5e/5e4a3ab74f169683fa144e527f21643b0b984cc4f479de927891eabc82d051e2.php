@@ -150,38 +150,36 @@ class __TwigTemplate_95cd0a55d3bfd987ac4eaa1a59bc63a8a939caff3cd9dd02fe14bdc0373
     <div class=\"container\">
         <div class=\"center wow fadeInDown\">
             <h2>Just Rent House</h2>
-            <p class=\"lead\">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-                ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
         </div>
         <div class=\"row\">
         ";
-        // line 17
+        // line 15
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["evs"]) || array_key_exists("evs", $context) ? $context["evs"] : (function () { throw new RuntimeError('Variable "evs" does not exist.', 17, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["evs"]) || array_key_exists("evs", $context) ? $context["evs"] : (function () { throw new RuntimeError('Variable "evs" does not exist.', 15, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["rs"]) {
-            // line 18
+            // line 16
             echo "
             <div class=\"col-xs-12 col-sm-4 col-md-3\">
                 <div class=\"recent-work-wrap\">
                     <img class=\"img-responsive\" src=\"";
-            // line 21
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, $context["rs"], "image", [], "any", false, false, false, 21))), "html", null, true);
+            // line 19
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, $context["rs"], "image", [], "any", false, false, false, 19))), "html", null, true);
             echo "\"  alt=\"\">
                     <div class=\"overlay\">
                         <div class=\"recent-work-inner\">
                             <h3><a href=\"";
-            // line 24
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ev_show", ["id" => twig_get_attribute($this->env, $this->source, $context["rs"], "id", [], "any", false, false, false, 24)]), "html", null, true);
+            // line 22
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ev_show", ["id" => twig_get_attribute($this->env, $this->source, $context["rs"], "id", [], "any", false, false, false, 22)]), "html", null, true);
             echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rs"], "title", [], "any", false, false, false, 24), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rs"], "title", [], "any", false, false, false, 22), "html", null, true);
             echo "</a> </h3>
                             <p>";
-            // line 25
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rs"], "description", [], "any", false, false, false, 25), "html", null, true);
+            // line 23
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rs"], "description", [], "any", false, false, false, 23), "html", null, true);
             echo "</p>
                             <a class=\"preview\" href=\"";
-            // line 26
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, $context["rs"], "image", [], "any", false, false, false, 26))), "html", null, true);
+            // line 24
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, $context["rs"], "image", [], "any", false, false, false, 24))), "html", null, true);
             echo "\" rel=\"prettyPhoto\"><i
                                     class=\"fa fa-eye\"></i> View</a>
                         </div>
@@ -193,7 +191,7 @@ class __TwigTemplate_95cd0a55d3bfd987ac4eaa1a59bc63a8a939caff3cd9dd02fe14bdc0373
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['rs'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 33
+        // line 31
         echo "        
         </div>
         <!--/.row-->
@@ -222,7 +220,7 @@ class __TwigTemplate_95cd0a55d3bfd987ac4eaa1a59bc63a8a939caff3cd9dd02fe14bdc0373
 
     public function getDebugInfo()
     {
-        return array (  197 => 33,  184 => 26,  180 => 25,  174 => 24,  168 => 21,  163 => 18,  159 => 17,  148 => 8,  138 => 7,  119 => 6,  100 => 5,  81 => 4,  62 => 3,  39 => 1,);
+        return array (  195 => 31,  182 => 24,  178 => 23,  172 => 22,  166 => 19,  161 => 16,  157 => 15,  148 => 8,  138 => 7,  119 => 6,  100 => 5,  81 => 4,  62 => 3,  39 => 1,);
     }
 
     public function getSourceContext()
@@ -239,8 +237,6 @@ class __TwigTemplate_95cd0a55d3bfd987ac4eaa1a59bc63a8a939caff3cd9dd02fe14bdc0373
     <div class=\"container\">
         <div class=\"center wow fadeInDown\">
             <h2>Just Rent House</h2>
-            <p class=\"lead\">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-                ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
         </div>
         <div class=\"row\">
         {% for rs in evs%}

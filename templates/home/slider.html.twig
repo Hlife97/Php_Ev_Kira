@@ -7,17 +7,15 @@
                 <li data-target="#main-slider" data-slide-to="3"></li>
                 <li data-target="#main-slider" data-slide-to="4"></li>
             </ol>
-            <div class="carousel-inner">
-                <div class="item active" style="background-image: url({{ asset ('uploads/images/' ~ slider[0].image) }});
-                
-                ">
+            <div class="carousel-inner" style="height:450px">
+                <div class="item active" style="background-image: url({{ asset ('uploads/images/' ~ slider[0].image) }}); height:450px ">
                     <div class="container">
                         <div class="row slide-margin">
                             <div class="col-sm-3">
                                 <div class="carousel-content">
                                     <h1 class="animation animated-item-1">{{ slider[0].title}}</h1>
                                     <h2 class="animation animated-item-2">{{ slider[0].description }}</h2>
-                                    <a class="btn-slide animation animated-item-3" href="#">Read More</a>
+                                    <a class="btn-slide animation animated-item-3" href="{{ path ('ev_show', {'id': slider[0].id})}}">Rent</a>
                                 </div>
                             </div>
 
@@ -33,16 +31,14 @@
                 {% for rs in slider %}
                 {%  if rs.id != slider[0].id  %}
 
-                <div class="item" style="background-image: url({{ asset ('uploads/images/' ~ rs.image) }});
-                            
-                            ">
+                <div class="item" style="background-image: url({{ asset ('uploads/images/' ~ rs.image) }}); height:450px">
                     <div class="container">
                         <div class="row slide-margin">
                             <div class="col-sm-6">
                                 <div class="carousel-content">
                                     <h1 class="animation animated-item-1">{{ rs.title}}</h1>
                                     <h2 class="animation animated-item-2">{{ rs.description }}</h2>
-                                    <a class="btn-slide animation animated-item-3" href="#">Read More</a>
+                                    <a class="btn-slide animation animated-item-3" href="{{ path ('ev_show', {'id': rs.id})}}">Rent</a>
                                 </div>
                             </div>
 

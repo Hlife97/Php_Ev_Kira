@@ -351,6 +351,13 @@
         <argument type="service" id=".service_locator.g9CqTPp.App\Controller\Admin\CategoryController"/>
       </call>
     </service>
+    <service id="App\Controller\Admin\CommentController" class="App\Controller\Admin\CommentController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.g9CqTPp.App\Controller\Admin\CommentController"/>
+      </call>
+    </service>
     <service id="App\Controller\Admin\EvController" class="App\Controller\Admin\EvController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -438,6 +445,9 @@
     <service id="App\Form\AdminUserType" class="App\Form\AdminUserType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Form\Admin\CommentType" class="App\Form\Admin\CommentType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\Admin\MessagesType" class="App\Form\Admin\MessagesType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -464,6 +474,10 @@
     </service>
     <service id="App\Form\UserType" class="App\Form\UserType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
+    </service>
+    <service id="App\Repository\Admin\CommentRepository" class="App\Repository\Admin\CommentRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\Admin\MessagesRepository" class="App\Repository\Admin\MessagesRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
@@ -941,6 +955,7 @@
       </argument>
       <argument type="collection">
         <argument>App\Form\AdminUserType</argument>
+        <argument>App\Form\Admin\CommentType</argument>
         <argument>App\Form\Admin\MessagesType</argument>
         <argument>App\Form\CategoryType</argument>
         <argument>App\Form\Ev1Type</argument>
@@ -1292,7 +1307,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.vcZZ1p1"/>
+      <argument type="service" id=".service_locator.mC5USgn"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -3765,7 +3780,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory" public="false">
-      <argument type="service" id=".service_locator.9h1G.TZ"/>
+      <argument type="service" id=".service_locator.xhsNQPZ"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -5230,6 +5245,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\CategoryController" class="App\Controller\Admin\CategoryController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\CategoryController" class="App\Controller\Admin\CategoryController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\CategoryController" class="App\Controller\Admin\CategoryController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\CommentController" class="App\Controller\Admin\CommentController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\CommentController" class="App\Controller\Admin\CommentController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Admin\CommentController" class="App\Controller\Admin\CommentController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\EvController" class="App\Controller\Admin\EvController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\EvController" class="App\Controller\Admin\EvController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\EvController" class="App\Controller\Admin\EvController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5268,6 +5286,8 @@
     <service id=".abstract.instanceof.App\Controller\UserController" class="App\Controller\UserController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\AdminUserType" class="App\Form\AdminUserType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\AdminUserType" class="App\Form\AdminUserType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\Admin\CommentType" class="App\Form\Admin\CommentType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\Admin\CommentType" class="App\Form\Admin\CommentType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\Admin\MessagesType" class="App\Form\Admin\MessagesType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\Admin\MessagesType" class="App\Form\Admin\MessagesType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CategoryType" class="App\Form\CategoryType" autowire="true" abstract="true"/>
@@ -5286,6 +5306,8 @@
     <service id=".abstract.instanceof.App\Form\SettingType" class="App\Form\SettingType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\UserType" class="App\Form\UserType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\UserType" class="App\Form\UserType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\Admin\CommentRepository" class="App\Repository\Admin\CommentRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\Admin\CommentRepository" class="App\Repository\Admin\CommentRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\Admin\MessagesRepository" class="App\Repository\Admin\MessagesRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\Admin\MessagesRepository" class="App\Repository\Admin\MessagesRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CategoryRepository" class="App\Repository\CategoryRepository" autowire="true" abstract="true"/>
@@ -5570,6 +5592,18 @@
         <argument key="categoryRepository" type="service" id="App\Repository\CategoryRepository"/>
       </argument>
     </service>
+    <service id=".service_locator.zEQsXir" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="commentRepository" type="service" id="App\Repository\Admin\CommentRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.YxDXDBU" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="comment" type="service" id=".errored..service_locator.YxDXDBU.App\Entity\Admin\Comment"/>
+      </argument>
+    </service>
     <service id=".service_locator.HOg8xP7" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5650,10 +5684,11 @@
         <argument key="settingRepository" type="service" id="App\Repository\SettingRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.CbPKdFI" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.v7vxJV1" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="ev" type="service" id=".errored..service_locator.CbPKdFI.App\Entity\Ev"/>
+        <argument key="commentRepository" type="service" id="App\Repository\Admin\CommentRepository"/>
+        <argument key="ev" type="service" id=".errored..service_locator.v7vxJV1.App\Entity\Ev"/>
         <argument key="imageRepository" type="service" id="App\Repository\ImageRepository"/>
       </argument>
     </service>
@@ -5671,7 +5706,7 @@
         <argument key="authenticationUtils" type="service" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.BnyKrHd" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.YX7b9Nn" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\Admin\CategoryController::delete" type="service" id=".service_locator.wNIwF8O"/>
@@ -5679,6 +5714,10 @@
         <argument key="App\Controller\Admin\CategoryController::index" type="service" id=".service_locator.zAmj.kw"/>
         <argument key="App\Controller\Admin\CategoryController::new" type="service" id=".service_locator.zAmj.kw"/>
         <argument key="App\Controller\Admin\CategoryController::show" type="service" id=".service_locator.wNIwF8O"/>
+        <argument key="App\Controller\Admin\CommentController::delete" type="service" id=".service_locator.YxDXDBU"/>
+        <argument key="App\Controller\Admin\CommentController::edit" type="service" id=".service_locator.YxDXDBU"/>
+        <argument key="App\Controller\Admin\CommentController::index" type="service" id=".service_locator.zEQsXir"/>
+        <argument key="App\Controller\Admin\CommentController::show" type="service" id=".service_locator.YxDXDBU"/>
         <argument key="App\Controller\Admin\EvController::delete" type="service" id=".service_locator.qNn3kGW"/>
         <argument key="App\Controller\Admin\EvController::edit" type="service" id=".service_locator.qNn3kGW"/>
         <argument key="App\Controller\Admin\EvController::index" type="service" id=".service_locator.HOg8xP7"/>
@@ -5708,7 +5747,7 @@
         <argument key="App\Controller\HomeController::about" type="service" id=".service_locator.3p6kP69"/>
         <argument key="App\Controller\HomeController::contact" type="service" id=".service_locator.3p6kP69"/>
         <argument key="App\Controller\HomeController::index" type="service" id=".service_locator.RbR9ZvW"/>
-        <argument key="App\Controller\HomeController::show" type="service" id=".service_locator.CbPKdFI"/>
+        <argument key="App\Controller\HomeController::show" type="service" id=".service_locator.v7vxJV1"/>
         <argument key="App\Controller\ImageController::delete" type="service" id=".service_locator.XFfswMO"/>
         <argument key="App\Controller\ImageController::edit" type="service" id=".service_locator.XFfswMO"/>
         <argument key="App\Controller\ImageController::index" type="service" id=".service_locator.cnYEmTx"/>
@@ -5732,6 +5771,10 @@
         <argument key="App\Controller\Admin\CategoryController:index" type="service" id=".service_locator.zAmj.kw"/>
         <argument key="App\Controller\Admin\CategoryController:new" type="service" id=".service_locator.zAmj.kw"/>
         <argument key="App\Controller\Admin\CategoryController:show" type="service" id=".service_locator.wNIwF8O"/>
+        <argument key="App\Controller\Admin\CommentController:delete" type="service" id=".service_locator.YxDXDBU"/>
+        <argument key="App\Controller\Admin\CommentController:edit" type="service" id=".service_locator.YxDXDBU"/>
+        <argument key="App\Controller\Admin\CommentController:index" type="service" id=".service_locator.zEQsXir"/>
+        <argument key="App\Controller\Admin\CommentController:show" type="service" id=".service_locator.YxDXDBU"/>
         <argument key="App\Controller\Admin\EvController:delete" type="service" id=".service_locator.qNn3kGW"/>
         <argument key="App\Controller\Admin\EvController:edit" type="service" id=".service_locator.qNn3kGW"/>
         <argument key="App\Controller\Admin\EvController:index" type="service" id=".service_locator.HOg8xP7"/>
@@ -5761,7 +5804,7 @@
         <argument key="App\Controller\HomeController:about" type="service" id=".service_locator.3p6kP69"/>
         <argument key="App\Controller\HomeController:contact" type="service" id=".service_locator.3p6kP69"/>
         <argument key="App\Controller\HomeController:index" type="service" id=".service_locator.RbR9ZvW"/>
-        <argument key="App\Controller\HomeController:show" type="service" id=".service_locator.CbPKdFI"/>
+        <argument key="App\Controller\HomeController:show" type="service" id=".service_locator.v7vxJV1"/>
         <argument key="App\Controller\ImageController:delete" type="service" id=".service_locator.XFfswMO"/>
         <argument key="App\Controller\ImageController:edit" type="service" id=".service_locator.XFfswMO"/>
         <argument key="App\Controller\ImageController:index" type="service" id=".service_locator.cnYEmTx"/>
@@ -5838,10 +5881,11 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.vcZZ1p1" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.mC5USgn" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\AdminUserType" type="service" id="App\Form\AdminUserType"/>
+        <argument key="App\Form\Admin\CommentType" type="service" id="App\Form\Admin\CommentType"/>
         <argument key="App\Form\Admin\MessagesType" type="service" id="App\Form\Admin\MessagesType"/>
         <argument key="App\Form\CategoryType" type="service" id="App\Form\CategoryType"/>
         <argument key="App\Form\Ev1Type" type="service" id="App\Form\Ev1Type"/>
@@ -5870,9 +5914,10 @@
         <argument key="doctrine.orm.default_listeners.attach_entity_listeners" type="service" id="doctrine.orm.default_listeners.attach_entity_listeners"/>
       </argument>
     </service>
-    <service id=".service_locator.9h1G.TZ" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.xhsNQPZ" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Repository\Admin\CommentRepository" type="service" id="App\Repository\Admin\CommentRepository"/>
         <argument key="App\Repository\Admin\MessagesRepository" type="service" id="App\Repository\Admin\MessagesRepository"/>
         <argument key="App\Repository\CategoryRepository" type="service" id="App\Repository\CategoryRepository"/>
         <argument key="App\Repository\EvRepository" type="service" id="App\Repository\EvRepository"/>
@@ -6090,6 +6135,12 @@
     <service id=".service_locator.g9CqTPp.App\Controller\Admin\CategoryController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\Admin\CategoryController"/>
       <argument>App\Controller\Admin\CategoryController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.g9CqTPp" method="withContext"/>
+    </service>
+    <service id=".service_locator.g9CqTPp.App\Controller\Admin\CommentController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\CommentController"/>
+      <argument>App\Controller\Admin\CommentController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.g9CqTPp" method="withContext"/>
     </service>
@@ -6326,12 +6377,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.BnyKrHd"/>
+      <argument type="service" id=".service_locator.YX7b9Nn"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.BnyKrHd"/>
+      <argument type="service" id=".service_locator.YX7b9Nn"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -6345,13 +6396,14 @@
     <service id=".errored..service_locator.C9JCBPC.Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface"/>
     <service id=".errored..service_locator.wNIwF8O.App\Entity\Category" class="App\Entity\Category"/>
     <service id=".errored..service_locator.vG92.Jb.App\Entity\Category" class="App\Entity\Category"/>
+    <service id=".errored..service_locator.YxDXDBU.App\Entity\Admin\Comment" class="App\Entity\Admin\Comment"/>
     <service id=".errored..service_locator.qNn3kGW.App\Entity\Ev" class="App\Entity\Ev"/>
     <service id=".errored..service_locator.XFfswMO.App\Entity\Image" class="App\Entity\Image"/>
     <service id=".errored..service_locator.VabPmrO.App\Entity\Admin\Messages" class="App\Entity\Admin\Messages"/>
     <service id=".errored..service_locator.m5TRjON.App\Entity\Setting" class="App\Entity\Setting"/>
     <service id=".errored..service_locator.hEwcf7A.App\Entity\User" class="App\Entity\User"/>
     <service id=".errored..service_locator.HXUxGRH.App\Entity\User" class="App\Entity\User"/>
-    <service id=".errored..service_locator.CbPKdFI.App\Entity\Ev" class="App\Entity\Ev"/>
+    <service id=".errored..service_locator.v7vxJV1.App\Entity\Ev" class="App\Entity\Ev"/>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
       <tag name="container.no_preload"/>
       <argument type="service" id=".service_locator.s3mLFTh"/>
@@ -6741,7 +6793,7 @@
     <service id="SymfonyCasts\Bundle\VerifyEmail\VerifyEmailHelperInterface" alias="symfonycasts.verify_email.helper"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.WaGDpDt" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.BnyKrHd"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.YX7b9Nn"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

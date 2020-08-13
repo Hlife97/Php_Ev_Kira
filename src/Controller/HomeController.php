@@ -42,12 +42,14 @@ class HomeController extends AbstractController
     /**
      * @Route("/ev/{id}", name="ev_show", methods={"GET"})
      */
-    public function show(Ev $ev, $id, RepositoryImageRepository $imageRepository): Response
+    public function show(Ev $ev, $id, RepositoryImageRepository $imageRepository, CommentRepository $commentRepository): Response
     {
         $images= $imageRepository->findBy(['ev'=>$id]);
+        $comments= $commentRepository->findBy(['evid'=>$id, 'status'=>'True']);
         return $this->render('home/evshow.html.twig', [
             'ev' => $ev,
             'images' => $images,
+            'comments' => $comments,
         ]);
     }
 
@@ -56,6 +58,7 @@ class HomeController extends AbstractController
      */
     public function about(SettingRepository $settingRepository): Response
     {
+        $setting = $settingRepository->findAll();
         return $this->render('home/aboutus.html.twig', [
             'setting'=>$setting,
         ]);

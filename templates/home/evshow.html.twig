@@ -29,7 +29,7 @@
                                                 <h1 class="animation animated-item-1">{{ ev.title}}</h1>
                                                 <h2 class="animation animated-item-2">{{ ev.description }}</h2>
                                                 <a class="preview" href="{{ asset ('uploads/images/' ~ ev.image) }}"
-                                                    rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>  
+                                                    rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
                                                 <a class="btn-slide animation animated-item-3" href="#">Read More</a>
                                             </div>
                                         </div>
@@ -185,25 +185,56 @@
                             </div>
 
                             <div class="tab-pane" id="tab3">
-                                <p>Comments</p>
-                            </div>
+                                {% for rs in comments %}
+                                <h5>{{ rs.subject}} [Rate:{{ rs.rate}}]</h5>
+                                <p>{{ rs.comment}} </p>
+                                <hr>
+                                {% endfor %}
 
-                            <div class="tab-pane" id="tab4">
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                                    suffered alteration in some form, by injected humour, or randomised words which
-                                    don't look even slightly believable. If you are going to use a passage of Lorem
-                                    Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of
-                                    text. All the Lorem Ipsum generators on the Internet tend to repeat predefined
-                                    chunks as necessary, making this the first true generator on the Internet. It uses a
-                                    dictionary of over 200 Latin words</p>
-                            </div>
+                                {% if app.user %}
+                                <div class="row contact-wrap">
+                                    <div class="status alert alert-success" style="display: none"></div>
+                                    <form name="comment" method="post"
+                                        action="{{ path('user_new_comment', {'id': ev.id}) }}" class="contact-form"
+                                        role="form">
+                                        <div class="col-sm-5 col-sm-offset-1" id="comment">
 
-                            <div class="tab-pane" id="tab5">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                                    irure dolor in reprehenderit.</p>
+                                            <div class="form-group">
+                                                <label for="comment_subject">Subject *</label>
+                                                <input type="text" id="comment_subject" name="comment[subject]"
+                                                    class="form-control" required="required">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="comment_subject">Rate *</label>
+                                                <select id="comment_rate" name="comment[rate]" class="form-control"
+                                                    required="required">
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-5">
+                                            <div class="form-group">
+                                                <label for="comment_comment">Message *</label>
+                                                <textarea id="comment_comment" name="comment[comment]"
+                                                    required="required" class="form-control" rows="8"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="hidden" name="token" value="{{ csrf_token('comment') }}" />
+                                                <button type="submit" class="btn btn-primary btn-lg">Send
+                                                    Comment</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
+                            {% else  %}
+                            <li><a href="/loginuser"><i class="icon-lock"></i>If you want to add comment please login</a></li>
+                            {% endif %}
                         </div>
                         <!--/.tab-content-->
                     </div>

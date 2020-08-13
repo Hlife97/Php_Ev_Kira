@@ -4,7 +4,10 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\UserType;
+use App\Repository\Admin\CommentRepository;
 use App\Repository\UserRepository;
+use App\Form\Admin\CommentType;
+use App\Entity\Admin\Comment;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -179,5 +182,39 @@ class UserController extends AbstractController
         // uniqid(), which is based on timestamps
         return md5(uniqid());
     }
+
+
+    /**
+     * @Route("/newcomment/{id}", name="user_new_comment", methods={"GET","POST"})
+     */
+    public function newcomment(Request $request, $id): Response
+    {
+        $comment = new Comment();
+        $form = $this->createForm(CommentType::class, $comment);
+        $form->handleRequest($request);
+        $submittedToken = $request->request->get('token');
+
+        if ($form->isSubmitted()) {
+            if ($this->isCsrfTokenValid('comment', $submittedToken)) {
+                $entityManager = $this->getDoctrine()->getManager();
+                $comment->setStatus('New');
+                $comment->setIp($_SERVER['REMOTE_ADDR']);
+                $comment->setEvid($id);
+                $comment->getUserid();
+                $user = $this->getUser();
+                $comment->setUserid($user->getId());
+                
+                $entityManager->persist($comment);
+                $entityManager->flush();
+                
+                //$this->addFlash('success', 'Your comment has been sent successfuly');
+                return $this->redirectToRoute('ev_show', ['id'=>$id]);
+            }
+        }
+
+            return $this->redirectToRoute('ev_show', ['id'=>$id]);
+
+    }
+
 
 }

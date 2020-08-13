@@ -9,6 +9,7 @@ use App\Repository\SettingRepository;
 use App\Form\Admin\MessagesType;
 use App\Repository\Admin\ImageRepository;
 use App\Repository\Admin\CommentRepository;
+use App\Repository\ImageRepository as RepositoryImageRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
@@ -27,6 +28,7 @@ class HomeController extends AbstractController
         $setting=$settingRepository->findAll();
         $slider= $evRepository->findBy([], ['title'=>'ASC'], 5);
         $evs= $evRepository->findBy([], ['title'=>'DESC'], 8);
+        //$newevs= $evRepository->findBy([], ['title'=>'DESC'], 8);
         //dump($slider);
         //die();
         return $this->render('home/index.html.twig', [
@@ -40,10 +42,12 @@ class HomeController extends AbstractController
     /**
      * @Route("/ev/{id}", name="ev_show", methods={"GET"})
      */
-    public function show(Ev $ev): Response
+    public function show(Ev $ev, $id, RepositoryImageRepository $imageRepository): Response
     {
+        $images= $imageRepository->findBy(['ev'=>$id]);
         return $this->render('home/evshow.html.twig', [
             'ev' => $ev,
+            'images' => $images,
         ]);
     }
 
@@ -52,7 +56,6 @@ class HomeController extends AbstractController
      */
     public function about(SettingRepository $settingRepository): Response
     {
-        $setting=$settingRepository->findAll();
         return $this->render('home/aboutus.html.twig', [
             'setting'=>$setting,
         ]);

@@ -1,5 +1,5 @@
-    <section id="main-slider" class="no-margin" >
-        <div class="carousel slide" >
+    <section id="main-slider" class="no-margin">
+        <div class="carousel slide">
             <ol class="carousel-indicators">
                 <li data-target="#main-slider" data-slide-to="0" class="active"></li>
                 <li data-target="#main-slider" data-slide-to="1"></li>
@@ -22,17 +22,17 @@
                             </div>
 
                             <div class="col-sm-6 hidden-xs animation animated-item-4">
-                            <a href="{{ path('ev_show', {'id': slider[0].id}) }}">
-                                <div class="slider-img">
-                                </div>
-                            </a>
+                                <a href="{{ path('ev_show', {'id': slider[0].id}) }}">
+                                    <div class="slider-img">
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
                 {% for rs in slider %}
                 {%  if rs.id != slider[0].id  %}
-                
+
                 <div class="item" style="background-image: url({{ asset ('uploads/images/' ~ rs.image) }});
                             
                             ">
@@ -47,10 +47,10 @@
                             </div>
 
                             <div class="col-sm-6 hidden-xs animation animated-item-4">
-                            <a href="{{ path('ev_show', {'id': rs.id}) }}">
-                                <div class="slider-img">
-                                </div>
-                            </a>
+                                <a href="{{ path('ev_show', {'id': rs.id}) }}">
+                                    <div class="slider-img">
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     </div>

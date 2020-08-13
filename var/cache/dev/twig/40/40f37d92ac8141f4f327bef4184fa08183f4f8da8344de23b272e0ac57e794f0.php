@@ -128,107 +128,282 @@ class __TwigTemplate_10f18687f5488bcfd2112cd65f67c89e8fbeaf7bb494345b577f5e3a982
         echo "<section id=\"content\" class=\"shortcode-item\">
     <div class=\"container\">
         <div class=\"row\">
+            <div class=\"col-xs-6 col-sm-6\">
+                ";
+        // line 13
+        echo "                <section id=\"main-slider\" class=\"no-margin\">
+                    <div class=\"carousel slide\">
+                        <ol class=\"carousel-indicators\">
+                            <li data-target=\"#main-slider\" data-slide-to=\"0\" class=\"active\"></li>
+                            <li data-target=\"#main-slider\" data-slide-to=\"1\"></li>
+                            <li data-target=\"#main-slider\" data-slide-to=\"2\"></li>
+                            <li data-target=\"#main-slider\" data-slide-to=\"3\"></li>
+                            <li data-target=\"#main-slider\" data-slide-to=\"4\"></li>
+                        </ol>
+                        <div class=\"carousel-inner\" style=\"height:380px\">
+                            <div class=\"item active\"
+                                style=\"background-image: url(";
+        // line 24
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, (isset($context["ev"]) || array_key_exists("ev", $context) ? $context["ev"] : (function () { throw new RuntimeError('Variable "ev" does not exist.', 24, $this->source); })()), "image", [], "any", false, false, false, 24))), "html", null, true);
+        echo "); height:380px\">
+                                <div class=\"container\">
+                                    <div class=\"row slide-margin\">
+                                        <div class=\"col-sm-3\">
+                                            <div class=\"carousel-content\">
+                                                <h1 class=\"animation animated-item-1\">";
+        // line 29
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["ev"]) || array_key_exists("ev", $context) ? $context["ev"] : (function () { throw new RuntimeError('Variable "ev" does not exist.', 29, $this->source); })()), "title", [], "any", false, false, false, 29), "html", null, true);
+        echo "</h1>
+                                                <h2 class=\"animation animated-item-2\">";
+        // line 30
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["ev"]) || array_key_exists("ev", $context) ? $context["ev"] : (function () { throw new RuntimeError('Variable "ev" does not exist.', 30, $this->source); })()), "description", [], "any", false, false, false, 30), "html", null, true);
+        echo "</h2>
+                                                <a class=\"preview\" href=\"";
+        // line 31
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, (isset($context["ev"]) || array_key_exists("ev", $context) ? $context["ev"] : (function () { throw new RuntimeError('Variable "ev" does not exist.', 31, $this->source); })()), "image", [], "any", false, false, false, 31))), "html", null, true);
+        echo "\"
+                                                    rel=\"prettyPhoto\"><i class=\"fa fa-eye\"></i> View</a>  
+                                                <a class=\"btn-slide animation animated-item-3\" href=\"#\">Read More</a>
+                                            </div>
+                                        </div>
 
+                                        <div class=\"col-sm-6 hidden-xs animation animated-item-4\">
+                                            <a href=\"";
+        // line 38
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ev_show", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["ev"]) || array_key_exists("ev", $context) ? $context["ev"] : (function () { throw new RuntimeError('Variable "ev" does not exist.', 38, $this->source); })()), "id", [], "any", false, false, false, 38)]), "html", null, true);
+        echo "\">
+                                                <div class=\"slider-img\">
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            ";
+        // line 46
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["images"]) || array_key_exists("images", $context) ? $context["images"] : (function () { throw new RuntimeError('Variable "images" does not exist.', 46, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["rs"]) {
+            // line 47
+            echo "                            <div class=\"item\"
+                                style=\"background-image: url(";
+            // line 48
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, (isset($context["ev"]) || array_key_exists("ev", $context) ? $context["ev"] : (function () { throw new RuntimeError('Variable "ev" does not exist.', 48, $this->source); })()), "image", [], "any", false, false, false, 48))), "html", null, true);
+            echo "); height:380px \">
+                                <div class=\"container\">
+                                    <div class=\"row slide-margin\">
+                                        <div class=\"col-sm-6\">
+                                            <div class=\"carousel-content\">
+                                                <a class=\"preview\" href=\"";
+            // line 53
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, (isset($context["ev"]) || array_key_exists("ev", $context) ? $context["ev"] : (function () { throw new RuntimeError('Variable "ev" does not exist.', 53, $this->source); })()), "image", [], "any", false, false, false, 53))), "html", null, true);
+            echo "\"
+                                                    rel=\"prettyPhoto\"><i class=\"fa fa-eye\"></i> View</a>
+                                                <h1 class=\"animation animated-item-1\">";
+            // line 55
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["ev"]) || array_key_exists("ev", $context) ? $context["ev"] : (function () { throw new RuntimeError('Variable "ev" does not exist.', 55, $this->source); })()), "title", [], "any", false, false, false, 55), "html", null, true);
+            echo "</h1>
+                                                <h2 class=\"animation animated-item-2\">";
+            // line 56
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["ev"]) || array_key_exists("ev", $context) ? $context["ev"] : (function () { throw new RuntimeError('Variable "ev" does not exist.', 56, $this->source); })()), "description", [], "any", false, false, false, 56), "html", null, true);
+            echo "</h2>
+                                                <a class=\"btn-slide animation animated-item-3\" href=\"#\">Read More</a>
+                                            </div>
+                                        </div>
 
-            <div align=\"center\" class=\"col-xs-8 col-sm-10\">
+                                        <div class=\"col-sm-6 hidden-xs animation animated-item-4\">
+                                            <a href=\"";
+            // line 62
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ev_show", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["ev"]) || array_key_exists("ev", $context) ? $context["ev"] : (function () { throw new RuntimeError('Variable "ev" does not exist.', 62, $this->source); })()), "id", [], "any", false, false, false, 62)]), "html", null, true);
+            echo "\">
+                                                <div class=\"slider-img\">
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['rs'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 71
+        echo "
+
+                        </div>
+                        <!--/.carousel-inner-->
+                    </div>
+                    <!--/.carousel-->
+                    <a class=\"prev hidden-xs\" href=\"#main-slider\" data-slide=\"prev\">
+                        <i class=\"fa fa-chevron-left\"></i>
+                    </a>
+                    <a class=\"next hidden-xs\" href=\"#main-slider\" data-slide=\"next\">
+                        <i class=\"fa fa-chevron-right\"></i>
+                    </a>
+                </section>
+                <!--/#main-slider-->
+            </div>
+
+            <div align=\"center\" class=\"col-xs-6 col-sm-6\">
                 <table class=\"table\">
                     <tbody>
                         <tr>
                             <th>Title</th>
                             <td>";
-        // line 18
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["ev"]) || array_key_exists("ev", $context) ? $context["ev"] : (function () { throw new RuntimeError('Variable "ev" does not exist.', 18, $this->source); })()), "title", [], "any", false, false, false, 18), "html", null, true);
+        // line 92
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["ev"]) || array_key_exists("ev", $context) ? $context["ev"] : (function () { throw new RuntimeError('Variable "ev" does not exist.', 92, $this->source); })()), "title", [], "any", false, false, false, 92), "html", null, true);
         echo "</td>
                         </tr>
                         <tr>
                             <th>Keywords</th>
                             <td>";
-        // line 22
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["ev"]) || array_key_exists("ev", $context) ? $context["ev"] : (function () { throw new RuntimeError('Variable "ev" does not exist.', 22, $this->source); })()), "keywords", [], "any", false, false, false, 22), "html", null, true);
+        // line 96
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["ev"]) || array_key_exists("ev", $context) ? $context["ev"] : (function () { throw new RuntimeError('Variable "ev" does not exist.', 96, $this->source); })()), "keywords", [], "any", false, false, false, 96), "html", null, true);
         echo "</td>
                         </tr>
                         <tr>
                             <th>Description</th>
                             <td>";
-        // line 26
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["ev"]) || array_key_exists("ev", $context) ? $context["ev"] : (function () { throw new RuntimeError('Variable "ev" does not exist.', 26, $this->source); })()), "description", [], "any", false, false, false, 26), "html", null, true);
+        // line 100
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["ev"]) || array_key_exists("ev", $context) ? $context["ev"] : (function () { throw new RuntimeError('Variable "ev" does not exist.', 100, $this->source); })()), "description", [], "any", false, false, false, 100), "html", null, true);
         echo "</td>
                         </tr>
-                        <tr>
-                            <th>Image</th>
-                            <td><img src=\"";
-        // line 30
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, (isset($context["ev"]) || array_key_exists("ev", $context) ? $context["ev"] : (function () { throw new RuntimeError('Variable "ev" does not exist.', 30, $this->source); })()), "image", [], "any", false, false, false, 30))), "html", null, true);
-        echo "\" height=\"40\"></td>
-                        </tr>
-                        <tr>
+                        ";
+        // line 106
+        echo "                        <tr>
                             <th>Star</th>
                             <td>";
-        // line 34
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["ev"]) || array_key_exists("ev", $context) ? $context["ev"] : (function () { throw new RuntimeError('Variable "ev" does not exist.', 34, $this->source); })()), "star", [], "any", false, false, false, 34), "html", null, true);
+        // line 108
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["ev"]) || array_key_exists("ev", $context) ? $context["ev"] : (function () { throw new RuntimeError('Variable "ev" does not exist.', 108, $this->source); })()), "star", [], "any", false, false, false, 108), "html", null, true);
         echo "</td>
                         </tr>
                         <tr>
                             <th>Address</th>
                             <td>";
-        // line 38
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["ev"]) || array_key_exists("ev", $context) ? $context["ev"] : (function () { throw new RuntimeError('Variable "ev" does not exist.', 38, $this->source); })()), "address", [], "any", false, false, false, 38), "html", null, true);
+        // line 112
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["ev"]) || array_key_exists("ev", $context) ? $context["ev"] : (function () { throw new RuntimeError('Variable "ev" does not exist.', 112, $this->source); })()), "address", [], "any", false, false, false, 112), "html", null, true);
         echo "</td>
                         </tr>
                         <tr>
                             <th>Phone</th>
                             <td>";
-        // line 42
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["ev"]) || array_key_exists("ev", $context) ? $context["ev"] : (function () { throw new RuntimeError('Variable "ev" does not exist.', 42, $this->source); })()), "phone", [], "any", false, false, false, 42), "html", null, true);
+        // line 116
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["ev"]) || array_key_exists("ev", $context) ? $context["ev"] : (function () { throw new RuntimeError('Variable "ev" does not exist.', 116, $this->source); })()), "phone", [], "any", false, false, false, 116), "html", null, true);
         echo "</td>
                         </tr>
                         <tr>
                             <th>Fax</th>
                             <td>";
-        // line 46
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["ev"]) || array_key_exists("ev", $context) ? $context["ev"] : (function () { throw new RuntimeError('Variable "ev" does not exist.', 46, $this->source); })()), "fax", [], "any", false, false, false, 46), "html", null, true);
+        // line 120
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["ev"]) || array_key_exists("ev", $context) ? $context["ev"] : (function () { throw new RuntimeError('Variable "ev" does not exist.', 120, $this->source); })()), "fax", [], "any", false, false, false, 120), "html", null, true);
         echo "</td>
                         </tr>
                         <tr>
                             <th>Email</th>
                             <td>";
-        // line 50
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["ev"]) || array_key_exists("ev", $context) ? $context["ev"] : (function () { throw new RuntimeError('Variable "ev" does not exist.', 50, $this->source); })()), "email", [], "any", false, false, false, 50), "html", null, true);
+        // line 124
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["ev"]) || array_key_exists("ev", $context) ? $context["ev"] : (function () { throw new RuntimeError('Variable "ev" does not exist.', 124, $this->source); })()), "email", [], "any", false, false, false, 124), "html", null, true);
         echo "</td>
                         </tr>
                         <tr>
                             <th>City</th>
                             <td>";
-        // line 54
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["ev"]) || array_key_exists("ev", $context) ? $context["ev"] : (function () { throw new RuntimeError('Variable "ev" does not exist.', 54, $this->source); })()), "city", [], "any", false, false, false, 54), "html", null, true);
+        // line 128
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["ev"]) || array_key_exists("ev", $context) ? $context["ev"] : (function () { throw new RuntimeError('Variable "ev" does not exist.', 128, $this->source); })()), "city", [], "any", false, false, false, 128), "html", null, true);
         echo "</td>
                         </tr>
                         <tr>
                             <th>Country</th>
                             <td>";
-        // line 58
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["ev"]) || array_key_exists("ev", $context) ? $context["ev"] : (function () { throw new RuntimeError('Variable "ev" does not exist.', 58, $this->source); })()), "country", [], "any", false, false, false, 58), "html", null, true);
+        // line 132
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["ev"]) || array_key_exists("ev", $context) ? $context["ev"] : (function () { throw new RuntimeError('Variable "ev" does not exist.', 132, $this->source); })()), "country", [], "any", false, false, false, 132), "html", null, true);
         echo "</td>
                         </tr>
-                        <tr>
-                            <th>Location</th>
-                            <td>";
-        // line 62
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["ev"]) || array_key_exists("ev", $context) ? $context["ev"] : (function () { throw new RuntimeError('Variable "ev" does not exist.', 62, $this->source); })()), "location", [], "any", false, false, false, 62), "html", null, true);
-        echo "</td>
-                        </tr>
-                        <tr>
-                            <th>Detail</th>
-                            <td>";
-        // line 66
-        echo twig_get_attribute($this->env, $this->source, (isset($context["ev"]) || array_key_exists("ev", $context) ? $context["ev"] : (function () { throw new RuntimeError('Variable "ev" does not exist.', 66, $this->source); })()), "detail", [], "any", false, false, false, 66);
-        echo "</td>
-                        </tr>
-                    </tbody>
+                        ";
+        // line 138
+        echo "                        ";
+        // line 142
+        echo "                    </tbody>
                 </table>
             </div>
         </div>
         <!--/.row-->
+        <hr>
+        <div class=\"col-xs-12 col-sm-12\">
+            <div class=\"tab-wrap\">
+                <div class=\"media\">
+                    <div class=\"parrent pull-left\">
+                        <ul class=\"nav nav-tabs nav-stacked\">
+                            <li class=\"\"><a href=\"#tab1\" data-toggle=\"tab\" class=\"analistic-01\">Houses & Price</a></li>
+                            <li class=\"active\"><a href=\"#tab2\" data-toggle=\"tab\" class=\"analistic-02\">Detail</a></li>
+                            <li class=\"\"><a href=\"#tab3\" data-toggle=\"tab\" class=\"tehnical\">Comments</a></li>
+                            <li class=\"\"><a href=\"#tab4\" data-toggle=\"tab\" class=\"tehnical\">Our Philosopy</a></li>
+                            <li class=\"\"><a href=\"#tab5\" data-toggle=\"tab\" class=\"tehnical\">What We Do?</a></li>
+                        </ul>
+                    </div>
+
+                    <div class=\"parrent media-body\">
+                        <div class=\"tab-content\">
+                            <div class=\"tab-pane\" id=\"tab1\">
+                                <div class=\"media\">
+                                    <div class=\"pull-left\">
+                                        <img class=\"img-responsive\" src=\"images/tab1.png\">
+                                    </div>
+                                    <div class=\"media-body\">
+                                        <h4>Houses & Price List</h4>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class=\"tab-pane active in\" id=\"tab2\">
+                                <div class=\"media\">
+                                    <div class=\"pull-left\">
+                                        <img class=\"img-responsive\" src=\"";
+        // line 178
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, (isset($context["ev"]) || array_key_exists("ev", $context) ? $context["ev"] : (function () { throw new RuntimeError('Variable "ev" does not exist.', 178, $this->source); })()), "image", [], "any", false, false, false, 178))), "html", null, true);
+        echo "\"
+                                            style=\"width:80px;height:80px\">
+                                    </div>
+                                    <div class=\"media-body\">
+                                        ";
+        // line 182
+        echo twig_get_attribute($this->env, $this->source, (isset($context["ev"]) || array_key_exists("ev", $context) ? $context["ev"] : (function () { throw new RuntimeError('Variable "ev" does not exist.', 182, $this->source); })()), "detail", [], "any", false, false, false, 182);
+        echo "
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class=\"tab-pane\" id=\"tab3\">
+                                <p>Comments</p>
+                            </div>
+
+                            <div class=\"tab-pane\" id=\"tab4\">
+                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have
+                                    suffered alteration in some form, by injected humour, or randomised words which
+                                    don't look even slightly believable. If you are going to use a passage of Lorem
+                                    Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of
+                                    text. All the Lorem Ipsum generators on the Internet tend to repeat predefined
+                                    chunks as necessary, making this the first true generator on the Internet. It uses a
+                                    dictionary of over 200 Latin words</p>
+                            </div>
+
+                            <div class=\"tab-pane\" id=\"tab5\">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                    irure dolor in reprehenderit.</p>
+                            </div>
+                        </div>
+                        <!--/.tab-content-->
+                    </div>
+                    <!--/.media-body-->
+                </div>
+                <!--/.media-->
+            </div>
+            <!--/.tab-wrap-->
+        </div>
     </div>
     <!--/.container-->
 </section>
@@ -254,7 +429,7 @@ class __TwigTemplate_10f18687f5488bcfd2112cd65f67c89e8fbeaf7bb494345b577f5e3a982
 
     public function getDebugInfo()
     {
-        return array (  224 => 66,  217 => 62,  210 => 58,  203 => 54,  196 => 50,  189 => 46,  182 => 42,  175 => 38,  168 => 34,  161 => 30,  154 => 26,  147 => 22,  140 => 18,  128 => 8,  118 => 7,  99 => 5,  80 => 4,  61 => 3,  38 => 1,);
+        return array (  372 => 182,  365 => 178,  327 => 142,  325 => 138,  320 => 132,  313 => 128,  306 => 124,  299 => 120,  292 => 116,  285 => 112,  278 => 108,  274 => 106,  269 => 100,  262 => 96,  255 => 92,  232 => 71,  217 => 62,  208 => 56,  204 => 55,  199 => 53,  191 => 48,  188 => 47,  184 => 46,  173 => 38,  163 => 31,  159 => 30,  155 => 29,  147 => 24,  134 => 13,  128 => 8,  118 => 7,  99 => 5,  80 => 4,  61 => 3,  38 => 1,);
     }
 
     public function getSourceContext()
@@ -269,9 +444,83 @@ class __TwigTemplate_10f18687f5488bcfd2112cd65f67c89e8fbeaf7bb494345b577f5e3a982
 <section id=\"content\" class=\"shortcode-item\">
     <div class=\"container\">
         <div class=\"row\">
+            <div class=\"col-xs-6 col-sm-6\">
+                {# #}
+                <section id=\"main-slider\" class=\"no-margin\">
+                    <div class=\"carousel slide\">
+                        <ol class=\"carousel-indicators\">
+                            <li data-target=\"#main-slider\" data-slide-to=\"0\" class=\"active\"></li>
+                            <li data-target=\"#main-slider\" data-slide-to=\"1\"></li>
+                            <li data-target=\"#main-slider\" data-slide-to=\"2\"></li>
+                            <li data-target=\"#main-slider\" data-slide-to=\"3\"></li>
+                            <li data-target=\"#main-slider\" data-slide-to=\"4\"></li>
+                        </ol>
+                        <div class=\"carousel-inner\" style=\"height:380px\">
+                            <div class=\"item active\"
+                                style=\"background-image: url({{ asset ('uploads/images/' ~ ev.image) }}); height:380px\">
+                                <div class=\"container\">
+                                    <div class=\"row slide-margin\">
+                                        <div class=\"col-sm-3\">
+                                            <div class=\"carousel-content\">
+                                                <h1 class=\"animation animated-item-1\">{{ ev.title}}</h1>
+                                                <h2 class=\"animation animated-item-2\">{{ ev.description }}</h2>
+                                                <a class=\"preview\" href=\"{{ asset ('uploads/images/' ~ ev.image) }}\"
+                                                    rel=\"prettyPhoto\"><i class=\"fa fa-eye\"></i> View</a>  
+                                                <a class=\"btn-slide animation animated-item-3\" href=\"#\">Read More</a>
+                                            </div>
+                                        </div>
+
+                                        <div class=\"col-sm-6 hidden-xs animation animated-item-4\">
+                                            <a href=\"{{ path('ev_show', {'id': ev.id}) }}\">
+                                                <div class=\"slider-img\">
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% for rs in images %}
+                            <div class=\"item\"
+                                style=\"background-image: url({{ asset ('uploads/images/' ~ ev.image) }}); height:380px \">
+                                <div class=\"container\">
+                                    <div class=\"row slide-margin\">
+                                        <div class=\"col-sm-6\">
+                                            <div class=\"carousel-content\">
+                                                <a class=\"preview\" href=\"{{ asset ('uploads/images/' ~ ev.image) }}\"
+                                                    rel=\"prettyPhoto\"><i class=\"fa fa-eye\"></i> View</a>
+                                                <h1 class=\"animation animated-item-1\">{{ ev.title}}</h1>
+                                                <h2 class=\"animation animated-item-2\">{{ ev.description }}</h2>
+                                                <a class=\"btn-slide animation animated-item-3\" href=\"#\">Read More</a>
+                                            </div>
+                                        </div>
+
+                                        <div class=\"col-sm-6 hidden-xs animation animated-item-4\">
+                                            <a href=\"{{ path('ev_show', {'id': ev.id}) }}\">
+                                                <div class=\"slider-img\">
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
 
 
-            <div align=\"center\" class=\"col-xs-8 col-sm-10\">
+                        </div>
+                        <!--/.carousel-inner-->
+                    </div>
+                    <!--/.carousel-->
+                    <a class=\"prev hidden-xs\" href=\"#main-slider\" data-slide=\"prev\">
+                        <i class=\"fa fa-chevron-left\"></i>
+                    </a>
+                    <a class=\"next hidden-xs\" href=\"#main-slider\" data-slide=\"next\">
+                        <i class=\"fa fa-chevron-right\"></i>
+                    </a>
+                </section>
+                <!--/#main-slider-->
+            </div>
+
+            <div align=\"center\" class=\"col-xs-6 col-sm-6\">
                 <table class=\"table\">
                     <tbody>
                         <tr>
@@ -286,10 +535,10 @@ class __TwigTemplate_10f18687f5488bcfd2112cd65f67c89e8fbeaf7bb494345b577f5e3a982
                             <th>Description</th>
                             <td>{{ ev.description }}</td>
                         </tr>
-                        <tr>
+                        {# <tr>
                             <th>Image</th>
                             <td><img src=\"{{ asset ('uploads/images/' ~ ev.image) }}\" height=\"40\"></td>
-                        </tr>
+                        </tr> #}
                         <tr>
                             <th>Star</th>
                             <td>{{ ev.star }}</td>
@@ -318,19 +567,88 @@ class __TwigTemplate_10f18687f5488bcfd2112cd65f67c89e8fbeaf7bb494345b577f5e3a982
                             <th>Country</th>
                             <td>{{ ev.country }}</td>
                         </tr>
-                        <tr>
+                        {# <tr>
                             <th>Location</th>
                             <td>{{ ev.location }}</td>
-                        </tr>
-                        <tr>
+                        </tr> #}
+                        {# <tr>
                             <th>Detail</th>
                             <td>{{ ev.detail | raw }}</td>
-                        </tr>
+                        </tr> #}
                     </tbody>
                 </table>
             </div>
         </div>
         <!--/.row-->
+        <hr>
+        <div class=\"col-xs-12 col-sm-12\">
+            <div class=\"tab-wrap\">
+                <div class=\"media\">
+                    <div class=\"parrent pull-left\">
+                        <ul class=\"nav nav-tabs nav-stacked\">
+                            <li class=\"\"><a href=\"#tab1\" data-toggle=\"tab\" class=\"analistic-01\">Houses & Price</a></li>
+                            <li class=\"active\"><a href=\"#tab2\" data-toggle=\"tab\" class=\"analistic-02\">Detail</a></li>
+                            <li class=\"\"><a href=\"#tab3\" data-toggle=\"tab\" class=\"tehnical\">Comments</a></li>
+                            <li class=\"\"><a href=\"#tab4\" data-toggle=\"tab\" class=\"tehnical\">Our Philosopy</a></li>
+                            <li class=\"\"><a href=\"#tab5\" data-toggle=\"tab\" class=\"tehnical\">What We Do?</a></li>
+                        </ul>
+                    </div>
+
+                    <div class=\"parrent media-body\">
+                        <div class=\"tab-content\">
+                            <div class=\"tab-pane\" id=\"tab1\">
+                                <div class=\"media\">
+                                    <div class=\"pull-left\">
+                                        <img class=\"img-responsive\" src=\"images/tab1.png\">
+                                    </div>
+                                    <div class=\"media-body\">
+                                        <h4>Houses & Price List</h4>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class=\"tab-pane active in\" id=\"tab2\">
+                                <div class=\"media\">
+                                    <div class=\"pull-left\">
+                                        <img class=\"img-responsive\" src=\"{{ asset ('uploads/images/' ~ ev.image) }}\"
+                                            style=\"width:80px;height:80px\">
+                                    </div>
+                                    <div class=\"media-body\">
+                                        {{ ev.detail | raw }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class=\"tab-pane\" id=\"tab3\">
+                                <p>Comments</p>
+                            </div>
+
+                            <div class=\"tab-pane\" id=\"tab4\">
+                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have
+                                    suffered alteration in some form, by injected humour, or randomised words which
+                                    don't look even slightly believable. If you are going to use a passage of Lorem
+                                    Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of
+                                    text. All the Lorem Ipsum generators on the Internet tend to repeat predefined
+                                    chunks as necessary, making this the first true generator on the Internet. It uses a
+                                    dictionary of over 200 Latin words</p>
+                            </div>
+
+                            <div class=\"tab-pane\" id=\"tab5\">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                    irure dolor in reprehenderit.</p>
+                            </div>
+                        </div>
+                        <!--/.tab-content-->
+                    </div>
+                    <!--/.media-body-->
+                </div>
+                <!--/.media-->
+            </div>
+            <!--/.tab-wrap-->
+        </div>
     </div>
     <!--/.container-->
 </section>

@@ -8,9 +8,83 @@
 <section id="content" class="shortcode-item">
     <div class="container">
         <div class="row">
+            <div class="col-xs-6 col-sm-6">
+                {# #}
+                <section id="main-slider" class="no-margin">
+                    <div class="carousel slide">
+                        <ol class="carousel-indicators">
+                            <li data-target="#main-slider" data-slide-to="0" class="active"></li>
+                            <li data-target="#main-slider" data-slide-to="1"></li>
+                            <li data-target="#main-slider" data-slide-to="2"></li>
+                            <li data-target="#main-slider" data-slide-to="3"></li>
+                            <li data-target="#main-slider" data-slide-to="4"></li>
+                        </ol>
+                        <div class="carousel-inner" style="height:380px">
+                            <div class="item active"
+                                style="background-image: url({{ asset ('uploads/images/' ~ ev.image) }}); height:380px">
+                                <div class="container">
+                                    <div class="row slide-margin">
+                                        <div class="col-sm-3">
+                                            <div class="carousel-content">
+                                                <h1 class="animation animated-item-1">{{ ev.title}}</h1>
+                                                <h2 class="animation animated-item-2">{{ ev.description }}</h2>
+                                                <a class="preview" href="{{ asset ('uploads/images/' ~ ev.image) }}"
+                                                    rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>  
+                                                <a class="btn-slide animation animated-item-3" href="#">Read More</a>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-6 hidden-xs animation animated-item-4">
+                                            <a href="{{ path('ev_show', {'id': ev.id}) }}">
+                                                <div class="slider-img">
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% for rs in images %}
+                            <div class="item"
+                                style="background-image: url({{ asset ('uploads/images/' ~ ev.image) }}); height:380px ">
+                                <div class="container">
+                                    <div class="row slide-margin">
+                                        <div class="col-sm-6">
+                                            <div class="carousel-content">
+                                                <a class="preview" href="{{ asset ('uploads/images/' ~ ev.image) }}"
+                                                    rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
+                                                <h1 class="animation animated-item-1">{{ ev.title}}</h1>
+                                                <h2 class="animation animated-item-2">{{ ev.description }}</h2>
+                                                <a class="btn-slide animation animated-item-3" href="#">Read More</a>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-6 hidden-xs animation animated-item-4">
+                                            <a href="{{ path('ev_show', {'id': ev.id}) }}">
+                                                <div class="slider-img">
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
 
 
-            <div align="center" class="col-xs-8 col-sm-10">
+                        </div>
+                        <!--/.carousel-inner-->
+                    </div>
+                    <!--/.carousel-->
+                    <a class="prev hidden-xs" href="#main-slider" data-slide="prev">
+                        <i class="fa fa-chevron-left"></i>
+                    </a>
+                    <a class="next hidden-xs" href="#main-slider" data-slide="next">
+                        <i class="fa fa-chevron-right"></i>
+                    </a>
+                </section>
+                <!--/#main-slider-->
+            </div>
+
+            <div align="center" class="col-xs-6 col-sm-6">
                 <table class="table">
                     <tbody>
                         <tr>
@@ -25,10 +99,10 @@
                             <th>Description</th>
                             <td>{{ ev.description }}</td>
                         </tr>
-                        <tr>
+                        {# <tr>
                             <th>Image</th>
                             <td><img src="{{ asset ('uploads/images/' ~ ev.image) }}" height="40"></td>
-                        </tr>
+                        </tr> #}
                         <tr>
                             <th>Star</th>
                             <td>{{ ev.star }}</td>
@@ -57,19 +131,88 @@
                             <th>Country</th>
                             <td>{{ ev.country }}</td>
                         </tr>
-                        <tr>
+                        {# <tr>
                             <th>Location</th>
                             <td>{{ ev.location }}</td>
-                        </tr>
-                        <tr>
+                        </tr> #}
+                        {# <tr>
                             <th>Detail</th>
                             <td>{{ ev.detail | raw }}</td>
-                        </tr>
+                        </tr> #}
                     </tbody>
                 </table>
             </div>
         </div>
         <!--/.row-->
+        <hr>
+        <div class="col-xs-12 col-sm-12">
+            <div class="tab-wrap">
+                <div class="media">
+                    <div class="parrent pull-left">
+                        <ul class="nav nav-tabs nav-stacked">
+                            <li class=""><a href="#tab1" data-toggle="tab" class="analistic-01">Houses & Price</a></li>
+                            <li class="active"><a href="#tab2" data-toggle="tab" class="analistic-02">Detail</a></li>
+                            <li class=""><a href="#tab3" data-toggle="tab" class="tehnical">Comments</a></li>
+                            <li class=""><a href="#tab4" data-toggle="tab" class="tehnical">Our Philosopy</a></li>
+                            <li class=""><a href="#tab5" data-toggle="tab" class="tehnical">What We Do?</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="parrent media-body">
+                        <div class="tab-content">
+                            <div class="tab-pane" id="tab1">
+                                <div class="media">
+                                    <div class="pull-left">
+                                        <img class="img-responsive" src="images/tab1.png">
+                                    </div>
+                                    <div class="media-body">
+                                        <h4>Houses & Price List</h4>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane active in" id="tab2">
+                                <div class="media">
+                                    <div class="pull-left">
+                                        <img class="img-responsive" src="{{ asset ('uploads/images/' ~ ev.image) }}"
+                                            style="width:80px;height:80px">
+                                    </div>
+                                    <div class="media-body">
+                                        {{ ev.detail | raw }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane" id="tab3">
+                                <p>Comments</p>
+                            </div>
+
+                            <div class="tab-pane" id="tab4">
+                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have
+                                    suffered alteration in some form, by injected humour, or randomised words which
+                                    don't look even slightly believable. If you are going to use a passage of Lorem
+                                    Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of
+                                    text. All the Lorem Ipsum generators on the Internet tend to repeat predefined
+                                    chunks as necessary, making this the first true generator on the Internet. It uses a
+                                    dictionary of over 200 Latin words</p>
+                            </div>
+
+                            <div class="tab-pane" id="tab5">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                    irure dolor in reprehenderit.</p>
+                            </div>
+                        </div>
+                        <!--/.tab-content-->
+                    </div>
+                    <!--/.media-body-->
+                </div>
+                <!--/.media-->
+            </div>
+            <!--/.tab-wrap-->
+        </div>
     </div>
     <!--/.container-->
 </section>

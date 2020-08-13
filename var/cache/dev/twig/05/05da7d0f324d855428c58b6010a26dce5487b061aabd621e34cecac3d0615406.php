@@ -40,8 +40,8 @@ class __TwigTemplate_6f1b283a2f563343e38e416f85389a63995980110cb749fe844f075184d
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "home/slider.html.twig"));
 
         // line 1
-        echo "    <section id=\"main-slider\" class=\"no-margin\" >
-        <div class=\"carousel slide\" >
+        echo "    <section id=\"main-slider\" class=\"no-margin\">
+        <div class=\"carousel slide\">
             <ol class=\"carousel-indicators\">
                 <li data-target=\"#main-slider\" data-slide-to=\"0\" class=\"active\"></li>
                 <li data-target=\"#main-slider\" data-slide-to=\"1\"></li>
@@ -73,13 +73,13 @@ class __TwigTemplate_6f1b283a2f563343e38e416f85389a63995980110cb749fe844f075184d
                             </div>
 
                             <div class=\"col-sm-6 hidden-xs animation animated-item-4\">
-                            <a href=\"";
+                                <a href=\"";
         // line 25
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ev_show", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["slider"]) || array_key_exists("slider", $context) ? $context["slider"] : (function () { throw new RuntimeError('Variable "slider" does not exist.', 25, $this->source); })()), 0, [], "array", false, false, false, 25), "id", [], "any", false, false, false, 25)]), "html", null, true);
         echo "\">
-                                <div class=\"slider-img\">
-                                </div>
-                            </a>
+                                    <div class=\"slider-img\">
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -93,7 +93,7 @@ class __TwigTemplate_6f1b283a2f563343e38e416f85389a63995980110cb749fe844f075184d
             echo "                ";
             if ((0 !== twig_compare(twig_get_attribute($this->env, $this->source, $context["rs"], "id", [], "any", false, false, false, 34), twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["slider"]) || array_key_exists("slider", $context) ? $context["slider"] : (function () { throw new RuntimeError('Variable "slider" does not exist.', 34, $this->source); })()), 0, [], "array", false, false, false, 34), "id", [], "any", false, false, false, 34)))) {
                 // line 35
-                echo "                
+                echo "
                 <div class=\"item\" style=\"background-image: url(";
                 // line 36
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, $context["rs"], "image", [], "any", false, false, false, 36))), "html", null, true);
@@ -117,13 +117,13 @@ class __TwigTemplate_6f1b283a2f563343e38e416f85389a63995980110cb749fe844f075184d
                             </div>
 
                             <div class=\"col-sm-6 hidden-xs animation animated-item-4\">
-                            <a href=\"";
+                                <a href=\"";
                 // line 50
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ev_show", ["id" => twig_get_attribute($this->env, $this->source, $context["rs"], "id", [], "any", false, false, false, 50)]), "html", null, true);
                 echo "\">
-                                <div class=\"slider-img\">
-                                </div>
-                            </a>
+                                    <div class=\"slider-img\">
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -176,8 +176,8 @@ class __TwigTemplate_6f1b283a2f563343e38e416f85389a63995980110cb749fe844f075184d
 
     public function getSourceContext()
     {
-        return new Source("    <section id=\"main-slider\" class=\"no-margin\" >
-        <div class=\"carousel slide\" >
+        return new Source("    <section id=\"main-slider\" class=\"no-margin\">
+        <div class=\"carousel slide\">
             <ol class=\"carousel-indicators\">
                 <li data-target=\"#main-slider\" data-slide-to=\"0\" class=\"active\"></li>
                 <li data-target=\"#main-slider\" data-slide-to=\"1\"></li>
@@ -200,17 +200,17 @@ class __TwigTemplate_6f1b283a2f563343e38e416f85389a63995980110cb749fe844f075184d
                             </div>
 
                             <div class=\"col-sm-6 hidden-xs animation animated-item-4\">
-                            <a href=\"{{ path('ev_show', {'id': slider[0].id}) }}\">
-                                <div class=\"slider-img\">
-                                </div>
-                            </a>
+                                <a href=\"{{ path('ev_show', {'id': slider[0].id}) }}\">
+                                    <div class=\"slider-img\">
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
                 {% for rs in slider %}
                 {%  if rs.id != slider[0].id  %}
-                
+
                 <div class=\"item\" style=\"background-image: url({{ asset ('uploads/images/' ~ rs.image) }});
                             
                             \">
@@ -225,10 +225,10 @@ class __TwigTemplate_6f1b283a2f563343e38e416f85389a63995980110cb749fe844f075184d
                             </div>
 
                             <div class=\"col-sm-6 hidden-xs animation animated-item-4\">
-                            <a href=\"{{ path('ev_show', {'id': rs.id}) }}\">
-                                <div class=\"slider-img\">
-                                </div>
-                            </a>
+                                <a href=\"{{ path('ev_show', {'id': rs.id}) }}\">
+                                    <div class=\"slider-img\">
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     </div>

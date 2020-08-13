@@ -94,8 +94,11 @@ class __TwigTemplate_805c032e97d0a6cafb850e4df3e9b0a62f4bab719d890fcebe369f5ade5
                         href=\"/admin/user\" aria-expanded=\"false\"><i class=\"mdi mdi- fas fa-user\"></i><span
                             class=\"hide-menu\">Users</span></a></li>
                 <li class=\"sidebar-item\"> <a class=\"sidebar-link waves-effect waves-dark sidebar-link\"
+                        href=\"/admin/messages\" aria-expanded=\"false\"><i class=\"mdi mdi-forum\"></i><span
+                            class=\"hide-menu\">Messeages</span></a></li>
+                <li class=\"sidebar-item\"> <a class=\"sidebar-link waves-effect waves-dark sidebar-link\"
                         href=\"";
-        // line 47
+        // line 50
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
         echo "\" aria-expanded=\"false\"><i class=\"mdi mdi-logout-variant\"></i><span
                             class=\"hide-menu\">Log Out</span></a></li>
@@ -123,7 +126,7 @@ class __TwigTemplate_805c032e97d0a6cafb850e4df3e9b0a62f4bab719d890fcebe369f5ade5
 
     public function getDebugInfo()
     {
-        return array (  99 => 47,  65 => 18,  59 => 15,  43 => 1,);
+        return array (  102 => 50,  65 => 18,  59 => 15,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -173,6 +176,9 @@ class __TwigTemplate_805c032e97d0a6cafb850e4df3e9b0a62f4bab719d890fcebe369f5ade5
                 <li class=\"sidebar-item\"> <a class=\"sidebar-link waves-effect waves-dark sidebar-link\"
                         href=\"/admin/user\" aria-expanded=\"false\"><i class=\"mdi mdi- fas fa-user\"></i><span
                             class=\"hide-menu\">Users</span></a></li>
+                <li class=\"sidebar-item\"> <a class=\"sidebar-link waves-effect waves-dark sidebar-link\"
+                        href=\"/admin/messages\" aria-expanded=\"false\"><i class=\"mdi mdi-forum\"></i><span
+                            class=\"hide-menu\">Messeages</span></a></li>
                 <li class=\"sidebar-item\"> <a class=\"sidebar-link waves-effect waves-dark sidebar-link\"
                         href=\"{{ path('app_logout')}}\" aria-expanded=\"false\"><i class=\"mdi mdi-logout-variant\"></i><span
                             class=\"hide-menu\">Log Out</span></a></li>

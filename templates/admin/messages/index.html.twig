@@ -1,0 +1,74 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+
+<div class="container-fluid">
+    <div class="page-wrapper">
+        <div class="page-breadcrumb">
+            <div class="row">
+                <div class="col-12 d-flex no-block align-items-center">
+                    <h4 class="page-title">User Messages</h4>
+                    <div class="ml-auto text-right">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="\admin">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Messages</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h1>Messages</h1>
+
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Subject</th>
+                                        <th>Message</th>
+                                        <th>Status</th>
+                                        <th>Email</th>
+                                        <th>actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for message in messages %}
+                                    <tr>
+                                        <td>{{ message.name }}</td>
+                                        <td>{{ message.subject }}</td>
+                                        <td>{{ message.message }}</td>
+                                        <td>{{ message.status }}</td>
+                                        <td>{{ message.email }}</td>
+                                        <td>
+                                            <a href="{{ path('admin_messages_show', {'id': message.id}) }}"><button
+                                                    type="button" class="btn btn-info">show</button></a>
+                                            <a href="{{ path('admin_messages_edit', {'id': message.id}) }}"><button
+                                                    type="button" class="btn btn-dark">edit</button></a>
+                                        </td>
+                                    </tr>
+                                    {% else %}
+                                    <tr>
+                                        <td colspan="11">no records found</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+
+                            <a href="{{ path('admin_messages_new') }}"><button type="button"
+                                    class="btn btn-success btn-lg">Creat New</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

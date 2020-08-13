@@ -1,13 +1,41 @@
-    <section id="main-slider" class="no-margin">
-        <div class="carousel slide">
+    <section id="main-slider" class="no-margin" >
+        <div class="carousel slide" >
             <ol class="carousel-indicators">
                 <li data-target="#main-slider" data-slide-to="0" class="active"></li>
                 <li data-target="#main-slider" data-slide-to="1"></li>
                 <li data-target="#main-slider" data-slide-to="2"></li>
+                <li data-target="#main-slider" data-slide-to="3"></li>
+                <li data-target="#main-slider" data-slide-to="4"></li>
             </ol>
             <div class="carousel-inner">
+                <div class="item active" style="background-image: url({{ asset ('uploads/images/' ~ slider[0].image) }});
+                
+                ">
+                    <div class="container">
+                        <div class="row slide-margin">
+                            <div class="col-sm-3">
+                                <div class="carousel-content">
+                                    <h1 class="animation animated-item-1">{{ slider[0].title}}</h1>
+                                    <h2 class="animation animated-item-2">{{ slider[0].description }}</h2>
+                                    <a class="btn-slide animation animated-item-3" href="#">Read More</a>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 hidden-xs animation animated-item-4">
+                            <a href="{{ path('ev_show', {'id': slider[0].id}) }}">
+                                <div class="slider-img">
+                                </div>
+                            </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 {% for rs in slider %}
-                <div class="item active" style="background-image: url({{ asset ('uploads/images/' ~ rs.image) }})">
+                {%  if rs.id != slider[0].id  %}
+                
+                <div class="item" style="background-image: url({{ asset ('uploads/images/' ~ rs.image) }});
+                            
+                            ">
                     <div class="container">
                         <div class="row slide-margin">
                             <div class="col-sm-6">
@@ -21,13 +49,13 @@
                             <div class="col-sm-6 hidden-xs animation animated-item-4">
                             <a href="{{ path('ev_show', {'id': rs.id}) }}">
                                 <div class="slider-img">
-                                    <img src="{{ asset ('uploads/images/' ~ rs.image) }}" class="img-responsive">
                                 </div>
                             </a>
                             </div>
                         </div>
                     </div>
                 </div>
+                {% endif %}
                 {% endfor %}
 
 

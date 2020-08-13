@@ -19,6 +19,8 @@ return [
         '/admin/ev' => [[['_route' => 'admin_ev_index', '_controller' => 'App\\Controller\\Admin\\EvController::index'], null, ['GET' => 0], null, true, false, null]],
         '/admin/ev/new' => [[['_route' => 'admin_ev_new', '_controller' => 'App\\Controller\\Admin\\EvController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/admin/image' => [[['_route' => 'admin_image_index', '_controller' => 'App\\Controller\\Admin\\ImageController::index'], null, ['GET' => 0], null, true, false, null]],
+        '/admin/messages' => [[['_route' => 'admin_messages_index', '_controller' => 'App\\Controller\\Admin\\MessagesController::index'], null, ['GET' => 0], null, true, false, null]],
+        '/admin/messages/new' => [[['_route' => 'admin_messages_new', '_controller' => 'App\\Controller\\Admin\\MessagesController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/admin/setting' => [[['_route' => 'setting_index', '_controller' => 'App\\Controller\\Admin\\SettingController::index'], null, ['GET' => 0], null, true, false, null]],
         '/admin/setting/new' => [[['_route' => 'setting_new', '_controller' => 'App\\Controller\\Admin\\SettingController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/admin/user' => [[['_route' => 'admin_user_index', '_controller' => 'App\\Controller\\Admin\\UserController::index'], null, ['GET' => 0], null, true, false, null]],
@@ -30,7 +32,7 @@ return [
         '/user/ev/new' => [[['_route' => 'user_ev_new', '_controller' => 'App\\Controller\\EvController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/' => [[['_route' => 'home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
         '/about' => [[['_route' => 'home_about', '_controller' => 'App\\Controller\\HomeController::about'], null, null, null, false, false, null]],
-        '/contact' => [[['_route' => 'home_contact', '_controller' => 'App\\Controller\\HomeController::contact'], null, null, null, false, false, null]],
+        '/contact' => [[['_route' => 'home_contact', '_controller' => 'App\\Controller\\HomeController::contact'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/user/image' => [[['_route' => 'user_image_index', '_controller' => 'App\\Controller\\ImageController::index'], null, ['GET' => 0], null, true, false, null]],
         '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null]],
         '/verify/email' => [[['_route' => 'app_verify_email', '_controller' => 'App\\Controller\\RegistrationController::verifyUserEmail'], null, null, null, false, false, null]],
@@ -81,38 +83,43 @@ return [
                             .')'
                         .')'
                     .')'
+                    .'|messages/([^/]++)(?'
+                        .'|(*:376)'
+                        .'|/edit(*:389)'
+                        .'|(*:397)'
+                    .')'
                     .'|setting/([^/]++)(?'
-                        .'|(*:375)'
-                        .'|/edit(*:388)'
-                        .'|(*:396)'
+                        .'|(*:425)'
+                        .'|/edit(*:438)'
+                        .'|(*:446)'
                     .')'
                     .'|user/([^/]++)(?'
-                        .'|(*:421)'
-                        .'|/edit(*:434)'
-                        .'|(*:442)'
+                        .'|(*:471)'
+                        .'|/edit(*:484)'
+                        .'|(*:492)'
                     .')'
                 .')'
                 .'|/user/(?'
                     .'|ev/([^/]++)(?'
-                        .'|(*:475)'
-                        .'|/edit(*:488)'
-                        .'|(*:496)'
+                        .'|(*:525)'
+                        .'|/edit(*:538)'
+                        .'|(*:546)'
                     .')'
                     .'|image/(?'
-                        .'|new/([^/]++)(*:526)'
+                        .'|new/([^/]++)(*:576)'
                         .'|([^/]++)(?'
-                            .'|(*:545)'
-                            .'|/edit(*:558)'
-                            .'|(*:566)'
+                            .'|(*:595)'
+                            .'|/edit(*:608)'
+                            .'|(*:616)'
                         .')'
                     .')'
                     .'|([^/]++)(?'
-                        .'|(*:587)'
-                        .'|/edit(*:600)'
-                        .'|(*:608)'
+                        .'|(*:637)'
+                        .'|/edit(*:650)'
+                        .'|(*:658)'
                     .')'
                 .')'
-                .'|/ev/([^/]++)(*:630)'
+                .'|/ev/([^/]++)(*:680)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -133,23 +140,26 @@ return [
         313 => [[['_route' => 'admin_image_show', '_controller' => 'App\\Controller\\Admin\\ImageController::show'], ['id'], ['GET' => 0], null, false, true, null]],
         329 => [[['_route' => 'admin_image_edit', '_controller' => 'App\\Controller\\Admin\\ImageController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
         345 => [[['_route' => 'admin_image_delete', '_controller' => 'App\\Controller\\Admin\\ImageController::delete'], ['id', 'hid'], ['DELETE' => 0], null, false, true, null]],
-        375 => [[['_route' => 'setting_show', '_controller' => 'App\\Controller\\Admin\\SettingController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        388 => [[['_route' => 'setting_edit', '_controller' => 'App\\Controller\\Admin\\SettingController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        396 => [[['_route' => 'setting_delete', '_controller' => 'App\\Controller\\Admin\\SettingController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
-        421 => [[['_route' => 'admin_user_show', '_controller' => 'App\\Controller\\Admin\\UserController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        434 => [[['_route' => 'admin_user_edit', '_controller' => 'App\\Controller\\Admin\\UserController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        442 => [[['_route' => 'admin_user_delete', '_controller' => 'App\\Controller\\Admin\\UserController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
-        475 => [[['_route' => 'user_ev_show', '_controller' => 'App\\Controller\\EvController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        488 => [[['_route' => 'user_ev_edit', '_controller' => 'App\\Controller\\EvController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        496 => [[['_route' => 'user_ev_delete', '_controller' => 'App\\Controller\\EvController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
-        526 => [[['_route' => 'user_image_new', '_controller' => 'App\\Controller\\ImageController::new'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        545 => [[['_route' => 'user_image_show', '_controller' => 'App\\Controller\\ImageController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        558 => [[['_route' => 'user_image_edit', '_controller' => 'App\\Controller\\ImageController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        566 => [[['_route' => 'user_image_delete', '_controller' => 'App\\Controller\\ImageController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
-        587 => [[['_route' => 'user_show', '_controller' => 'App\\Controller\\UserController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        600 => [[['_route' => 'user_edit', '_controller' => 'App\\Controller\\UserController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        608 => [[['_route' => 'user_delete', '_controller' => 'App\\Controller\\UserController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
-        630 => [
+        376 => [[['_route' => 'admin_messages_show', '_controller' => 'App\\Controller\\Admin\\MessagesController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        389 => [[['_route' => 'admin_messages_edit', '_controller' => 'App\\Controller\\Admin\\MessagesController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        397 => [[['_route' => 'admin_messages_delete', '_controller' => 'App\\Controller\\Admin\\MessagesController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
+        425 => [[['_route' => 'setting_show', '_controller' => 'App\\Controller\\Admin\\SettingController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        438 => [[['_route' => 'setting_edit', '_controller' => 'App\\Controller\\Admin\\SettingController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        446 => [[['_route' => 'setting_delete', '_controller' => 'App\\Controller\\Admin\\SettingController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
+        471 => [[['_route' => 'admin_user_show', '_controller' => 'App\\Controller\\Admin\\UserController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        484 => [[['_route' => 'admin_user_edit', '_controller' => 'App\\Controller\\Admin\\UserController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        492 => [[['_route' => 'admin_user_delete', '_controller' => 'App\\Controller\\Admin\\UserController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
+        525 => [[['_route' => 'user_ev_show', '_controller' => 'App\\Controller\\EvController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        538 => [[['_route' => 'user_ev_edit', '_controller' => 'App\\Controller\\EvController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        546 => [[['_route' => 'user_ev_delete', '_controller' => 'App\\Controller\\EvController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
+        576 => [[['_route' => 'user_image_new', '_controller' => 'App\\Controller\\ImageController::new'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        595 => [[['_route' => 'user_image_show', '_controller' => 'App\\Controller\\ImageController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        608 => [[['_route' => 'user_image_edit', '_controller' => 'App\\Controller\\ImageController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        616 => [[['_route' => 'user_image_delete', '_controller' => 'App\\Controller\\ImageController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
+        637 => [[['_route' => 'user_show', '_controller' => 'App\\Controller\\UserController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        650 => [[['_route' => 'user_edit', '_controller' => 'App\\Controller\\UserController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        658 => [[['_route' => 'user_delete', '_controller' => 'App\\Controller\\UserController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
+        680 => [
             [['_route' => 'ev_show', '_controller' => 'App\\Controller\\HomeController::show'], ['id'], ['GET' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

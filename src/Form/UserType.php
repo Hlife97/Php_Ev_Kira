@@ -21,12 +21,6 @@ class UserType extends AbstractType
         $builder
             ->add('email')
             //->add('roles')
-            ->add('roles', ChoiceType::class, [
-                'choices' => [
-                    'Admin' => 'ROLE_ADMIN',
-                    'User' => 'ROLE_USER'
-                ],
-            ])
             ->add('password', PasswordType::class, [
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
@@ -45,13 +39,13 @@ class UserType extends AbstractType
             ])
             ->add('name')
             ->add('surname')
-            ->add('image',  FileType::class, [
-                'label' => 'Ev Main Image',      
+            ->add('image', FileType::class, [
+                'label' => 'Ev Main Image',
                 'mapped' => false,
                 'required' => false,
                 
                 'constraints' => [
-                    new File( [
+                    new File([
                         'maxSize' => '1024k',
                         'mimeTypes' => [
                             'image/*',
@@ -59,28 +53,9 @@ class UserType extends AbstractType
                         'mimeTypesMessage' => 'Please upload a valid Image File',
                     ])
                 ],
-            ] )
-            ->add('status', ChoiceType::class, [
-                'choices' => [
-                    'True' => 'True',
-                    'False' => 'False'
-                ],
             ])
         ;
-        //roles field data transformer
-        $builder->get ('roles')
-            ->addModelTransformer(new CallbackTransformer(
-                function ($rolesArray) {
-                    // transform the array to a string
-                    return count($rolesArray)? $rolesArray[0]: null;
-                },
-                function ($rolesString) {
-                    // transform the string back to an array
-                    return [$rolesString];
-                }
-            ));
     }
-
 
 
 

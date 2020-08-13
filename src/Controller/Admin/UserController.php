@@ -90,7 +90,7 @@ class UserController extends AbstractController
      */
     public function edit(Request $request, User $user, UserPasswordEncoderInterface $passwordEncoder): Response
     {
-        $form = $this->createForm(UserType::class, $user);
+        $form = $this->createForm(AdminUserType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

@@ -21,8 +21,38 @@
             <!--/.col-sm-6-->
 
             <div align="center" class="col-xs-8 col-sm-10">
-                <h2>Comments</h2>
-               Bu bir comment
+                <h2>My Comments</h2>
+ <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Subject</th>
+                                        <th>Comment</th>
+                                        <th>Status</th>
+                                        <th>Home Name</th>
+                                        <th>Created_At</th>
+                                        <th>Rate</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for comment in comments %}
+                                    <tr>
+                                        <td>{{ comment.id }}</td>
+                                        <td>{{ comment.subject }}</td>
+                                        <td>{{ comment.comment }}</td>
+                                        <td>{{ comment.status }}</td>
+                                        <td nowrap ><a href="{{ path('ev_show', {'id': comment.evid}) }}">{{ comment.title }} </a></td>
+                                        <td>{{ comment.created_at}}</td>
+                                        {#<td>{{ comment.updatedAt ? comment.updatedAt|date('Y-m-d H:i:s') : '' }}</td> #}
+                                        <td>{{ comment.rate }}</td>
+                                    </tr>
+                                    {% else %}
+                                    <tr>
+                                        <td colspan="10">no records found</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
             </div>
         </div>
         <!--/.row-->

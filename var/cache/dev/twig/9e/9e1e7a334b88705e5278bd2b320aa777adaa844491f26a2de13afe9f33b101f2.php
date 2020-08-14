@@ -107,8 +107,76 @@ class __TwigTemplate_034c223ac9ad56d179e423b28a81c60f9dce887ffd5f544b4f3b9d10745
             <!--/.col-sm-6-->
 
             <div align=\"center\" class=\"col-xs-8 col-sm-10\">
-                <h2>Comments</h2>
-               Bu bir comment
+                <h2>My Comments</h2>
+ <table class=\"table\">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Subject</th>
+                                        <th>Comment</th>
+                                        <th>Status</th>
+                                        <th>Home Name</th>
+                                        <th>Created_At</th>
+                                        <th>Rate</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ";
+        // line 38
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["comments"]) || array_key_exists("comments", $context) ? $context["comments"] : (function () { throw new RuntimeError('Variable "comments" does not exist.', 38, $this->source); })()));
+        $context['_iterated'] = false;
+        foreach ($context['_seq'] as $context["_key"] => $context["comment"]) {
+            // line 39
+            echo "                                    <tr>
+                                        <td>";
+            // line 40
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "id", [], "any", false, false, false, 40), "html", null, true);
+            echo "</td>
+                                        <td>";
+            // line 41
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "subject", [], "any", false, false, false, 41), "html", null, true);
+            echo "</td>
+                                        <td>";
+            // line 42
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "comment", [], "any", false, false, false, 42), "html", null, true);
+            echo "</td>
+                                        <td>";
+            // line 43
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "status", [], "any", false, false, false, 43), "html", null, true);
+            echo "</td>
+                                        <td nowrap ><a href=\"";
+            // line 44
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ev_show", ["id" => twig_get_attribute($this->env, $this->source, $context["comment"], "evid", [], "any", false, false, false, 44)]), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "title", [], "any", false, false, false, 44), "html", null, true);
+            echo " </a></td>
+                                        <td>";
+            // line 45
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "created_at", [], "any", false, false, false, 45), "html", null, true);
+            echo "</td>
+                                        ";
+            // line 47
+            echo "                                        <td>";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "rate", [], "any", false, false, false, 47), "html", null, true);
+            echo "</td>
+                                    </tr>
+                                    ";
+            $context['_iterated'] = true;
+        }
+        if (!$context['_iterated']) {
+            // line 50
+            echo "                                    <tr>
+                                        <td colspan=\"10\">no records found</td>
+                                    </tr>
+                                    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['comment'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 54
+        echo "                                </tbody>
+                            </table>
             </div>
         </div>
         <!--/.row-->
@@ -138,7 +206,7 @@ class __TwigTemplate_034c223ac9ad56d179e423b28a81c60f9dce887ffd5f544b4f3b9d10745
 
     public function getDebugInfo()
     {
-        return array (  98 => 13,  89 => 6,  79 => 5,  59 => 3,  36 => 1,);
+        return array (  178 => 54,  169 => 50,  160 => 47,  156 => 45,  150 => 44,  146 => 43,  142 => 42,  138 => 41,  134 => 40,  131 => 39,  126 => 38,  98 => 13,  89 => 6,  79 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -166,8 +234,38 @@ class __TwigTemplate_034c223ac9ad56d179e423b28a81c60f9dce887ffd5f544b4f3b9d10745
             <!--/.col-sm-6-->
 
             <div align=\"center\" class=\"col-xs-8 col-sm-10\">
-                <h2>Comments</h2>
-               Bu bir comment
+                <h2>My Comments</h2>
+ <table class=\"table\">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Subject</th>
+                                        <th>Comment</th>
+                                        <th>Status</th>
+                                        <th>Home Name</th>
+                                        <th>Created_At</th>
+                                        <th>Rate</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for comment in comments %}
+                                    <tr>
+                                        <td>{{ comment.id }}</td>
+                                        <td>{{ comment.subject }}</td>
+                                        <td>{{ comment.comment }}</td>
+                                        <td>{{ comment.status }}</td>
+                                        <td nowrap ><a href=\"{{ path('ev_show', {'id': comment.evid}) }}\">{{ comment.title }} </a></td>
+                                        <td>{{ comment.created_at}}</td>
+                                        {#<td>{{ comment.updatedAt ? comment.updatedAt|date('Y-m-d H:i:s') : '' }}</td> #}
+                                        <td>{{ comment.rate }}</td>
+                                    </tr>
+                                    {% else %}
+                                    <tr>
+                                        <td colspan=\"10\">no records found</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
             </div>
         </div>
         <!--/.row-->

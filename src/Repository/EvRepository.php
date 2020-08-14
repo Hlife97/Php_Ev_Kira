@@ -47,4 +47,23 @@ class EvRepository extends ServiceEntityRepository
         ;
     }
     */
+    
+     // *** LEFT JOIN WITH SQL ******
+    public function getAllEvs(): array
+    {
+        $conn = $this->getEntityManager()->getConnection();
+        $sql= '
+        SELECT h.*,c.title as catname FROM ev h
+        JOIN category c ON c.id = h.category_id
+        ORDER BY c.title ASC
+        ';
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+
+        // return an array of arrays (i.e a raw data set)
+
+        return $stmt->fetchAll();
+
+
+    }
 }

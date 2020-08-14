@@ -12,12 +12,12 @@ function openWin( windowURL, windowName, windowFeatures ) { window.open( windowU
         <div class="page-breadcrumb">
             <div class="row">
                 <div class="col-12 d-flex no-block align-items-center">
-                    <h4 class="page-title">Kira Listesi</h4>
+                    <h4 class="page-title">Home List</h4>
                     <div class="ml-auto text-right">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="\admin">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Category</li>
+                                <li class="breadcrumb-item active" aria-current="page">RentHome</li>
                             </ol>
                         </nav>
                     </div>
@@ -30,12 +30,13 @@ function openWin( windowURL, windowName, windowFeatures ) { window.open( windowU
                     <div class="card">
                         <div class="card-body">
 
-                            <h3>Evini Kirala</h3>
+                            <h3>Rent Home</h3>
 
                             <table class="table">
                                 <thead>
                                     <tr>
                                         <th>Id</th>
+                                        <th>Category</th>
                                         <th>Title</th>
                                         <th>Keywords</th>
                                         <th>Description</th>
@@ -52,6 +53,7 @@ function openWin( windowURL, windowName, windowFeatures ) { window.open( windowU
                                     {% for ev in evs %}
                                     <tr>
                                         <td>{{ ev.id }}</td>
+                                        <td>{{ ev.catname }}</td>
                                         <td>{{ ev.title }}</td>
                                         <td>{{ ev.keywords }}</td>
                                         <td>{{ ev.description }}</td>

@@ -188,7 +188,7 @@ class __TwigTemplate_10f18687f5488bcfd2112cd65f67c89e8fbeaf7bb494345b577f5e3a982
             echo "                            <div class=\"item\"
                                 style=\"background-image: url(";
             // line 48
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, (isset($context["ev"]) || array_key_exists("ev", $context) ? $context["ev"] : (function () { throw new RuntimeError('Variable "ev" does not exist.', 48, $this->source); })()), "image", [], "any", false, false, false, 48))), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, $context["rs"], "image", [], "any", false, false, false, 48))), "html", null, true);
             echo "); height:380px \">
                                 <div class=\"container\">
                                     <div class=\"row slide-margin\">
@@ -196,7 +196,7 @@ class __TwigTemplate_10f18687f5488bcfd2112cd65f67c89e8fbeaf7bb494345b577f5e3a982
                                             <div class=\"carousel-content\">
                                                 <a class=\"preview\" href=\"";
             // line 53
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, (isset($context["ev"]) || array_key_exists("ev", $context) ? $context["ev"] : (function () { throw new RuntimeError('Variable "ev" does not exist.', 53, $this->source); })()), "image", [], "any", false, false, false, 53))), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, $context["rs"], "image", [], "any", false, false, false, 53))), "html", null, true);
             echo "\"
                                                     rel=\"prettyPhoto\"><i class=\"fa fa-eye\"></i> View</a>
                                                 <h1 class=\"animation animated-item-1\">";
@@ -542,12 +542,12 @@ class __TwigTemplate_10f18687f5488bcfd2112cd65f67c89e8fbeaf7bb494345b577f5e3a982
                             </div>
                             {% for rs in images %}
                             <div class=\"item\"
-                                style=\"background-image: url({{ asset ('uploads/images/' ~ ev.image) }}); height:380px \">
+                                style=\"background-image: url({{ asset ('uploads/images/' ~ rs.image) }}); height:380px \">
                                 <div class=\"container\">
                                     <div class=\"row slide-margin\">
                                         <div class=\"col-sm-6\">
                                             <div class=\"carousel-content\">
-                                                <a class=\"preview\" href=\"{{ asset ('uploads/images/' ~ ev.image) }}\"
+                                                <a class=\"preview\" href=\"{{ asset ('uploads/images/' ~ rs.image) }}\"
                                                     rel=\"prettyPhoto\"><i class=\"fa fa-eye\"></i> View</a>
                                                 <h1 class=\"animation animated-item-1\">{{ ev.title}}</h1>
                                                 <h2 class=\"animation animated-item-2\">{{ ev.description }}</h2>

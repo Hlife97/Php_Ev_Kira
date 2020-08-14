@@ -45,12 +45,12 @@
                             </div>
                             {% for rs in images %}
                             <div class="item"
-                                style="background-image: url({{ asset ('uploads/images/' ~ ev.image) }}); height:380px ">
+                                style="background-image: url({{ asset ('uploads/images/' ~ rs.image) }}); height:380px ">
                                 <div class="container">
                                     <div class="row slide-margin">
                                         <div class="col-sm-6">
                                             <div class="carousel-content">
-                                                <a class="preview" href="{{ asset ('uploads/images/' ~ ev.image) }}"
+                                                <a class="preview" href="{{ asset ('uploads/images/' ~ rs.image) }}"
                                                     rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
                                                 <h1 class="animation animated-item-1">{{ ev.title}}</h1>
                                                 <h2 class="animation animated-item-2">{{ ev.description }}</h2>

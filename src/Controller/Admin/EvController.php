@@ -29,8 +29,9 @@ class EvController extends AbstractController
      */
     public function index(EvRepository $evRepository): Response
     {
+        $evs = $evRepository->getAllEvs();
         return $this->render('admin/ev/index.html.twig', [
-            'evs' => $evRepository->findAll(),
+            'evs' => $evs,
         ]);
     }
 

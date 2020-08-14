@@ -44,7 +44,7 @@ class HomeController extends AbstractController
      */
     public function show(Ev $ev, $id, RepositoryImageRepository $imageRepository, CommentRepository $commentRepository): Response
     {
-        $images= $imageRepository->findBy(['ev'=>$id]);
+        $images= $imageRepository->findBy(['ev'=>$ev]);
         $comments= $commentRepository->findBy(['evid'=>$id, 'status'=>'True']);
         return $this->render('home/evshow.html.twig', [
             'ev' => $ev,

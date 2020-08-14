@@ -36,12 +36,13 @@
                                         <th>Comment</th>
                                         <th>Status</th>
                                         <th>Ip</th>
-                                        <th>Userid</th>
-                                        <th>Evid</th>
+                                        <th nowrap>Name-Surname</th>
+                                        <th>Home</th>
                                         {# <th>Created_at</th>
                                         <th>Updated_at</th> #}
                                         <th>Rate</th>
-                                        <th>actions</th>
+                                        <th>Show</th>
+                                        <th>Edit</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -52,14 +53,16 @@
                                         <td>{{ comment.comment }}</td>
                                         <td>{{ comment.status }}</td>
                                         <td>{{ comment.ip }}</td>
-                                        <td>{{ comment.userid }}</td>
-                                        <td>{{ comment.evid }}</td>
+                                        <td><a href="{{ path('admin_user_show', {'id': comment.id}) }}">{{ comment.name }} {{ comment.surname }} </a> </td>
+                                        <td><a href="{{ path('admin_ev_show', {'id': comment.id}) }}">{{ comment.title }} </a></td>
                                         {# <td>{{ comment.createdAt ? comment.createdAt|date('Y-m-d H:i:s') : '' }}</td>
                                         <td>{{ comment.updatedAt ? comment.updatedAt|date('Y-m-d H:i:s') : '' }}</td> #}
                                         <td>{{ comment.rate }}</td>
                                         <td>
                                             <a href="{{ path('admin_comment_show', {'id': comment.id}) }}"><button
                                                     type="button" class="btn btn-info">show</button></a>
+                                        </td>
+                                        <td>
                                             <a href="{{ path('admin_comment_edit', {'id': comment.id}) }}"><button
                                                     type="button" class="btn btn-dark">edit</button></a>
                                         </td>

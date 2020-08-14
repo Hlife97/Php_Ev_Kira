@@ -37,9 +37,7 @@ function openWin( windowURL, windowName, windowFeatures ) { window.open( windowU
                                     <tr>
                                         <th>Id</th>
                                         <th>Category</th>
-                                        <th>Title</th>
-                                        <th>Keywords</th>
-                                        <th>Description</th>
+                                        <th>User</th>
                                         <th>Image</th>
                                         <th>Star</th>
                                         <th>Email</th>
@@ -54,16 +52,13 @@ function openWin( windowURL, windowName, windowFeatures ) { window.open( windowU
                                     <tr>
                                         <td>{{ ev.id }}</td>
                                         <td>{{ ev.catname }}</td>
-                                        <td>{{ ev.title }}</td>
-                                        <td>{{ ev.keywords }}</td>
-                                        <td>{{ ev.description }}</td>
+                                        <td><a href="{{ path('admin_user_show', {'id': ev.userid}) }}"> {{ ev.name }} {{ ev.surname }}</a></td>
                                         <td><img src="{{ asset ('uploads/images/' ~ ev.image) }}" height="40"></td>
                                         <td>{{ ev.star }}</td>
                                         <td>{{ ev.email }}</td>
                                         <td>{{ ev.status }}</td>
                                         <td>
-                                            <a
-                                                href="javascript:openWin('{{ path('admin_image_new',{'id':ev.id}) }}','','toolbar=no,location=no, directories=0, status=no, top=50,left=100, menuBar=no, scrollBars=yes,resizable=no, width=900, height=600'); ">
+                                            <a href="javascript:openWin('{{ path('admin_image_new',{'id':ev.id}) }}','','toolbar=no,location=no, directories=0, status=no, top=50,left=100, menuBar=no, scrollBars=yes,resizable=no, width=900, height=600'); ">
                                                 <img src="{{ asset ('assets/admin/img') }}/gallery.png" height="40"></a>
                                         </td>
                                         <td>

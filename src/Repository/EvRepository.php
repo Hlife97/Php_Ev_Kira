@@ -53,8 +53,9 @@ class EvRepository extends ServiceEntityRepository
     {
         $conn = $this->getEntityManager()->getConnection();
         $sql= '
-        SELECT h.*,c.title as catname FROM ev h
+        SELECT h.*,c.title as catname,u.name,u.surname FROM ev h
         JOIN category c ON c.id = h.category_id
+        JOIN user u ON u.id = h.userid
         ORDER BY c.title ASC
         ';
         $stmt = $conn->prepare($sql);

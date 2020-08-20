@@ -47,4 +47,24 @@ class ReservationRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    // *** LEFT JOIN WITH SQL ******
+    public function getUserReservation($id): array
+    {
+        $conn = $this->getEntityManager()->getConnection();
+        $sql= '
+        SELECT r.*,h.title as rname FROM reservation r
+        JOIN ev h ON h.id = r.evid
+        WHERE r.userid = :userid
+        ORDER BY r.id DESC
+        ';
+        $stmt = $conn->prepare($sql);
+        $stmt->execute(['userid'=>$id]);
+
+        // return an array of arrays (i.e a raw data set)
+
+        return $stmt->fetchAll();
+
+
+    }
 }

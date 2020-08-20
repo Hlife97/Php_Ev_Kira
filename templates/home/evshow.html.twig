@@ -9,7 +9,6 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-6 col-sm-6">
-                {# #}
                 <section id="main-slider" class="no-margin">
                     <div class="carousel slide">
                         <ol class="carousel-indicators">
@@ -99,6 +98,10 @@
                             <th>Description</th>
                             <td>{{ ev.description }}</td>
                         </tr>
+                        <tr>
+                            <th>Price</th>
+                            <td>{{ ev.price }} TRY</td>
+                        </tr>
                         {# <tr>
                             <th>Image</th>
                             <td><img src="{{ asset ('uploads/images/' ~ ev.image) }}" height="40"></td>
@@ -115,23 +118,23 @@
                             <th>Phone</th>
                             <td>{{ ev.phone }}</td>
                         </tr>
-                        <tr>
+                        {# <tr>
                             <th>Fax</th>
                             <td>{{ ev.fax }}</td>
                         </tr>
-                        <tr>
+                         <tr>
                             <th>Email</th>
                             <td>{{ ev.email }}</td>
-                        </tr>
+                        </tr> #}
                         <tr>
                             <th>City</th>
                             <td>{{ ev.city }}</td>
                         </tr>
-                        <tr>
+                       <tr>
                             <th>Country</th>
                             <td>{{ ev.country }}</td>
                         </tr>
-                        {# <tr>
+                        {#  <tr>
                             <th>Location</th>
                             <td>{{ ev.location }}</td>
                         </tr> #}
@@ -150,11 +153,11 @@
                 <div class="media">
                     <div class="parrent pull-left">
                         <ul class="nav nav-tabs nav-stacked">
-                            <li class=""><a href="#tab1" data-toggle="tab" class="analistic-01">Houses & Price</a></li>
+                            <li class=""><a href="#tab1" data-toggle="tab" class="analistic-01">Rent</a></li>
                             <li class="active"><a href="#tab2" data-toggle="tab" class="analistic-02">Detail</a></li>
                             <li class=""><a href="#tab3" data-toggle="tab" class="tehnical">Comments</a></li>
-                            <li class=""><a href="#tab4" data-toggle="tab" class="tehnical">Our Philosopy</a></li>
-                            <li class=""><a href="#tab5" data-toggle="tab" class="tehnical">What We Do?</a></li>
+                            <!--<li class=""><a href="#tab4" data-toggle="tab" class="tehnical">Our Philosopy</a></li>
+                            <li class=""><a href="#tab5" data-toggle="tab" class="tehnical">What We Do?</a></li>-->
                         </ul>
                     </div>
 
@@ -163,11 +166,12 @@
                             <div class="tab-pane" id="tab1">
                                 <div class="media">
                                     <div class="pull-left">
-                                        <img class="img-responsive" src="images/tab1.png">
+                                        <img class="img-responsive" src="{{ asset ('uploads/images/' ~ ev.image) }}"
+                                            style="width:80px;height:80px">
                                     </div>
                                     <div class="media-body">
-                                        <h4>Houses & Price List</h4>
-
+                                        <h4>Price: {{ ev.price }} TRY</h4>
+                                            <a href="{{ path('user_reservation_new', {'id': ev.id}) }}"><button class="btn btn-info">Rent Home</button></a>
                                     </div>
                                 </div>
                             </div>
@@ -233,7 +237,8 @@
                                 </div>
                             </div>
                             {% else  %}
-                            <li><a href="/loginuser"><i class="icon-lock"></i>If you want to add comment please login</a></li>
+                            <li><a href="/loginuser"><i class="icon-lock"></i>If you want to add comment please
+                                    login</a></li>
                             {% endif %}
                         </div>
                         <!--/.tab-content-->

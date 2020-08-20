@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\CategoryRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -12,7 +13,7 @@ class SecurityController extends AbstractController
     /**
      * @Route("/login", name="app_login")
      */
-    public function login(AuthenticationUtils $authenticationUtils): Response
+    public function login(AuthenticationUtils $authenticationUtils,CategoryRepository $categoryRepository): Response
     {
         if ($this->getUser()) {
             $user = $this->getUser();
@@ -29,13 +30,17 @@ class SecurityController extends AbstractController
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
 
-        return $this->render('security/adminlogin.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
+        return $this->render('security/adminlogin.html.twig', [
+            'last_username' => $lastUsername,
+            'error' => $error,
+            'categori'=>$categoryRepository->findBy(['status'=>'True']),
+        ]);
     }
     
     /**
      * @Route("/loginuser", name="login_user")
      */
-    public function loginuser(AuthenticationUtils $authenticationUtils): Response
+    public function loginuser(AuthenticationUtils $authenticationUtils,CategoryRepository $categoryRepository): Response
     {
         // if ($this->getUser()) {
         //     return $this->redirectToRoute('target_path');
@@ -46,7 +51,12 @@ class SecurityController extends AbstractController
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
 
-        return $this->render('security/userlogin.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
+        return $this->render('security/userlogin.html.twig', [
+            'last_username' => $lastUsername,
+            'error' => $error,
+            'categori'=>$categoryRepository->findBy(['status'=>'True']),
+
+        ]);
     }
 
     /**

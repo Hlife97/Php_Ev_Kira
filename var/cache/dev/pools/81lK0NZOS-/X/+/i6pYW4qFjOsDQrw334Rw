@@ -8,7 +8,7 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
     [
         'Symfony\\Component\\Routing\\Annotation\\Route' => [
             'path' => [
-                '/reservation/{eid}',
+                '/reservation/{id}',
             ],
             'name' => [
                 'user_reservation_new',

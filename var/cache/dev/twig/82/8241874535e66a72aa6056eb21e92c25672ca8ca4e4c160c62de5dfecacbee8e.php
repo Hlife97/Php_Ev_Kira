@@ -47,13 +47,13 @@ class __TwigTemplate_b839a29dd322beb379ecc2017446a14b5666d9523b95c4234542e2ad400
                        <div class=\"widget\">
                            <h3>Company</h3>
                            <ul>
-                               <li><a href=\"#\">About us</a></li>
+                               <li><a href=\"/about\">About us</a></li>
                                <li><a href=\"#\">We are hiring</a></li>
                                <li><a href=\"#\">Meet the team</a></li>
                                <li><a href=\"#\">Copyright</a></li>
                                <li><a href=\"#\">Terms of use</a></li>
                                <li><a href=\"#\">Privacy policy</a></li>
-                               <li><a href=\"#\">Contact us</a></li>
+                               <li><a href=\"/contact\">Contact us</a></li>
                            </ul>
                        </div>
                    </div>
@@ -120,10 +120,10 @@ class __TwigTemplate_b839a29dd322beb379ecc2017446a14b5666d9523b95c4234542e2ad400
                    </div>
                    <div class=\"col-sm-6\">
                        <ul class=\"pull-right\">
-                           <li><a href=\"#\">Home</a></li>
-                           <li><a href=\"#\">About Us</a></li>
-                           <li><a href=\"#\">Faq</a></li>
-                           <li><a href=\"#\">Contact Us</a></li>
+                           <li><a href=\"/\">Home</a></li>
+                           <li><a href=\"/about\">About Us</a></li>
+                           <li><a href=\"/sss\">Faq</a></li>
+                           <li><a href=\"/contact\">Contact Us</a></li>
                        </ul>
                    </div>
                </div>
@@ -157,13 +157,13 @@ class __TwigTemplate_b839a29dd322beb379ecc2017446a14b5666d9523b95c4234542e2ad400
                        <div class=\"widget\">
                            <h3>Company</h3>
                            <ul>
-                               <li><a href=\"#\">About us</a></li>
+                               <li><a href=\"/about\">About us</a></li>
                                <li><a href=\"#\">We are hiring</a></li>
                                <li><a href=\"#\">Meet the team</a></li>
                                <li><a href=\"#\">Copyright</a></li>
                                <li><a href=\"#\">Terms of use</a></li>
                                <li><a href=\"#\">Privacy policy</a></li>
-                               <li><a href=\"#\">Contact us</a></li>
+                               <li><a href=\"/contact\">Contact us</a></li>
                            </ul>
                        </div>
                    </div>
@@ -230,10 +230,10 @@ class __TwigTemplate_b839a29dd322beb379ecc2017446a14b5666d9523b95c4234542e2ad400
                    </div>
                    <div class=\"col-sm-6\">
                        <ul class=\"pull-right\">
-                           <li><a href=\"#\">Home</a></li>
-                           <li><a href=\"#\">About Us</a></li>
-                           <li><a href=\"#\">Faq</a></li>
-                           <li><a href=\"#\">Contact Us</a></li>
+                           <li><a href=\"/\">Home</a></li>
+                           <li><a href=\"/about\">About Us</a></li>
+                           <li><a href=\"/sss\">Faq</a></li>
+                           <li><a href=\"/contact\">Contact Us</a></li>
                        </ul>
                    </div>
                </div>

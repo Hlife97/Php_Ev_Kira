@@ -72,13 +72,13 @@ class __TwigTemplate_805c032e97d0a6cafb850e4df3e9b0a62f4bab719d890fcebe369f5ade5
 
                 <li class=\"sidebar-item\"> <a class=\"sidebar-link has-arrow waves-effect waves-dark\"
                         href=\"javascript:void(0)\" aria-expanded=\"false\"><i class=\"mdi mdi-receipt\"></i><span
-                            class=\"hide-menu\">Kiralanan </span></a>
+                            class=\"hide-menu\">Leased</span></a>
                     <ul aria-expanded=\"false\" class=\"collapse  first-level\">
                         <li class=\"sidebar-item\"><a href=\"form-basic.html\" class=\"sidebar-link\"><i
-                                    class=\"mdi mdi-note-outline\"></i><span class=\"hide-menu\"> Yeni </span></a>
+                                    class=\"mdi mdi-note-outline\"></i><span class=\"hide-menu\"> New </span></a>
                         </li>
                         <li class=\"sidebar-item\"><a href=\"form-wizard.html\" class=\"sidebar-link\"><i
-                                    class=\"mdi mdi-note-plus\"></i><span class=\"hide-menu\"> Kabul Edilen </span></a>
+                                    class=\"mdi mdi-note-plus\"></i><span class=\"hide-menu\">Accepted</span></a>
                         </li>
                     </ul>
                 </li>
@@ -86,7 +86,7 @@ class __TwigTemplate_805c032e97d0a6cafb850e4df3e9b0a62f4bab719d890fcebe369f5ade5
                         href=\"/admin/category\" aria-expanded=\"false\"><i class=\"mdi mdi-view-dashboard\"></i><span
                             class=\"hide-menu\">Category</span></a></li>
                 <li class=\"sidebar-item\"> <a class=\"sidebar-link waves-effect waves-dark sidebar-link\" href=\"/admin/ev\"
-                        aria-expanded=\"false\"><i class=\"mdi mdi-home\"></i><span class=\"hide-menu\">Kirala</span></a></li>
+                        aria-expanded=\"false\"><i class=\"mdi mdi-home\"></i><span class=\"hide-menu\">Homes</span></a></li>
                 <li class=\"sidebar-item\"> <a class=\"sidebar-link waves-effect waves-dark sidebar-link\"
                         href=\"/admin/setting\" aria-expanded=\"false\"><i class=\"mdi mdi-settings\"></i><span
                             class=\"hide-menu\">Settings</span></a></li>
@@ -158,13 +158,13 @@ class __TwigTemplate_805c032e97d0a6cafb850e4df3e9b0a62f4bab719d890fcebe369f5ade5
 
                 <li class=\"sidebar-item\"> <a class=\"sidebar-link has-arrow waves-effect waves-dark\"
                         href=\"javascript:void(0)\" aria-expanded=\"false\"><i class=\"mdi mdi-receipt\"></i><span
-                            class=\"hide-menu\">Kiralanan </span></a>
+                            class=\"hide-menu\">Leased</span></a>
                     <ul aria-expanded=\"false\" class=\"collapse  first-level\">
                         <li class=\"sidebar-item\"><a href=\"form-basic.html\" class=\"sidebar-link\"><i
-                                    class=\"mdi mdi-note-outline\"></i><span class=\"hide-menu\"> Yeni </span></a>
+                                    class=\"mdi mdi-note-outline\"></i><span class=\"hide-menu\"> New </span></a>
                         </li>
                         <li class=\"sidebar-item\"><a href=\"form-wizard.html\" class=\"sidebar-link\"><i
-                                    class=\"mdi mdi-note-plus\"></i><span class=\"hide-menu\"> Kabul Edilen </span></a>
+                                    class=\"mdi mdi-note-plus\"></i><span class=\"hide-menu\">Accepted</span></a>
                         </li>
                     </ul>
                 </li>
@@ -172,7 +172,7 @@ class __TwigTemplate_805c032e97d0a6cafb850e4df3e9b0a62f4bab719d890fcebe369f5ade5
                         href=\"/admin/category\" aria-expanded=\"false\"><i class=\"mdi mdi-view-dashboard\"></i><span
                             class=\"hide-menu\">Category</span></a></li>
                 <li class=\"sidebar-item\"> <a class=\"sidebar-link waves-effect waves-dark sidebar-link\" href=\"/admin/ev\"
-                        aria-expanded=\"false\"><i class=\"mdi mdi-home\"></i><span class=\"hide-menu\">Kirala</span></a></li>
+                        aria-expanded=\"false\"><i class=\"mdi mdi-home\"></i><span class=\"hide-menu\">Homes</span></a></li>
                 <li class=\"sidebar-item\"> <a class=\"sidebar-link waves-effect waves-dark sidebar-link\"
                         href=\"/admin/setting\" aria-expanded=\"false\"><i class=\"mdi mdi-settings\"></i><span
                             class=\"hide-menu\">Settings</span></a></li>

@@ -149,7 +149,7 @@ class __TwigTemplate_95cd0a55d3bfd987ac4eaa1a59bc63a8a939caff3cd9dd02fe14bdc0373
 <section id=\"recent-works\">
     <div class=\"container\">
         <div class=\"center wow fadeInDown\">
-            <h2>Just Rent House</h2>
+            <h2>Öne Çıkan İlanlar</h2>
         </div>
         <div class=\"row\">
         ";
@@ -159,12 +159,12 @@ class __TwigTemplate_95cd0a55d3bfd987ac4eaa1a59bc63a8a939caff3cd9dd02fe14bdc0373
         foreach ($context['_seq'] as $context["_key"] => $context["rs"]) {
             // line 16
             echo "
-            <div class=\"col-xs-12 col-sm-4 col-md-3\">
+            <div class=\"col-xs-12 col-sm-4 col-md-3\" style=\"margin-bottom: 10px;\">
                 <div class=\"recent-work-wrap\">
                     <img class=\"img-responsive\" src=\"";
             // line 19
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, $context["rs"], "image", [], "any", false, false, false, 19))), "html", null, true);
-            echo "\"  alt=\"\">
+            echo "\"  style=\"height: 200px\">
                     <div class=\"overlay\">
                         <div class=\"recent-work-inner\">
                             <h3><a href=\"";
@@ -196,6 +196,57 @@ class __TwigTemplate_95cd0a55d3bfd987ac4eaa1a59bc63a8a939caff3cd9dd02fe14bdc0373
         </div>
         <!--/.row-->
     </div>
+    <br><br><hr>
+    <!--/.container-->
+    <div class=\"container\">
+        <div class=\"center wow fadeInDown\">
+            <h2>Son Eklenen İlanlar</h2>
+        </div>
+        <div class=\"row\">
+            ";
+        // line 42
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["evs"]) || array_key_exists("evs", $context) ? $context["evs"] : (function () { throw new RuntimeError('Variable "evs" does not exist.', 42, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["rs"]) {
+            // line 43
+            echo "
+                <div class=\"col-xs-12 col-sm-4 col-md-3\" style=\"margin-left: 10px; margin-bottom: 10px;\">
+                    <div class=\"recent-work-wrap\">
+                        <img class=\"img-responsive\" src=\"";
+            // line 46
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, $context["rs"], "image", [], "any", false, false, false, 46))), "html", null, true);
+            echo "\"  style=\"height: 200px\">
+                        <div class=\"overlay\">
+                            <div class=\"recent-work-inner\">
+                                <h3><a href=\"";
+            // line 49
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ev_show", ["id" => twig_get_attribute($this->env, $this->source, $context["rs"], "id", [], "any", false, false, false, 49)]), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rs"], "title", [], "any", false, false, false, 49), "html", null, true);
+            echo "</a> </h3>
+                                <p>";
+            // line 50
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rs"], "description", [], "any", false, false, false, 50), "html", null, true);
+            echo "</p>
+                                <a class=\"preview\" href=\"";
+            // line 51
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, $context["rs"], "image", [], "any", false, false, false, 51))), "html", null, true);
+            echo "\" rel=\"prettyPhoto\"><i
+                                            class=\"fa fa-eye\"></i> View</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['rs'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 58
+        echo "
+        </div>
+        <!--/.row-->
+    </div>
     <!--/.container-->
 </section>
 <!--/#recent-works-->
@@ -220,7 +271,7 @@ class __TwigTemplate_95cd0a55d3bfd987ac4eaa1a59bc63a8a939caff3cd9dd02fe14bdc0373
 
     public function getDebugInfo()
     {
-        return array (  195 => 31,  182 => 24,  178 => 23,  172 => 22,  166 => 19,  161 => 16,  157 => 15,  148 => 8,  138 => 7,  119 => 6,  100 => 5,  81 => 4,  62 => 3,  39 => 1,);
+        return array (  246 => 58,  233 => 51,  229 => 50,  223 => 49,  217 => 46,  212 => 43,  208 => 42,  195 => 31,  182 => 24,  178 => 23,  172 => 22,  166 => 19,  161 => 16,  157 => 15,  148 => 8,  138 => 7,  119 => 6,  100 => 5,  81 => 4,  62 => 3,  39 => 1,);
     }
 
     public function getSourceContext()
@@ -236,14 +287,14 @@ class __TwigTemplate_95cd0a55d3bfd987ac4eaa1a59bc63a8a939caff3cd9dd02fe14bdc0373
 <section id=\"recent-works\">
     <div class=\"container\">
         <div class=\"center wow fadeInDown\">
-            <h2>Just Rent House</h2>
+            <h2>Öne Çıkan İlanlar</h2>
         </div>
         <div class=\"row\">
         {% for rs in evs%}
 
-            <div class=\"col-xs-12 col-sm-4 col-md-3\">
+            <div class=\"col-xs-12 col-sm-4 col-md-3\" style=\"margin-bottom: 10px;\">
                 <div class=\"recent-work-wrap\">
-                    <img class=\"img-responsive\" src=\"{{ asset ('uploads/images/' ~ rs.image) }}\"  alt=\"\">
+                    <img class=\"img-responsive\" src=\"{{ asset ('uploads/images/' ~ rs.image) }}\"  style=\"height: 200px\">
                     <div class=\"overlay\">
                         <div class=\"recent-work-inner\">
                             <h3><a href=\"{{ path ('ev_show', {'id': rs.id})}}\">{{ rs.title }}</a> </h3>
@@ -256,6 +307,33 @@ class __TwigTemplate_95cd0a55d3bfd987ac4eaa1a59bc63a8a939caff3cd9dd02fe14bdc0373
             </div>
         {% endfor %}
         
+        </div>
+        <!--/.row-->
+    </div>
+    <br><br><hr>
+    <!--/.container-->
+    <div class=\"container\">
+        <div class=\"center wow fadeInDown\">
+            <h2>Son Eklenen İlanlar</h2>
+        </div>
+        <div class=\"row\">
+            {% for rs in evs%}
+
+                <div class=\"col-xs-12 col-sm-4 col-md-3\" style=\"margin-left: 10px; margin-bottom: 10px;\">
+                    <div class=\"recent-work-wrap\">
+                        <img class=\"img-responsive\" src=\"{{ asset ('uploads/images/' ~ rs.image) }}\"  style=\"height: 200px\">
+                        <div class=\"overlay\">
+                            <div class=\"recent-work-inner\">
+                                <h3><a href=\"{{ path ('ev_show', {'id': rs.id})}}\">{{ rs.title }}</a> </h3>
+                                <p>{{ rs.description }}</p>
+                                <a class=\"preview\" href=\"{{ asset ('uploads/images/' ~ rs.image) }}\" rel=\"prettyPhoto\"><i
+                                            class=\"fa fa-eye\"></i> View</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
         </div>
         <!--/.row-->
     </div>

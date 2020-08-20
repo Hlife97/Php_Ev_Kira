@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Ev;
 use App\Form\Ev1Type;
+use App\Repository\CategoryRepository;
 use App\Repository\EvRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -18,18 +19,19 @@ class EvController extends AbstractController
     /**
      * @Route("/", name="user_ev_index", methods={"GET"})
      */
-    public function index(EvRepository $evRepository): Response
+    public function index(EvRepository $evRepository,CategoryRepository $categoryRepository): Response
     {   
         $user = $this->getUser();
         return $this->render('ev/index.html.twig', [
             'evs' => $evRepository->findBy(['userid'=>$user->getId()]),
+            'categori'=>$categoryRepository->findBy(['status'=>'True']),
         ]);
     }
 
     /**
      * @Route("/new", name="user_ev_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request,CategoryRepository $categoryRepository): Response
     {
         $ev = new Ev();
         $form = $this->createForm(Ev1Type::class, $ev);
@@ -68,23 +70,25 @@ class EvController extends AbstractController
         return $this->render('ev/new.html.twig', [
             'ev' => $ev,
             'form' => $form->createView(),
+            'categori'=>$categoryRepository->findBy(['status'=>'True']),
         ]);
     }
 
     /**
      * @Route("/{id}", name="user_ev_show", methods={"GET"})
      */
-    public function show(Ev $ev): Response
+    public function show(Ev $ev,CategoryRepository $categoryRepository): Response
     {
         return $this->render('ev/show.html.twig', [
             'ev' => $ev,
+            'categori'=>$categoryRepository->findBy(['status'=>'True']),
         ]);
     }
 
     /**
      * @Route("/{id}/edit", name="user_ev_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Ev $ev): Response
+    public function edit(Request $request, Ev $ev,CategoryRepository $categoryRepository): Response
     {
         $form = $this->createForm(Ev1Type::class, $ev);
         $form->handleRequest($request);
@@ -117,6 +121,7 @@ class EvController extends AbstractController
         return $this->render('ev/edit.html.twig', [
             'ev' => $ev,
             'form' => $form->createView(),
+            'categori'=>$categoryRepository->findBy(['status'=>'True']),
         ]);
     }
 

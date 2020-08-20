@@ -113,6 +113,11 @@ class Ev
      */
     private $userid;
 
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     */
+    private $price;
+
     public function __construct()
     {
         $this->images = new ArrayCollection();
@@ -369,6 +374,18 @@ class Ev
     public function setUserid(?int $userid): self
     {
         $this->userid = $userid;
+
+        return $this;
+    }
+
+    public function getPrice(): ?float
+    {
+        return $this->price;
+    }
+
+    public function setPrice(?float $price): self
+    {
+        $this->price = $price;
 
         return $this;
     }

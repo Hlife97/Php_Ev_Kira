@@ -18,6 +18,7 @@ class ReservationType extends AbstractType
             ->add('surname')
             ->add('email')
             ->add('phone')
+            ->add('price')
             ->add('checkin')
             ->add('checkout')
             ->add('days')

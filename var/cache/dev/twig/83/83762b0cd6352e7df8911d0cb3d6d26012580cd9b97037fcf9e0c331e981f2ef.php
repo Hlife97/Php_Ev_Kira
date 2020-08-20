@@ -41,7 +41,7 @@ class __TwigTemplate_13326797b7d74f2d96e75b64fefb3a43e362ab25ec908421478625deb1d
 
         // line 1
         echo "<div class=\"card\">
-    <form class=\"form-horizontal\" name=\"category\" method=\"post\">
+    <form class=\"form-horizontal\" name=\"category\" method=\"post\" enctype=\"multipart/form-data\">
         <div class=\"card-body\">
             <div class=\"form-group row\">
                 <label for=\"lname\" class=\"col-sm-3 text-right control-label col-form-label\">Parent</label>
@@ -153,7 +153,7 @@ class __TwigTemplate_13326797b7d74f2d96e75b64fefb3a43e362ab25ec908421478625deb1d
     public function getSourceContext()
     {
         return new Source("<div class=\"card\">
-    <form class=\"form-horizontal\" name=\"category\" method=\"post\">
+    <form class=\"form-horizontal\" name=\"category\" method=\"post\" enctype=\"multipart/form-data\">
         <div class=\"card-body\">
             <div class=\"form-group row\">
                 <label for=\"lname\" class=\"col-sm-3 text-right control-label col-form-label\">Parent</label>

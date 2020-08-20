@@ -148,6 +148,7 @@ class EvController extends AbstractController
         }
 
         return $this->redirectToRoute('admin_ev_index');
+        
     }
 
 }

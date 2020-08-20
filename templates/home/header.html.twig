@@ -10,11 +10,11 @@
                     <div class="col-sm-6 col-xs-8">
                         <div class="social">
                             <ul class="social-share">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                                <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                                <li><a href="https://www.facebook.com/hdyt.hov/"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://www.instagram.com/hidayet_hidayetov/"><i class="fa fa-instagram"></i></a></li>
+                                <li><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="https://www.youtube.com/channel/UCr7XvvjR2sAJcs_U2GPzcpA?view_as=subscriber"><i class="fa fa-youtube"></i></a></li>
+                                <li><a href="https://www.skype.com/en/"><i class="fa fa-skype"></i></a></li>
                             </ul>
                             <div class="search">
                                 <form role="form">
@@ -39,33 +39,32 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html"><img src="{{ asset ('assets')}}/images/logo.png"
+                    <a class="navbar-brand" href="/"><img src="{{ asset ('assets')}}/images/logo.png"
                             alt="logo"></a>
                 </div>
 
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="/">Home</a></li>
-                        <li><a href="/about">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
+                        <li class="active"><a href="/">Anasayfa</a></li>
+                        <li><a href="/about">Hakkımızda</a></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kiralık <i
                                     class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="blog-item.html">Blog Single</a></li>
-                                <li><a href="pricing.html">Pricing</a></li>
-                                <li><a href="404.html">404</a></li>
-                                <li><a href="shortcodes.html">Shortcodes</a></li>
+                                {% for rs in categori %}
+                                <li><a href="/categori_ev/{{ rs.id }}">{{ rs.title }}</a></li>
+                                {% endfor %}
                             </ul>
                         </li>
                         <li><a href="blog.html">Blog</a></li>
-                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="/contact">İletişim</a></li>
                         {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                         <li><a href="/user"><img src="{{ asset('uploads/images/' ~ app.user.image) }}" alt="user"
                                     class="rounded-circle" width="31">{{ app.user.name }}</a></li>
                         <li><a href="/logout">Logout</a></li>
                         {% else  %}
                         <li><a href="/loginuser"><i class="icon-lock"></i>Login</a></li>
+                        <li><a href="/register">SignUp</a></li>
                         {% endif %}
 
                     </ul>

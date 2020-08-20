@@ -40,6 +40,7 @@ class EvType extends AbstractType
                     ])
                 ],
             ] )
+            ->add('price')
             ->add('star',  ChoiceType::class, [
                 'choices' =>[
                     '1 Star' => '1',
@@ -67,8 +68,6 @@ class EvType extends AbstractType
                     'False' => 'False'
                 ],
             ])
-            ->add('created_at')
-            ->add('updated_at')
             ->add('category')
             ->add('userid')
         ;

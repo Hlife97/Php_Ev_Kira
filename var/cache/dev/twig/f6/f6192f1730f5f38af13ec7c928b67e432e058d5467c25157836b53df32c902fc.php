@@ -85,22 +85,52 @@ class __TwigTemplate_9f4022e61b4fd6bb9dbe244bce9784ea51c67f7b70081ef69bf370eeca9
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Edit Ev</h1>
+        echo "<div class=\"container-fluid\">
+    <div class=\"page-wrapper\">
+        <div class=\"page-breadcrumb\">
+            <div class=\"row\">
+                <div class=\"col-12 d-flex no-block align-items-center\">
+                    <h4 class=\"page-title\">Category</h4>
+                    <div class=\"ml-auto text-right\">
+                        <nav aria-label=\"breadcrumb\">
+                            <ol class=\"breadcrumb\">
+                                <li class=\"breadcrumb-item\"><a href=\"#\">Home</a></li>
+                                <li class=\"breadcrumb-item active\" aria-current=\"page\">Library</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=\"container-fluid\">
+            <div class=\"row\">
+                <div class=\"col-12\">
+                    <div class=\"card\">
+                        <div class=\"card-body\">
+    <h1>Edit Ev</h1>
 
     ";
-        // line 8
+        // line 30
         echo twig_include($this->env, $context, "admin/ev/_form.html.twig", ["button_label" => "Update"]);
         echo "
 
     <a href=\"";
-        // line 10
+        // line 32
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_ev_index");
         echo "\">back to list</a>
 
     ";
-        // line 12
+        // line 34
         echo twig_include($this->env, $context, "admin/ev/_delete_form.html.twig");
         echo "
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -122,7 +152,7 @@ class __TwigTemplate_9f4022e61b4fd6bb9dbe244bce9784ea51c67f7b70081ef69bf370eeca9
 
     public function getDebugInfo()
     {
-        return array (  102 => 12,  97 => 10,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  124 => 34,  119 => 32,  114 => 30,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -132,6 +162,28 @@ class __TwigTemplate_9f4022e61b4fd6bb9dbe244bce9784ea51c67f7b70081ef69bf370eeca9
 {% block title %}Edit Ev{% endblock %}
 
 {% block body %}
+<div class=\"container-fluid\">
+    <div class=\"page-wrapper\">
+        <div class=\"page-breadcrumb\">
+            <div class=\"row\">
+                <div class=\"col-12 d-flex no-block align-items-center\">
+                    <h4 class=\"page-title\">Category</h4>
+                    <div class=\"ml-auto text-right\">
+                        <nav aria-label=\"breadcrumb\">
+                            <ol class=\"breadcrumb\">
+                                <li class=\"breadcrumb-item\"><a href=\"#\">Home</a></li>
+                                <li class=\"breadcrumb-item active\" aria-current=\"page\">Library</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=\"container-fluid\">
+            <div class=\"row\">
+                <div class=\"col-12\">
+                    <div class=\"card\">
+                        <div class=\"card-body\">
     <h1>Edit Ev</h1>
 
     {{ include('admin/ev/_form.html.twig', {'button_label': 'Update'}) }}
@@ -139,6 +191,14 @@ class __TwigTemplate_9f4022e61b4fd6bb9dbe244bce9784ea51c67f7b70081ef69bf370eeca9
     <a href=\"{{ path('admin_ev_index') }}\">back to list</a>
 
     {{ include('admin/ev/_delete_form.html.twig') }}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
 ", "admin/ev/edit.html.twig", "C:\\xampp\\htdocs\\ev_kira\\templates\\admin\\ev\\edit.html.twig");
     }

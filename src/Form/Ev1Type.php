@@ -35,6 +35,7 @@ class Ev1Type extends AbstractType
                     ])
                 ],
             ] )
+            ->add('price')
             ->add ('star',  ChoiceType::class, [
                 'choices' =>[
                     '1 Star' => '1',
@@ -51,14 +52,6 @@ class Ev1Type extends AbstractType
             ->add('city')
             ->add('country')
             ->add('location')
-            ->add('status', ChoiceType::class, [
-                'choices' => [
-                    'True' => 'True',
-                    'False' => 'False'
-                ],
-            ])
-            ->add('created_at')
-            ->add('updated_at')
         ;
     }
 

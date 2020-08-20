@@ -21,13 +21,13 @@ class CategoryType extends AbstractType
             ->add('keywords')
             ->add('description')
             ->add('image',  FileType::class, [
-                'label' => 'Ev Main Image',      
+                'label' => 'Categori Main Image',      
                 'mapped' => false,
                 'required' => false,
                 
                 'constraints' => [
                     new File( [
-                        'maxSize' => '4096k',
+                        'maxSize' => '1024k',
                         'mimeTypes' => [
                             'image/*',
                         ],

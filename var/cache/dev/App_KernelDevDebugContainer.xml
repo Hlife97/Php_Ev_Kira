@@ -365,6 +365,13 @@
         <argument type="service" id=".service_locator.g9CqTPp.App\Controller\Admin\EvController"/>
       </call>
     </service>
+    <service id="App\Controller\Admin\HomesController" class="App\Controller\Admin\HomesController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.g9CqTPp.App\Controller\Admin\HomesController"/>
+      </call>
+    </service>
     <service id="App\Controller\Admin\ImageController" class="App\Controller\Admin\ImageController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -377,6 +384,13 @@
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.g9CqTPp.App\Controller\Admin\MessagesController"/>
+      </call>
+    </service>
+    <service id="App\Controller\Admin\ReservationController" class="App\Controller\Admin\ReservationController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.g9CqTPp.App\Controller\Admin\ReservationController"/>
       </call>
     </service>
     <service id="App\Controller\Admin\SettingController" class="App\Controller\Admin\SettingController" public="true" autowire="true" autoconfigure="true">
@@ -448,7 +462,13 @@
     <service id="App\Form\Admin\CommentType" class="App\Form\Admin\CommentType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Form\Admin\HomesType" class="App\Form\Admin\HomesType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\Admin\MessagesType" class="App\Form\Admin\MessagesType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\Admin\ReservationType" class="App\Form\Admin\ReservationType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Form\CategoryType" class="App\Form\CategoryType" autowire="true" autoconfigure="true">
@@ -479,7 +499,15 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
+    <service id="App\Repository\Admin\HomesRepository" class="App\Repository\Admin\HomesRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="App\Repository\Admin\MessagesRepository" class="App\Repository\Admin\MessagesRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\Admin\ReservationRepository" class="App\Repository\Admin\ReservationRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -956,7 +984,9 @@
       <argument type="collection">
         <argument>App\Form\AdminUserType</argument>
         <argument>App\Form\Admin\CommentType</argument>
+        <argument>App\Form\Admin\HomesType</argument>
         <argument>App\Form\Admin\MessagesType</argument>
+        <argument>App\Form\Admin\ReservationType</argument>
         <argument>App\Form\CategoryType</argument>
         <argument>App\Form\Ev1Type</argument>
         <argument>App\Form\EvType</argument>
@@ -1307,7 +1337,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.mC5USgn"/>
+      <argument type="service" id=".service_locator.oaQ31wa"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -3780,7 +3810,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory" public="false">
-      <argument type="service" id=".service_locator.xhsNQPZ"/>
+      <argument type="service" id=".service_locator.fe_mT48"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -5251,12 +5281,18 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\EvController" class="App\Controller\Admin\EvController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\EvController" class="App\Controller\Admin\EvController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\EvController" class="App\Controller\Admin\EvController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\HomesController" class="App\Controller\Admin\HomesController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\HomesController" class="App\Controller\Admin\HomesController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Admin\HomesController" class="App\Controller\Admin\HomesController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\ImageController" class="App\Controller\Admin\ImageController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\ImageController" class="App\Controller\Admin\ImageController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\ImageController" class="App\Controller\Admin\ImageController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\MessagesController" class="App\Controller\Admin\MessagesController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\MessagesController" class="App\Controller\Admin\MessagesController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\MessagesController" class="App\Controller\Admin\MessagesController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\ReservationController" class="App\Controller\Admin\ReservationController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\ReservationController" class="App\Controller\Admin\ReservationController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Admin\ReservationController" class="App\Controller\Admin\ReservationController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\SettingController" class="App\Controller\Admin\SettingController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\SettingController" class="App\Controller\Admin\SettingController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\SettingController" class="App\Controller\Admin\SettingController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5288,8 +5324,12 @@
     <service id=".abstract.instanceof.App\Form\AdminUserType" class="App\Form\AdminUserType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\Admin\CommentType" class="App\Form\Admin\CommentType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\Admin\CommentType" class="App\Form\Admin\CommentType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\Admin\HomesType" class="App\Form\Admin\HomesType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\Admin\HomesType" class="App\Form\Admin\HomesType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\Admin\MessagesType" class="App\Form\Admin\MessagesType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\Admin\MessagesType" class="App\Form\Admin\MessagesType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\Admin\ReservationType" class="App\Form\Admin\ReservationType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\Admin\ReservationType" class="App\Form\Admin\ReservationType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CategoryType" class="App\Form\CategoryType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\CategoryType" class="App\Form\CategoryType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\Ev1Type" class="App\Form\Ev1Type" autowire="true" abstract="true"/>
@@ -5308,8 +5348,12 @@
     <service id=".abstract.instanceof.App\Form\UserType" class="App\Form\UserType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\Admin\CommentRepository" class="App\Repository\Admin\CommentRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\Admin\CommentRepository" class="App\Repository\Admin\CommentRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\Admin\HomesRepository" class="App\Repository\Admin\HomesRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\Admin\HomesRepository" class="App\Repository\Admin\HomesRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\Admin\MessagesRepository" class="App\Repository\Admin\MessagesRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\Admin\MessagesRepository" class="App\Repository\Admin\MessagesRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\Admin\ReservationRepository" class="App\Repository\Admin\ReservationRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\Admin\ReservationRepository" class="App\Repository\Admin\ReservationRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CategoryRepository" class="App\Repository\CategoryRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\CategoryRepository" class="App\Repository\CategoryRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\EvRepository" class="App\Repository\EvRepository" autowire="true" abstract="true"/>
@@ -5616,6 +5660,18 @@
         <argument key="ev" type="service" id=".errored..service_locator.qNn3kGW.App\Entity\Ev"/>
       </argument>
     </service>
+    <service id=".service_locator.5_qw.dU" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="homesRepository" type="service" id="App\Repository\Admin\HomesRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.vcKDXoT" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="home" type="service" id=".errored..service_locator.vcKDXoT.App\Entity\Admin\Homes"/>
+      </argument>
+    </service>
     <service id=".service_locator.cnYEmTx" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5638,6 +5694,18 @@
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="message" type="service" id=".errored..service_locator.VabPmrO.App\Entity\Admin\Messages"/>
+      </argument>
+    </service>
+    <service id=".service_locator.XTxoajc" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="reservationRepository" type="service" id="App\Repository\Admin\ReservationRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.MpfsMse" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="reservation" type="service" id=".errored..service_locator.MpfsMse.App\Entity\Admin\Reservation"/>
       </argument>
     </service>
     <service id=".service_locator.3p6kP69" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -5677,19 +5745,42 @@
         <argument key="user" type="service" id=".errored..service_locator.HXUxGRH.App\Entity\User"/>
       </argument>
     </service>
-    <service id=".service_locator.RbR9ZvW" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.x6b22Se" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="categoryRepository" type="service" id="App\Repository\CategoryRepository"/>
+        <argument key="evRepository" type="service" id="App\Repository\EvRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.Xd830CV" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="categoryRepository" type="service" id="App\Repository\CategoryRepository"/>
+        <argument key="ev" type="service" id=".errored..service_locator.Xd830CV.App\Entity\Ev"/>
+      </argument>
+    </service>
+    <service id=".service_locator..vG4VJX" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="categoryRepository" type="service" id="App\Repository\CategoryRepository"/>
         <argument key="evRepository" type="service" id="App\Repository\EvRepository"/>
         <argument key="settingRepository" type="service" id="App\Repository\SettingRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.v7vxJV1" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.GVPwxS7" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="categoryRepository" type="service" id="App\Repository\CategoryRepository"/>
         <argument key="commentRepository" type="service" id="App\Repository\Admin\CommentRepository"/>
-        <argument key="ev" type="service" id=".errored..service_locator.v7vxJV1.App\Entity\Ev"/>
+        <argument key="ev" type="service" id=".errored..service_locator.GVPwxS7.App\Entity\Ev"/>
         <argument key="imageRepository" type="service" id="App\Repository\ImageRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.W0PxTN5" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="categoryRepository" type="service" id="App\Repository\CategoryRepository"/>
+        <argument key="settingRepository" type="service" id="App\Repository\SettingRepository"/>
       </argument>
     </service>
     <service id=".service_locator.nld8pAv" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -5700,13 +5791,50 @@
         <argument key="passwordEncoder" type="service" id="security.user_password_encoder.generic"/>
       </argument>
     </service>
-    <service id=".service_locator.xA8Fw_." class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.3Wv30Z7" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="authenticationUtils" type="service" id="security.authentication_utils"/>
+        <argument key="categoryRepository" type="service" id="App\Repository\CategoryRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.MyuYfJI" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.6thNx1s" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="categoryRepository" type="service" id="App\Repository\CategoryRepository"/>
+        <argument key="commentRepository" type="service" id="App\Repository\Admin\CommentRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.viEr1QG" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="categoryRepository" type="service" id="App\Repository\CategoryRepository"/>
+        <argument key="reservationRepository" type="service" id="App\Repository\Admin\ReservationRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.JZIeO2S" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="categoryRepository" type="service" id="App\Repository\CategoryRepository"/>
+        <argument key="passwordEncoder" type="service" id="security.user_password_encoder.generic"/>
+      </argument>
+    </service>
+    <service id=".service_locator..WwnQdy" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="categoryRepository" type="service" id="App\Repository\CategoryRepository"/>
+        <argument key="user" type="service" id=".errored..service_locator..WwnQdy.App\Entity\User"/>
+      </argument>
+    </service>
+    <service id=".service_locator.tvrh6pM" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="categoryRepository" type="service" id="App\Repository\CategoryRepository"/>
+        <argument key="passwordEncoder" type="service" id="security.user_password_encoder.generic"/>
+        <argument key="user" type="service" id=".errored..service_locator.tvrh6pM.App\Entity\User"/>
+      </argument>
+    </service>
+    <service id=".service_locator.nyZonyv" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\Admin\CategoryController::delete" type="service" id=".service_locator.wNIwF8O"/>
@@ -5722,6 +5850,10 @@
         <argument key="App\Controller\Admin\EvController::edit" type="service" id=".service_locator.qNn3kGW"/>
         <argument key="App\Controller\Admin\EvController::index" type="service" id=".service_locator.HOg8xP7"/>
         <argument key="App\Controller\Admin\EvController::show" type="service" id=".service_locator.qNn3kGW"/>
+        <argument key="App\Controller\Admin\HomesController::delete" type="service" id=".service_locator.vcKDXoT"/>
+        <argument key="App\Controller\Admin\HomesController::edit" type="service" id=".service_locator.vcKDXoT"/>
+        <argument key="App\Controller\Admin\HomesController::index" type="service" id=".service_locator.5_qw.dU"/>
+        <argument key="App\Controller\Admin\HomesController::show" type="service" id=".service_locator.vcKDXoT"/>
         <argument key="App\Controller\Admin\ImageController::delete" type="service" id=".service_locator.XFfswMO"/>
         <argument key="App\Controller\Admin\ImageController::edit" type="service" id=".service_locator.XFfswMO"/>
         <argument key="App\Controller\Admin\ImageController::index" type="service" id=".service_locator.cnYEmTx"/>
@@ -5731,6 +5863,10 @@
         <argument key="App\Controller\Admin\MessagesController::edit" type="service" id=".service_locator.VabPmrO"/>
         <argument key="App\Controller\Admin\MessagesController::index" type="service" id=".service_locator.O9dvn8e"/>
         <argument key="App\Controller\Admin\MessagesController::show" type="service" id=".service_locator.VabPmrO"/>
+        <argument key="App\Controller\Admin\ReservationController::delete" type="service" id=".service_locator.MpfsMse"/>
+        <argument key="App\Controller\Admin\ReservationController::edit" type="service" id=".service_locator.MpfsMse"/>
+        <argument key="App\Controller\Admin\ReservationController::index" type="service" id=".service_locator.XTxoajc"/>
+        <argument key="App\Controller\Admin\ReservationController::show" type="service" id=".service_locator.MpfsMse"/>
         <argument key="App\Controller\Admin\SettingController::delete" type="service" id=".service_locator.m5TRjON"/>
         <argument key="App\Controller\Admin\SettingController::edit" type="service" id=".service_locator.m5TRjON"/>
         <argument key="App\Controller\Admin\SettingController::index" type="service" id=".service_locator.3p6kP69"/>
@@ -5741,26 +5877,31 @@
         <argument key="App\Controller\Admin\UserController::new" type="service" id=".service_locator.j5_bHjD"/>
         <argument key="App\Controller\Admin\UserController::show" type="service" id=".service_locator.hEwcf7A"/>
         <argument key="App\Controller\EvController::delete" type="service" id=".service_locator.qNn3kGW"/>
-        <argument key="App\Controller\EvController::edit" type="service" id=".service_locator.qNn3kGW"/>
-        <argument key="App\Controller\EvController::index" type="service" id=".service_locator.HOg8xP7"/>
-        <argument key="App\Controller\EvController::show" type="service" id=".service_locator.qNn3kGW"/>
-        <argument key="App\Controller\HomeController::about" type="service" id=".service_locator.3p6kP69"/>
-        <argument key="App\Controller\HomeController::contact" type="service" id=".service_locator.3p6kP69"/>
-        <argument key="App\Controller\HomeController::index" type="service" id=".service_locator.RbR9ZvW"/>
-        <argument key="App\Controller\HomeController::show" type="service" id=".service_locator.v7vxJV1"/>
+        <argument key="App\Controller\EvController::edit" type="service" id=".service_locator.Xd830CV"/>
+        <argument key="App\Controller\EvController::index" type="service" id=".service_locator.x6b22Se"/>
+        <argument key="App\Controller\EvController::new" type="service" id=".service_locator.zAmj.kw"/>
+        <argument key="App\Controller\EvController::show" type="service" id=".service_locator.Xd830CV"/>
+        <argument key="App\Controller\HomeController::about" type="service" id=".service_locator.W0PxTN5"/>
+        <argument key="App\Controller\HomeController::categori_ev" type="service" id=".service_locator..vG4VJX"/>
+        <argument key="App\Controller\HomeController::contact" type="service" id=".service_locator.W0PxTN5"/>
+        <argument key="App\Controller\HomeController::index" type="service" id=".service_locator..vG4VJX"/>
+        <argument key="App\Controller\HomeController::show" type="service" id=".service_locator.GVPwxS7"/>
         <argument key="App\Controller\ImageController::delete" type="service" id=".service_locator.XFfswMO"/>
         <argument key="App\Controller\ImageController::edit" type="service" id=".service_locator.XFfswMO"/>
         <argument key="App\Controller\ImageController::index" type="service" id=".service_locator.cnYEmTx"/>
         <argument key="App\Controller\ImageController::new" type="service" id=".service_locator.cnYEmTx"/>
         <argument key="App\Controller\ImageController::show" type="service" id=".service_locator.XFfswMO"/>
         <argument key="App\Controller\RegistrationController::register" type="service" id=".service_locator.nld8pAv"/>
-        <argument key="App\Controller\SecurityController::login" type="service" id=".service_locator.xA8Fw_."/>
-        <argument key="App\Controller\SecurityController::loginuser" type="service" id=".service_locator.xA8Fw_."/>
-        <argument key="App\Controller\UserController::comments" type="service" id=".service_locator.zEQsXir"/>
-        <argument key="App\Controller\UserController::delete" type="service" id=".service_locator.hEwcf7A"/>
-        <argument key="App\Controller\UserController::edit" type="service" id=".service_locator.HXUxGRH"/>
-        <argument key="App\Controller\UserController::new" type="service" id=".service_locator.j5_bHjD"/>
-        <argument key="App\Controller\UserController::show" type="service" id=".service_locator.hEwcf7A"/>
+        <argument key="App\Controller\SecurityController::login" type="service" id=".service_locator.3Wv30Z7"/>
+        <argument key="App\Controller\SecurityController::loginuser" type="service" id=".service_locator.3Wv30Z7"/>
+        <argument key="App\Controller\UserController::comments" type="service" id=".service_locator.6thNx1s"/>
+        <argument key="App\Controller\UserController::delete" type="service" id=".service_locator..WwnQdy"/>
+        <argument key="App\Controller\UserController::edit" type="service" id=".service_locator.tvrh6pM"/>
+        <argument key="App\Controller\UserController::index" type="service" id=".service_locator.zAmj.kw"/>
+        <argument key="App\Controller\UserController::new" type="service" id=".service_locator.JZIeO2S"/>
+        <argument key="App\Controller\UserController::newreservation" type="service" id=".service_locator.x6b22Se"/>
+        <argument key="App\Controller\UserController::reservations" type="service" id=".service_locator.viEr1QG"/>
+        <argument key="App\Controller\UserController::show" type="service" id=".service_locator..WwnQdy"/>
         <argument key="App\Kernel::loadRoutes" type="service" id=".service_locator.C9JCBPC"/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service" id=".service_locator.C9JCBPC"/>
         <argument key="App\Kernel::terminate" type="service" id=".service_locator.beq5mCo"/>
@@ -5780,6 +5921,10 @@
         <argument key="App\Controller\Admin\EvController:edit" type="service" id=".service_locator.qNn3kGW"/>
         <argument key="App\Controller\Admin\EvController:index" type="service" id=".service_locator.HOg8xP7"/>
         <argument key="App\Controller\Admin\EvController:show" type="service" id=".service_locator.qNn3kGW"/>
+        <argument key="App\Controller\Admin\HomesController:delete" type="service" id=".service_locator.vcKDXoT"/>
+        <argument key="App\Controller\Admin\HomesController:edit" type="service" id=".service_locator.vcKDXoT"/>
+        <argument key="App\Controller\Admin\HomesController:index" type="service" id=".service_locator.5_qw.dU"/>
+        <argument key="App\Controller\Admin\HomesController:show" type="service" id=".service_locator.vcKDXoT"/>
         <argument key="App\Controller\Admin\ImageController:delete" type="service" id=".service_locator.XFfswMO"/>
         <argument key="App\Controller\Admin\ImageController:edit" type="service" id=".service_locator.XFfswMO"/>
         <argument key="App\Controller\Admin\ImageController:index" type="service" id=".service_locator.cnYEmTx"/>
@@ -5789,6 +5934,10 @@
         <argument key="App\Controller\Admin\MessagesController:edit" type="service" id=".service_locator.VabPmrO"/>
         <argument key="App\Controller\Admin\MessagesController:index" type="service" id=".service_locator.O9dvn8e"/>
         <argument key="App\Controller\Admin\MessagesController:show" type="service" id=".service_locator.VabPmrO"/>
+        <argument key="App\Controller\Admin\ReservationController:delete" type="service" id=".service_locator.MpfsMse"/>
+        <argument key="App\Controller\Admin\ReservationController:edit" type="service" id=".service_locator.MpfsMse"/>
+        <argument key="App\Controller\Admin\ReservationController:index" type="service" id=".service_locator.XTxoajc"/>
+        <argument key="App\Controller\Admin\ReservationController:show" type="service" id=".service_locator.MpfsMse"/>
         <argument key="App\Controller\Admin\SettingController:delete" type="service" id=".service_locator.m5TRjON"/>
         <argument key="App\Controller\Admin\SettingController:edit" type="service" id=".service_locator.m5TRjON"/>
         <argument key="App\Controller\Admin\SettingController:index" type="service" id=".service_locator.3p6kP69"/>
@@ -5799,26 +5948,31 @@
         <argument key="App\Controller\Admin\UserController:new" type="service" id=".service_locator.j5_bHjD"/>
         <argument key="App\Controller\Admin\UserController:show" type="service" id=".service_locator.hEwcf7A"/>
         <argument key="App\Controller\EvController:delete" type="service" id=".service_locator.qNn3kGW"/>
-        <argument key="App\Controller\EvController:edit" type="service" id=".service_locator.qNn3kGW"/>
-        <argument key="App\Controller\EvController:index" type="service" id=".service_locator.HOg8xP7"/>
-        <argument key="App\Controller\EvController:show" type="service" id=".service_locator.qNn3kGW"/>
-        <argument key="App\Controller\HomeController:about" type="service" id=".service_locator.3p6kP69"/>
-        <argument key="App\Controller\HomeController:contact" type="service" id=".service_locator.3p6kP69"/>
-        <argument key="App\Controller\HomeController:index" type="service" id=".service_locator.RbR9ZvW"/>
-        <argument key="App\Controller\HomeController:show" type="service" id=".service_locator.v7vxJV1"/>
+        <argument key="App\Controller\EvController:edit" type="service" id=".service_locator.Xd830CV"/>
+        <argument key="App\Controller\EvController:index" type="service" id=".service_locator.x6b22Se"/>
+        <argument key="App\Controller\EvController:new" type="service" id=".service_locator.zAmj.kw"/>
+        <argument key="App\Controller\EvController:show" type="service" id=".service_locator.Xd830CV"/>
+        <argument key="App\Controller\HomeController:about" type="service" id=".service_locator.W0PxTN5"/>
+        <argument key="App\Controller\HomeController:categori_ev" type="service" id=".service_locator..vG4VJX"/>
+        <argument key="App\Controller\HomeController:contact" type="service" id=".service_locator.W0PxTN5"/>
+        <argument key="App\Controller\HomeController:index" type="service" id=".service_locator..vG4VJX"/>
+        <argument key="App\Controller\HomeController:show" type="service" id=".service_locator.GVPwxS7"/>
         <argument key="App\Controller\ImageController:delete" type="service" id=".service_locator.XFfswMO"/>
         <argument key="App\Controller\ImageController:edit" type="service" id=".service_locator.XFfswMO"/>
         <argument key="App\Controller\ImageController:index" type="service" id=".service_locator.cnYEmTx"/>
         <argument key="App\Controller\ImageController:new" type="service" id=".service_locator.cnYEmTx"/>
         <argument key="App\Controller\ImageController:show" type="service" id=".service_locator.XFfswMO"/>
         <argument key="App\Controller\RegistrationController:register" type="service" id=".service_locator.nld8pAv"/>
-        <argument key="App\Controller\SecurityController:login" type="service" id=".service_locator.xA8Fw_."/>
-        <argument key="App\Controller\SecurityController:loginuser" type="service" id=".service_locator.xA8Fw_."/>
-        <argument key="App\Controller\UserController:comments" type="service" id=".service_locator.zEQsXir"/>
-        <argument key="App\Controller\UserController:delete" type="service" id=".service_locator.hEwcf7A"/>
-        <argument key="App\Controller\UserController:edit" type="service" id=".service_locator.HXUxGRH"/>
-        <argument key="App\Controller\UserController:new" type="service" id=".service_locator.j5_bHjD"/>
-        <argument key="App\Controller\UserController:show" type="service" id=".service_locator.hEwcf7A"/>
+        <argument key="App\Controller\SecurityController:login" type="service" id=".service_locator.3Wv30Z7"/>
+        <argument key="App\Controller\SecurityController:loginuser" type="service" id=".service_locator.3Wv30Z7"/>
+        <argument key="App\Controller\UserController:comments" type="service" id=".service_locator.6thNx1s"/>
+        <argument key="App\Controller\UserController:delete" type="service" id=".service_locator..WwnQdy"/>
+        <argument key="App\Controller\UserController:edit" type="service" id=".service_locator.tvrh6pM"/>
+        <argument key="App\Controller\UserController:index" type="service" id=".service_locator.zAmj.kw"/>
+        <argument key="App\Controller\UserController:new" type="service" id=".service_locator.JZIeO2S"/>
+        <argument key="App\Controller\UserController:newreservation" type="service" id=".service_locator.x6b22Se"/>
+        <argument key="App\Controller\UserController:reservations" type="service" id=".service_locator.viEr1QG"/>
+        <argument key="App\Controller\UserController:show" type="service" id=".service_locator..WwnQdy"/>
         <argument key="kernel:loadRoutes" type="service" id=".service_locator.C9JCBPC"/>
         <argument key="kernel:registerContainerConfiguration" type="service" id=".service_locator.C9JCBPC"/>
         <argument key="kernel:terminate" type="service" id=".service_locator.beq5mCo"/>
@@ -5883,12 +6037,14 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.mC5USgn" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.oaQ31wa" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\AdminUserType" type="service" id="App\Form\AdminUserType"/>
         <argument key="App\Form\Admin\CommentType" type="service" id="App\Form\Admin\CommentType"/>
+        <argument key="App\Form\Admin\HomesType" type="service" id="App\Form\Admin\HomesType"/>
         <argument key="App\Form\Admin\MessagesType" type="service" id="App\Form\Admin\MessagesType"/>
+        <argument key="App\Form\Admin\ReservationType" type="service" id="App\Form\Admin\ReservationType"/>
         <argument key="App\Form\CategoryType" type="service" id="App\Form\CategoryType"/>
         <argument key="App\Form\Ev1Type" type="service" id="App\Form\Ev1Type"/>
         <argument key="App\Form\EvType" type="service" id="App\Form\EvType"/>
@@ -5916,11 +6072,13 @@
         <argument key="doctrine.orm.default_listeners.attach_entity_listeners" type="service" id="doctrine.orm.default_listeners.attach_entity_listeners"/>
       </argument>
     </service>
-    <service id=".service_locator.xhsNQPZ" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.fe_mT48" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\Admin\CommentRepository" type="service" id="App\Repository\Admin\CommentRepository"/>
+        <argument key="App\Repository\Admin\HomesRepository" type="service" id="App\Repository\Admin\HomesRepository"/>
         <argument key="App\Repository\Admin\MessagesRepository" type="service" id="App\Repository\Admin\MessagesRepository"/>
+        <argument key="App\Repository\Admin\ReservationRepository" type="service" id="App\Repository\Admin\ReservationRepository"/>
         <argument key="App\Repository\CategoryRepository" type="service" id="App\Repository\CategoryRepository"/>
         <argument key="App\Repository\EvRepository" type="service" id="App\Repository\EvRepository"/>
         <argument key="App\Repository\ImageRepository" type="service" id="App\Repository\ImageRepository"/>
@@ -6152,6 +6310,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.g9CqTPp" method="withContext"/>
     </service>
+    <service id=".service_locator.g9CqTPp.App\Controller\Admin\HomesController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\HomesController"/>
+      <argument>App\Controller\Admin\HomesController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.g9CqTPp" method="withContext"/>
+    </service>
     <service id=".service_locator.g9CqTPp.App\Controller\Admin\ImageController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\Admin\ImageController"/>
       <argument>App\Controller\Admin\ImageController</argument>
@@ -6161,6 +6325,12 @@
     <service id=".service_locator.g9CqTPp.App\Controller\Admin\MessagesController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\Admin\MessagesController"/>
       <argument>App\Controller\Admin\MessagesController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.g9CqTPp" method="withContext"/>
+    </service>
+    <service id=".service_locator.g9CqTPp.App\Controller\Admin\ReservationController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\ReservationController"/>
+      <argument>App\Controller\Admin\ReservationController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.g9CqTPp" method="withContext"/>
     </service>
@@ -6379,12 +6549,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.MyuYfJI"/>
+      <argument type="service" id=".service_locator.nyZonyv"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.MyuYfJI"/>
+      <argument type="service" id=".service_locator.nyZonyv"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -6400,12 +6570,17 @@
     <service id=".errored..service_locator.vG92.Jb.App\Entity\Category" class="App\Entity\Category"/>
     <service id=".errored..service_locator.YxDXDBU.App\Entity\Admin\Comment" class="App\Entity\Admin\Comment"/>
     <service id=".errored..service_locator.qNn3kGW.App\Entity\Ev" class="App\Entity\Ev"/>
+    <service id=".errored..service_locator.vcKDXoT.App\Entity\Admin\Homes" class="App\Entity\Admin\Homes"/>
     <service id=".errored..service_locator.XFfswMO.App\Entity\Image" class="App\Entity\Image"/>
     <service id=".errored..service_locator.VabPmrO.App\Entity\Admin\Messages" class="App\Entity\Admin\Messages"/>
+    <service id=".errored..service_locator.MpfsMse.App\Entity\Admin\Reservation" class="App\Entity\Admin\Reservation"/>
     <service id=".errored..service_locator.m5TRjON.App\Entity\Setting" class="App\Entity\Setting"/>
     <service id=".errored..service_locator.hEwcf7A.App\Entity\User" class="App\Entity\User"/>
     <service id=".errored..service_locator.HXUxGRH.App\Entity\User" class="App\Entity\User"/>
-    <service id=".errored..service_locator.v7vxJV1.App\Entity\Ev" class="App\Entity\Ev"/>
+    <service id=".errored..service_locator.Xd830CV.App\Entity\Ev" class="App\Entity\Ev"/>
+    <service id=".errored..service_locator.GVPwxS7.App\Entity\Ev" class="App\Entity\Ev"/>
+    <service id=".errored..service_locator..WwnQdy.App\Entity\User" class="App\Entity\User"/>
+    <service id=".errored..service_locator.tvrh6pM.App\Entity\User" class="App\Entity\User"/>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
       <tag name="container.no_preload"/>
       <argument type="service" id=".service_locator.s3mLFTh"/>
@@ -6795,7 +6970,7 @@
     <service id="SymfonyCasts\Bundle\VerifyEmail\VerifyEmailHelperInterface" alias="symfonycasts.verify_email.helper"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.WaGDpDt" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.MyuYfJI"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.nyZonyv"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

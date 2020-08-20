@@ -20,9 +20,13 @@ return [
         '/admin/comment/new' => [[['_route' => 'admin_comment_new', '_controller' => 'App\\Controller\\Admin\\CommentController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/admin/ev' => [[['_route' => 'admin_ev_index', '_controller' => 'App\\Controller\\Admin\\EvController::index'], null, ['GET' => 0], null, true, false, null]],
         '/admin/ev/new' => [[['_route' => 'admin_ev_new', '_controller' => 'App\\Controller\\Admin\\EvController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/admin/homes' => [[['_route' => 'admin_homes_index', '_controller' => 'App\\Controller\\Admin\\HomesController::index'], null, ['GET' => 0], null, true, false, null]],
+        '/admin/homes/new' => [[['_route' => 'admin_homes_new', '_controller' => 'App\\Controller\\Admin\\HomesController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/admin/image' => [[['_route' => 'admin_image_index', '_controller' => 'App\\Controller\\Admin\\ImageController::index'], null, ['GET' => 0], null, true, false, null]],
         '/admin/messages' => [[['_route' => 'admin_messages_index', '_controller' => 'App\\Controller\\Admin\\MessagesController::index'], null, ['GET' => 0], null, true, false, null]],
         '/admin/messages/new' => [[['_route' => 'admin_messages_new', '_controller' => 'App\\Controller\\Admin\\MessagesController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/admin/reservation' => [[['_route' => 'admin_reservation_index', '_controller' => 'App\\Controller\\Admin\\ReservationController::index'], null, ['GET' => 0], null, true, false, null]],
+        '/admin/reservation/new' => [[['_route' => 'admin_reservation_new', '_controller' => 'App\\Controller\\Admin\\ReservationController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/admin/setting' => [[['_route' => 'setting_index', '_controller' => 'App\\Controller\\Admin\\SettingController::index'], null, ['GET' => 0], null, true, false, null]],
         '/admin/setting/new' => [[['_route' => 'setting_new', '_controller' => 'App\\Controller\\Admin\\SettingController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/admin/user' => [[['_route' => 'admin_user_index', '_controller' => 'App\\Controller\\Admin\\UserController::index'], null, ['GET' => 0], null, true, false, null]],
@@ -82,54 +86,66 @@ return [
                         .'|/edit(*:308)'
                         .'|(*:316)'
                     .')'
+                    .'|homes/([^/]++)(?'
+                        .'|(*:342)'
+                        .'|/edit(*:355)'
+                        .'|(*:363)'
+                    .')'
                     .'|image/(?'
-                        .'|new/([^/]++)(*:346)'
+                        .'|new/([^/]++)(*:393)'
                         .'|([^/]++)(?'
-                            .'|(*:365)'
+                            .'|(*:412)'
                             .'|/(?'
-                                .'|edit(*:381)'
-                                .'|([^/]++)(*:397)'
+                                .'|edit(*:428)'
+                                .'|([^/]++)(*:444)'
                             .')'
                         .')'
                     .')'
                     .'|messages/([^/]++)(?'
-                        .'|(*:428)'
-                        .'|/edit(*:441)'
-                        .'|(*:449)'
+                        .'|(*:475)'
+                        .'|/edit(*:488)'
+                        .'|(*:496)'
+                    .')'
+                    .'|reservation/([^/]++)(?'
+                        .'|(*:528)'
+                        .'|/edit(*:541)'
+                        .'|(*:549)'
                     .')'
                     .'|setting/([^/]++)(?'
-                        .'|(*:477)'
-                        .'|/edit(*:490)'
-                        .'|(*:498)'
-                    .')'
-                    .'|user/([^/]++)(?'
-                        .'|(*:523)'
-                        .'|/edit(*:536)'
-                        .'|(*:544)'
-                    .')'
-                .')'
-                .'|/user/(?'
-                    .'|ev/([^/]++)(?'
                         .'|(*:577)'
                         .'|/edit(*:590)'
                         .'|(*:598)'
                     .')'
+                    .'|user/([^/]++)(?'
+                        .'|(*:623)'
+                        .'|/edit(*:636)'
+                        .'|(*:644)'
+                    .')'
+                .')'
+                .'|/user/(?'
+                    .'|ev/([^/]++)(?'
+                        .'|(*:677)'
+                        .'|/edit(*:690)'
+                        .'|(*:698)'
+                    .')'
                     .'|image/(?'
-                        .'|new/([^/]++)(*:628)'
+                        .'|new/([^/]++)(*:728)'
                         .'|([^/]++)(?'
-                            .'|(*:647)'
-                            .'|/edit(*:660)'
-                            .'|(*:668)'
+                            .'|(*:747)'
+                            .'|/edit(*:760)'
+                            .'|(*:768)'
                         .')'
                     .')'
                     .'|([^/]++)(?'
-                        .'|(*:689)'
-                        .'|/edit(*:702)'
-                        .'|(*:710)'
+                        .'|(*:789)'
+                        .'|/edit(*:802)'
+                        .'|(*:810)'
                     .')'
-                    .'|newcomment/([^/]++)(*:738)'
+                    .'|newcomment/([^/]++)(*:838)'
+                    .'|reservation/([^/]++)(*:866)'
                 .')'
-                .'|/ev/([^/]++)(*:759)'
+                .'|/categori_ev/([^/]++)(*:896)'
+                .'|/ev/([^/]++)(*:916)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -149,31 +165,39 @@ return [
         295 => [[['_route' => 'admin_ev_show', '_controller' => 'App\\Controller\\Admin\\EvController::show'], ['id'], ['GET' => 0], null, false, true, null]],
         308 => [[['_route' => 'admin_ev_edit', '_controller' => 'App\\Controller\\Admin\\EvController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
         316 => [[['_route' => 'admin_ev_delete', '_controller' => 'App\\Controller\\Admin\\EvController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
-        346 => [[['_route' => 'admin_image_new', '_controller' => 'App\\Controller\\Admin\\ImageController::new'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        365 => [[['_route' => 'admin_image_show', '_controller' => 'App\\Controller\\Admin\\ImageController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        381 => [[['_route' => 'admin_image_edit', '_controller' => 'App\\Controller\\Admin\\ImageController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        397 => [[['_route' => 'admin_image_delete', '_controller' => 'App\\Controller\\Admin\\ImageController::delete'], ['id', 'hid'], ['DELETE' => 0], null, false, true, null]],
-        428 => [[['_route' => 'admin_messages_show', '_controller' => 'App\\Controller\\Admin\\MessagesController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        441 => [[['_route' => 'admin_messages_edit', '_controller' => 'App\\Controller\\Admin\\MessagesController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        449 => [[['_route' => 'admin_messages_delete', '_controller' => 'App\\Controller\\Admin\\MessagesController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
-        477 => [[['_route' => 'setting_show', '_controller' => 'App\\Controller\\Admin\\SettingController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        490 => [[['_route' => 'setting_edit', '_controller' => 'App\\Controller\\Admin\\SettingController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        498 => [[['_route' => 'setting_delete', '_controller' => 'App\\Controller\\Admin\\SettingController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
-        523 => [[['_route' => 'admin_user_show', '_controller' => 'App\\Controller\\Admin\\UserController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        536 => [[['_route' => 'admin_user_edit', '_controller' => 'App\\Controller\\Admin\\UserController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        544 => [[['_route' => 'admin_user_delete', '_controller' => 'App\\Controller\\Admin\\UserController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
-        577 => [[['_route' => 'user_ev_show', '_controller' => 'App\\Controller\\EvController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        590 => [[['_route' => 'user_ev_edit', '_controller' => 'App\\Controller\\EvController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        598 => [[['_route' => 'user_ev_delete', '_controller' => 'App\\Controller\\EvController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
-        628 => [[['_route' => 'user_image_new', '_controller' => 'App\\Controller\\ImageController::new'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        647 => [[['_route' => 'user_image_show', '_controller' => 'App\\Controller\\ImageController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        660 => [[['_route' => 'user_image_edit', '_controller' => 'App\\Controller\\ImageController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        668 => [[['_route' => 'user_image_delete', '_controller' => 'App\\Controller\\ImageController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
-        689 => [[['_route' => 'user_show', '_controller' => 'App\\Controller\\UserController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        702 => [[['_route' => 'user_edit', '_controller' => 'App\\Controller\\UserController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        710 => [[['_route' => 'user_delete', '_controller' => 'App\\Controller\\UserController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
-        738 => [[['_route' => 'user_new_comment', '_controller' => 'App\\Controller\\UserController::newcomment'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        759 => [
+        342 => [[['_route' => 'admin_homes_show', '_controller' => 'App\\Controller\\Admin\\HomesController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        355 => [[['_route' => 'admin_homes_edit', '_controller' => 'App\\Controller\\Admin\\HomesController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        363 => [[['_route' => 'admin_homes_delete', '_controller' => 'App\\Controller\\Admin\\HomesController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
+        393 => [[['_route' => 'admin_image_new', '_controller' => 'App\\Controller\\Admin\\ImageController::new'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        412 => [[['_route' => 'admin_image_show', '_controller' => 'App\\Controller\\Admin\\ImageController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        428 => [[['_route' => 'admin_image_edit', '_controller' => 'App\\Controller\\Admin\\ImageController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        444 => [[['_route' => 'admin_image_delete', '_controller' => 'App\\Controller\\Admin\\ImageController::delete'], ['id', 'hid'], ['DELETE' => 0], null, false, true, null]],
+        475 => [[['_route' => 'admin_messages_show', '_controller' => 'App\\Controller\\Admin\\MessagesController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        488 => [[['_route' => 'admin_messages_edit', '_controller' => 'App\\Controller\\Admin\\MessagesController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        496 => [[['_route' => 'admin_messages_delete', '_controller' => 'App\\Controller\\Admin\\MessagesController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
+        528 => [[['_route' => 'admin_reservation_show', '_controller' => 'App\\Controller\\Admin\\ReservationController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        541 => [[['_route' => 'admin_reservation_edit', '_controller' => 'App\\Controller\\Admin\\ReservationController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        549 => [[['_route' => 'admin_reservation_delete', '_controller' => 'App\\Controller\\Admin\\ReservationController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
+        577 => [[['_route' => 'setting_show', '_controller' => 'App\\Controller\\Admin\\SettingController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        590 => [[['_route' => 'setting_edit', '_controller' => 'App\\Controller\\Admin\\SettingController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        598 => [[['_route' => 'setting_delete', '_controller' => 'App\\Controller\\Admin\\SettingController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
+        623 => [[['_route' => 'admin_user_show', '_controller' => 'App\\Controller\\Admin\\UserController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        636 => [[['_route' => 'admin_user_edit', '_controller' => 'App\\Controller\\Admin\\UserController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        644 => [[['_route' => 'admin_user_delete', '_controller' => 'App\\Controller\\Admin\\UserController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
+        677 => [[['_route' => 'user_ev_show', '_controller' => 'App\\Controller\\EvController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        690 => [[['_route' => 'user_ev_edit', '_controller' => 'App\\Controller\\EvController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        698 => [[['_route' => 'user_ev_delete', '_controller' => 'App\\Controller\\EvController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
+        728 => [[['_route' => 'user_image_new', '_controller' => 'App\\Controller\\ImageController::new'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        747 => [[['_route' => 'user_image_show', '_controller' => 'App\\Controller\\ImageController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        760 => [[['_route' => 'user_image_edit', '_controller' => 'App\\Controller\\ImageController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        768 => [[['_route' => 'user_image_delete', '_controller' => 'App\\Controller\\ImageController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
+        789 => [[['_route' => 'user_show', '_controller' => 'App\\Controller\\UserController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        802 => [[['_route' => 'user_edit', '_controller' => 'App\\Controller\\UserController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        810 => [[['_route' => 'user_delete', '_controller' => 'App\\Controller\\UserController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
+        838 => [[['_route' => 'user_new_comment', '_controller' => 'App\\Controller\\UserController::newcomment'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        866 => [[['_route' => 'user_reservation_new', '_controller' => 'App\\Controller\\UserController::newreservation'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        896 => [[['_route' => 'categori_ev', '_controller' => 'App\\Controller\\HomeController::categori_ev'], ['id'], null, null, false, true, null]],
+        916 => [
             [['_route' => 'ev_show', '_controller' => 'App\\Controller\\HomeController::show'], ['id'], ['GET' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

@@ -1,0 +1,78 @@
+{% extends 'homebase.html.twig' %}
+
+{% block title %}{{ app.user.name }}-Rents{% endblock %}
+
+{% block body %}
+
+<section id="content" class="shortcode-item">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-4 col-sm-2">
+
+                <div class="tab-wrap">
+                    <div align="center" class="media">
+                        {{ include('user/usermenu.html.twig') }}
+
+                    </div>
+                    <!--/.media-->
+                </div>
+                <!--/.tab-wrap-->
+            </div>
+            <!--/.col-sm-6-->
+
+            <div align="center" class="col-xs-8 col-sm-10">
+                <h2>Rent</h2>
+                <hr>
+                <h4>Home: {{ ev.title }}</h4>
+                <hr>
+                {{ include('messages.html.twig') }}
+
+                <div class="row contact-wrap">
+                    <div class="status alert alert-success" style="display: none"></div>
+                    <form name="reservation" method="post" class="contact-form" role="form">
+                        <div class="col-sm-5 col-sm-offset-1" id="reservation">
+                            <div class="form-group">
+                                <label for="reservation_name">Name *</label>
+                                <input type="text" id="reservation_name" name="reservation[name]" value="{{ app.user.name }}" class="form-control"
+                                    required="required">
+                            </div>
+                            <div class="form-group">
+                                <label for="reservation_surname">Sruname *</label>
+                                <input type="text" id="reservation_name" name="reservation[surname]" value="{{ app.user.surname }}" class="form-control"
+                                    required="required">
+                            </div>
+                            <div class="form-group">
+                                <label for="reservation_email">Email *</label>
+                                <input type="email" id="reservation_email" name="reservation[email]" value="{{ app.user.email }}" class="form-control"
+                                    required="required">
+                            </div>
+                            <div class="form-group">
+                                <label for="reservation_subject">Phone *</label>
+                                <input type="text" id="reservation_phone" name="reservation[phone]" class="form-control"
+                                    required="required">
+                            </div>
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="form-group">
+                                <label for="reservation_message">Message *</label>
+                                <textarea id="reservation_message" name="reservation[message]" required="required"
+                                    class="form-control" rows="8"></textarea>
+                            </div>
+                            <div class="form-group">
+                            **************Credit Card Informations ********************
+                                <input type="hidden" name="token" value="{{ csrf_token('form-messeage') }}" />
+                                <button type="submit" class="btn btn-primary btn-lg">Rent</button>
+                            </div>
+                        </div>
+                    </form>
+                    <!--/.row-->
+                </div>
+            </div>
+        </div>
+        <!--/.row-->
+    </div>
+    <!--/.container-->
+</section>
+<!--/#content-->
+
+{% endblock %}

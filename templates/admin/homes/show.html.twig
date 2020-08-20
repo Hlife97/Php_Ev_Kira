@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Homes{% endblock %}
+
+{% block body %}
+    <h1>Homes</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ home.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ home.title }}</td>
+            </tr>
+            <tr>
+                <th>Evid</th>
+                <td>{{ home.evid }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ home.description }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ home.image }}</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>{{ home.price }}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ home.status }}</td>
+            </tr>
+            <tr>
+                <th>Number</th>
+                <td>{{ home.number }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_homes_index') }}">back to list</a>
+
+    <a href="{{ path('admin_homes_edit', {'id': home.id}) }}">edit</a>
+
+    {{ include('admin_homes/_delete_form.html.twig') }}
+{% endblock %}

@@ -33,7 +33,7 @@ class __TwigTemplate_f7b8bc511d58f2fd62191f5abae29ea13deb1d7384f18ffc82711e29226
     protected function doGetParent(array $context)
     {
         // line 1
-        return "base.html.twig";
+        return "adminbase.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -45,7 +45,7 @@ class __TwigTemplate_f7b8bc511d58f2fd62191f5abae29ea13deb1d7384f18ffc82711e29226
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "admin/reservation/index.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "admin/reservation/index.html.twig", 1);
+        $this->parent = $this->loadTemplate("adminbase.html.twig", "admin/reservation/index.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -65,7 +65,7 @@ class __TwigTemplate_f7b8bc511d58f2fd62191f5abae29ea13deb1d7384f18ffc82711e29226
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Reservation index";
+        echo "Hello AdminController!";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -85,124 +85,106 @@ class __TwigTemplate_f7b8bc511d58f2fd62191f5abae29ea13deb1d7384f18ffc82711e29226
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Reservation index</h1>
+        echo "
+<div class=\"container-fluid\">
+    <div class=\"page-wrapper\">
+        <div class=\"page-breadcrumb\">
+            <div class=\"row\">
+                <div class=\"col-12 d-flex no-block align-items-center\">
+                    <h4 class=\"page-title\">User Reservations</h4>
+                    <div class=\"ml-auto text-right\">
+                        <nav aria-label=\"breadcrumb\">
+                            <ol class=\"breadcrumb\">
+                                <li class=\"breadcrumb-item\"><a href=\"\\admin\">Home</a></li>
+                                <li class=\"breadcrumb-item active\" aria-current=\"page\">Reservations-New</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=\"container-fluid\">
+            <div class=\"row\">
+                <div class=\"col-12\">
+                    <div class=\"card\">
+                        <div class=\"card-body\">
+                            <h3>Reservations List</h3>
 
-    <table class=\"table\">
+                            <table class=\"table\">
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Userid</th>
                 <th>Evid</th>
                 <th>Name</th>
-                <th>Surname</th>
                 <th>Email</th>
                 <th>Phone</th>
-                <th>Checkin</th>
-                <th>Checkout</th>
-                <th>Days</th>
-                <th>Total</th>
-                <th>Ip</th>
-                <th>Message</th>
-                <th>Note</th>
                 <th>Status</th>
-                <th>Created_at</th>
-                <th>Updated_at</th>
-                <th>actions</th>
+                <th>Show</th>
+                <th>Edit</th>
             </tr>
         </thead>
         <tbody>
         ";
-        // line 32
+        // line 46
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["reservations"]) || array_key_exists("reservations", $context) ? $context["reservations"] : (function () { throw new RuntimeError('Variable "reservations" does not exist.', 32, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["reservations"]) || array_key_exists("reservations", $context) ? $context["reservations"] : (function () { throw new RuntimeError('Variable "reservations" does not exist.', 46, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["reservation"]) {
-            // line 33
+            // line 47
             echo "            <tr>
                 <td>";
-            // line 34
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "id", [], "any", false, false, false, 34), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 35
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "userid", [], "any", false, false, false, 35), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 36
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "evid", [], "any", false, false, false, 36), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 37
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "name", [], "any", false, false, false, 37), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 38
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "surname", [], "any", false, false, false, 38), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 39
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "email", [], "any", false, false, false, 39), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 40
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "phone", [], "any", false, false, false, 40), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 41
-            ((twig_get_attribute($this->env, $this->source, $context["reservation"], "checkin", [], "any", false, false, false, 41)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "checkin", [], "any", false, false, false, 41), "Y-m-d H:i:s"), "html", null, true))) : (print ("")));
-            echo "</td>
-                <td>";
-            // line 42
-            ((twig_get_attribute($this->env, $this->source, $context["reservation"], "checkout", [], "any", false, false, false, 42)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "checkout", [], "any", false, false, false, 42), "Y-m-d H:i:s"), "html", null, true))) : (print ("")));
-            echo "</td>
-                <td>";
-            // line 43
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "days", [], "any", false, false, false, 43), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 44
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "total", [], "any", false, false, false, 44), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 45
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "ip", [], "any", false, false, false, 45), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 46
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "message", [], "any", false, false, false, 46), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 47
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "note", [], "any", false, false, false, 47), "html", null, true);
-            echo "</td>
-                <td>";
             // line 48
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "status", [], "any", false, false, false, 48), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "id", [], "any", false, false, false, 48), "html", null, true);
             echo "</td>
-                <td>";
+                <td><a href=\"";
             // line 49
-            ((twig_get_attribute($this->env, $this->source, $context["reservation"], "createdAt", [], "any", false, false, false, 49)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "createdAt", [], "any", false, false, false, 49), "Y-m-d H:i:s"), "html", null, true))) : (print ("")));
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user_show", ["id" => twig_get_attribute($this->env, $this->source, $context["reservation"], "userid", [], "any", false, false, false, 49)]), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "rname", [], "any", false, false, false, 49), "html", null, true);
+            echo "</a></td>
+                <td><a href=\"";
+            // line 50
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_ev_show", ["id" => twig_get_attribute($this->env, $this->source, $context["reservation"], "evid", [], "any", false, false, false, 50)]), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "hname", [], "any", false, false, false, 50), "html", null, true);
+            echo "</a></td>
+                <td>";
+            // line 51
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "rname", [], "any", false, false, false, 51), "html", null, true);
             echo "</td>
                 <td>";
-            // line 50
-            ((twig_get_attribute($this->env, $this->source, $context["reservation"], "updatedAt", [], "any", false, false, false, 50)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "updatedAt", [], "any", false, false, false, 50), "Y-m-d H:i:s"), "html", null, true))) : (print ("")));
+            // line 52
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "email", [], "any", false, false, false, 52), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 53
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "phone", [], "any", false, false, false, 53), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 54
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "status", [], "any", false, false, false, 54), "html", null, true);
             echo "</td>
                 <td>
                     <a href=\"";
-            // line 52
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_reservation_show", ["id" => twig_get_attribute($this->env, $this->source, $context["reservation"], "id", [], "any", false, false, false, 52)]), "html", null, true);
-            echo "\">show</a>
+            // line 56
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_reservation_show", ["id" => twig_get_attribute($this->env, $this->source, $context["reservation"], "id", [], "any", false, false, false, 56)]), "html", null, true);
+            echo "\"><button
+                                type=\"button\" class=\"btn btn-info\">show</button></a>
+                </td>
+                <td>
                     <a href=\"";
-            // line 53
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_reservation_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["reservation"], "id", [], "any", false, false, false, 53)]), "html", null, true);
-            echo "\">edit</a>
+            // line 60
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_reservation_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["reservation"], "id", [], "any", false, false, false, 60)]), "html", null, true);
+            echo "\"><button
+                                type=\"button\" class=\"btn btn-dark\">edit</button></a>
                 </td>
             </tr>
         ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 57
+            // line 65
             echo "            <tr>
                 <td colspan=\"18\">no records found</td>
             </tr>
@@ -211,14 +193,17 @@ class __TwigTemplate_f7b8bc511d58f2fd62191f5abae29ea13deb1d7384f18ffc82711e29226
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['reservation'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 61
+        // line 69
         echo "        </tbody>
     </table>
 
-    <a href=\"";
-        // line 64
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_reservation_new");
-        echo "\">Create new</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -240,64 +225,72 @@ class __TwigTemplate_f7b8bc511d58f2fd62191f5abae29ea13deb1d7384f18ffc82711e29226
 
     public function getDebugInfo()
     {
-        return array (  220 => 64,  215 => 61,  206 => 57,  197 => 53,  193 => 52,  188 => 50,  184 => 49,  180 => 48,  176 => 47,  172 => 46,  168 => 45,  164 => 44,  160 => 43,  156 => 42,  152 => 41,  148 => 40,  144 => 39,  140 => 38,  136 => 37,  132 => 36,  128 => 35,  124 => 34,  121 => 33,  116 => 32,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  197 => 69,  188 => 65,  178 => 60,  171 => 56,  166 => 54,  162 => 53,  158 => 52,  154 => 51,  148 => 50,  142 => 49,  138 => 48,  135 => 47,  130 => 46,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'base.html.twig' %}
+        return new Source("{% extends 'adminbase.html.twig' %}
 
-{% block title %}Reservation index{% endblock %}
+{% block title %}Hello AdminController!{% endblock %}
 
 {% block body %}
-    <h1>Reservation index</h1>
 
-    <table class=\"table\">
+<div class=\"container-fluid\">
+    <div class=\"page-wrapper\">
+        <div class=\"page-breadcrumb\">
+            <div class=\"row\">
+                <div class=\"col-12 d-flex no-block align-items-center\">
+                    <h4 class=\"page-title\">User Reservations</h4>
+                    <div class=\"ml-auto text-right\">
+                        <nav aria-label=\"breadcrumb\">
+                            <ol class=\"breadcrumb\">
+                                <li class=\"breadcrumb-item\"><a href=\"\\admin\">Home</a></li>
+                                <li class=\"breadcrumb-item active\" aria-current=\"page\">Reservations-New</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=\"container-fluid\">
+            <div class=\"row\">
+                <div class=\"col-12\">
+                    <div class=\"card\">
+                        <div class=\"card-body\">
+                            <h3>Reservations List</h3>
+
+                            <table class=\"table\">
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Userid</th>
                 <th>Evid</th>
                 <th>Name</th>
-                <th>Surname</th>
                 <th>Email</th>
                 <th>Phone</th>
-                <th>Checkin</th>
-                <th>Checkout</th>
-                <th>Days</th>
-                <th>Total</th>
-                <th>Ip</th>
-                <th>Message</th>
-                <th>Note</th>
                 <th>Status</th>
-                <th>Created_at</th>
-                <th>Updated_at</th>
-                <th>actions</th>
+                <th>Show</th>
+                <th>Edit</th>
             </tr>
         </thead>
         <tbody>
         {% for reservation in reservations %}
             <tr>
                 <td>{{ reservation.id }}</td>
-                <td>{{ reservation.userid }}</td>
-                <td>{{ reservation.evid }}</td>
-                <td>{{ reservation.name }}</td>
-                <td>{{ reservation.surname }}</td>
+                <td><a href=\"{{ path('admin_user_show', {'id': reservation.userid}) }}\">{{ reservation.rname }}</a></td>
+                <td><a href=\"{{ path('admin_ev_show', {'id': reservation.evid}) }}\">{{ reservation.hname }}</a></td>
+                <td>{{ reservation.rname }}</td>
                 <td>{{ reservation.email }}</td>
                 <td>{{ reservation.phone }}</td>
-                <td>{{ reservation.checkin ? reservation.checkin|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ reservation.checkout ? reservation.checkout|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ reservation.days }}</td>
-                <td>{{ reservation.total }}</td>
-                <td>{{ reservation.ip }}</td>
-                <td>{{ reservation.message }}</td>
-                <td>{{ reservation.note }}</td>
                 <td>{{ reservation.status }}</td>
-                <td>{{ reservation.createdAt ? reservation.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ reservation.updatedAt ? reservation.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
-                    <a href=\"{{ path('admin_reservation_show', {'id': reservation.id}) }}\">show</a>
-                    <a href=\"{{ path('admin_reservation_edit', {'id': reservation.id}) }}\">edit</a>
+                    <a href=\"{{ path('admin_reservation_show', {'id': reservation.id}) }}\"><button
+                                type=\"button\" class=\"btn btn-info\">show</button></a>
+                </td>
+                <td>
+                    <a href=\"{{ path('admin_reservation_edit', {'id': reservation.id}) }}\"><button
+                                type=\"button\" class=\"btn btn-dark\">edit</button></a>
                 </td>
             </tr>
         {% else %}
@@ -308,7 +301,13 @@ class __TwigTemplate_f7b8bc511d58f2fd62191f5abae29ea13deb1d7384f18ffc82711e29226
         </tbody>
     </table>
 
-    <a href=\"{{ path('admin_reservation_new') }}\">Create new</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
 ", "admin/reservation/index.html.twig", "C:\\xampp\\htdocs\\ev_kira\\templates\\admin\\reservation\\index.html.twig");
     }

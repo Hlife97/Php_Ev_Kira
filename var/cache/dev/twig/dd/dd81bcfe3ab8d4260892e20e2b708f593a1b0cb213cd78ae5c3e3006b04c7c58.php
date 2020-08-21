@@ -132,14 +132,18 @@ class __TwigTemplate_67c1d060f87bee4223a15a424571ddca6ba796e46b7eef2ffd3a1a19321
         foreach ($context['_seq'] as $context["_key"] => $context["reservation"]) {
             // line 42
             echo "                        <tr>
-                            <td>";
+                            <td><a href=\"";
             // line 43
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "rname", [], "any", false, false, false, 43), "html", null, true);
-            echo "</td>
-                            <td>";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_show", ["id" => twig_get_attribute($this->env, $this->source, $context["reservation"], "userid", [], "any", false, false, false, 43)]), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "name", [], "any", false, false, false, 43), "html", null, true);
+            echo "</a></td>
+                            <td><a href=\"";
             // line 44
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "name", [], "any", false, false, false, 44), "html", null, true);
-            echo "</td>
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ev_show", ["id" => twig_get_attribute($this->env, $this->source, $context["reservation"], "evid", [], "any", false, false, false, 44)]), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "hname", [], "any", false, false, false, 44), "html", null, true);
+            echo "</a></td>
                             <td>";
             // line 45
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "surname", [], "any", false, false, false, 45), "html", null, true);
@@ -175,7 +179,7 @@ class __TwigTemplate_67c1d060f87bee4223a15a424571ddca6ba796e46b7eef2ffd3a1a19321
                             <td>
                                 <a href=\"";
             // line 54
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_reservation_show", ["id" => twig_get_attribute($this->env, $this->source, $context["reservation"], "id", [], "any", false, false, false, 54)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_reservation_show", ["id" => twig_get_attribute($this->env, $this->source, $context["reservation"], "id", [], "any", false, false, false, 54)]), "html", null, true);
             echo "\">show</a>
                             </td>
                         </tr>
@@ -224,7 +228,7 @@ class __TwigTemplate_67c1d060f87bee4223a15a424571ddca6ba796e46b7eef2ffd3a1a19321
 
     public function getDebugInfo()
     {
-        return array (  196 => 62,  187 => 58,  178 => 54,  173 => 52,  169 => 51,  165 => 50,  161 => 49,  157 => 48,  153 => 47,  149 => 46,  145 => 45,  141 => 44,  137 => 43,  134 => 42,  129 => 41,  98 => 13,  89 => 6,  79 => 5,  59 => 3,  36 => 1,);
+        return array (  200 => 62,  191 => 58,  182 => 54,  177 => 52,  173 => 51,  169 => 50,  165 => 49,  161 => 48,  157 => 47,  153 => 46,  149 => 45,  143 => 44,  137 => 43,  134 => 42,  129 => 41,  98 => 13,  89 => 6,  79 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -271,8 +275,8 @@ class __TwigTemplate_67c1d060f87bee4223a15a424571ddca6ba796e46b7eef2ffd3a1a19321
                     <tbody>
                     {% for reservation in reservations %}
                         <tr>
-                            <td>{{ reservation.rname }}</td>
-                            <td>{{ reservation.name }}</td>
+                            <td><a href=\"{{ path('user_show', {'id': reservation.userid}) }}\">{{ reservation.name }}</a></td>
+                            <td><a href=\"{{ path('ev_show', {'id': reservation.evid}) }}\">{{ reservation.hname }}</a></td>
                             <td>{{ reservation.surname }}</td>
                             <td>{{ reservation.email }}</td>
                             <td>{{ reservation.phone }}</td>
@@ -282,7 +286,7 @@ class __TwigTemplate_67c1d060f87bee4223a15a424571ddca6ba796e46b7eef2ffd3a1a19321
                             <td>{{ reservation.status }}</td>
                             <td>{{ reservation.created_at }}</td>
                             <td>
-                                <a href=\"{{ path('admin_reservation_show', {'id': reservation.id}) }}\">show</a>
+                                <a href=\"{{ path('user_reservation_show', {'id': reservation.id}) }}\">show</a>
                             </td>
                         </tr>
                     {% else %}

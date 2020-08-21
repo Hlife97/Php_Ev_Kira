@@ -4,6 +4,7 @@ namespace App\Form\Admin;
 
 use App\Entity\Admin\Reservation;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -19,16 +20,16 @@ class ReservationType extends AbstractType
             ->add('email')
             ->add('phone')
             ->add('price')
-            ->add('checkin')
-            ->add('checkout')
-            ->add('days')
-            ->add('total')
-            ->add('ip')
             ->add('message')
             ->add('note')
-            ->add('status')
-            ->add('created_at')
-            ->add('updated_at')
+            ->add('status', ChoiceType::class, [
+                'choices' => [
+                    'New' => 'New',
+                    'Accepted' => 'Accepted',
+                    'Canceled' => 'Canceled',
+                    'Completed' => 'Completed'
+                ],
+            ])
         ;
     }
 

@@ -157,7 +157,7 @@ class __TwigTemplate_a9956e578d4e23a67d566eeab6fd3341be58e32f8fa547b94538e476fe6
                             <td><img src=\"";
         // line 53
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 53, $this->source); })()), "user", [], "any", false, false, false, 53), "image", [], "any", false, false, false, 53))), "html", null, true);
-        echo "\" height=\"70\"></td>
+        echo "\" height=\"90\"></td>
                         </tr>
                         <tr>
                             <th>Status</th>
@@ -274,7 +274,7 @@ class __TwigTemplate_a9956e578d4e23a67d566eeab6fd3341be58e32f8fa547b94538e476fe6
                         </tr>
                         <tr>
                             <th>Image</th>
-                            <td><img src=\"{{ asset ('uploads/images/' ~ app.user.image) }}\" height=\"70\"></td>
+                            <td><img src=\"{{ asset ('uploads/images/' ~ app.user.image) }}\" height=\"90\"></td>
                         </tr>
                         <tr>
                             <th>Status</th>

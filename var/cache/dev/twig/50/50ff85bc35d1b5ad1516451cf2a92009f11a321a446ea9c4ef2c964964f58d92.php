@@ -120,18 +120,10 @@ class __TwigTemplate_6477aa49f0a42a7fe55ffd6eb861d07017fe4c45b7788e63cbab79710cb
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["ev"]) || array_key_exists("ev", $context) ? $context["ev"] : (function () { throw new RuntimeError('Variable "ev" does not exist.', 29, $this->source); })()), "price", [], "any", false, false, false, 29), "html", null, true);
         echo "₺</span>
                 </div>
-                <form action=\"";
-        // line 31
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_reservation_new", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["ev"]) || array_key_exists("ev", $context) ? $context["ev"] : (function () { throw new RuntimeError('Variable "ev" does not exist.', 31, $this->source); })()), "id", [], "any", false, false, false, 31)]), "html", null, true);
-        echo "\" method=\"post\">
-                    <span>Qty</span>
-                    <input id=\"qty\" class=\"input-text qty\" name=\"amount\" min=\"1\" value=\"1\" title=\"Qty\" type=\"number\">
-
-                </form>
 </table>
                 <hr>
                 ";
-        // line 38
+        // line 33
         echo twig_include($this->env, $context, "messages.html.twig");
         echo "
 
@@ -142,24 +134,24 @@ class __TwigTemplate_6477aa49f0a42a7fe55ffd6eb861d07017fe4c45b7788e63cbab79710cb
                             <div class=\"form-group\">
                                 <label for=\"reservation_name\">Name *</label>
                                 <input type=\"text\" id=\"reservation_name\" name=\"reservation[name]\" value=\"";
-        // line 46
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 46, $this->source); })()), "user", [], "any", false, false, false, 46), "name", [], "any", false, false, false, 46), "html", null, true);
+        // line 41
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 41, $this->source); })()), "user", [], "any", false, false, false, 41), "name", [], "any", false, false, false, 41), "html", null, true);
         echo "\" class=\"form-control\"
                                     required=\"required\">
                             </div>
                             <div class=\"form-group\">
                                 <label for=\"reservation_surname\">Sruname *</label>
                                 <input type=\"text\" id=\"reservation_name\" name=\"reservation[surname]\" value=\"";
-        // line 51
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 51, $this->source); })()), "user", [], "any", false, false, false, 51), "surname", [], "any", false, false, false, 51), "html", null, true);
+        // line 46
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 46, $this->source); })()), "user", [], "any", false, false, false, 46), "surname", [], "any", false, false, false, 46), "html", null, true);
         echo "\" class=\"form-control\"
                                     required=\"required\">
                             </div>
                             <div class=\"form-group\">
                                 <label for=\"reservation_email\">Email *</label>
                                 <input type=\"email\" id=\"reservation_email\" name=\"reservation[email]\" value=\"";
-        // line 56
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 56, $this->source); })()), "user", [], "any", false, false, false, 56), "email", [], "any", false, false, false, 56), "html", null, true);
+        // line 51
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 51, $this->source); })()), "user", [], "any", false, false, false, 51), "email", [], "any", false, false, false, 51), "html", null, true);
         echo "\" class=\"form-control\"
                                     required=\"required\">
                             </div>
@@ -178,7 +170,7 @@ class __TwigTemplate_6477aa49f0a42a7fe55ffd6eb861d07017fe4c45b7788e63cbab79710cb
                             <div class=\"form-group\">
                             **************Credit Card Informations ********************
                                 <input type=\"hidden\" name=\"token\" value=\"";
-        // line 73
+        // line 68
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("form-reservation"), "html", null, true);
         echo "\" />
                                 <button type=\"submit\" class=\"btn btn-primary btn-lg\">Rent</button>
@@ -216,7 +208,7 @@ class __TwigTemplate_6477aa49f0a42a7fe55ffd6eb861d07017fe4c45b7788e63cbab79710cb
 
     public function getDebugInfo()
     {
-        return array (  182 => 73,  162 => 56,  154 => 51,  146 => 46,  135 => 38,  125 => 31,  120 => 29,  114 => 26,  99 => 14,  89 => 6,  79 => 5,  59 => 3,  36 => 1,);
+        return array (  174 => 68,  154 => 51,  146 => 46,  138 => 41,  127 => 33,  120 => 29,  114 => 26,  99 => 14,  89 => 6,  79 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -251,11 +243,6 @@ class __TwigTemplate_6477aa49f0a42a7fe55ffd6eb861d07017fe4c45b7788e63cbab79710cb
                 <div class=\"price-box\">
                     <span>Price:{{ev.price}}₺</span>
                 </div>
-                <form action=\"{{ path('user_reservation_new', {'id':ev.id}) }}\" method=\"post\">
-                    <span>Qty</span>
-                    <input id=\"qty\" class=\"input-text qty\" name=\"amount\" min=\"1\" value=\"1\" title=\"Qty\" type=\"number\">
-
-                </form>
 </table>
                 <hr>
                 {{ include('messages.html.twig') }}

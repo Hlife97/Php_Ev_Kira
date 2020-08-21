@@ -5834,7 +5834,7 @@
         <argument key="user" type="service" id=".errored..service_locator.tvrh6pM.App\Entity\User"/>
       </argument>
     </service>
-    <service id=".service_locator.nyZonyv" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.5DlpHST" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\Admin\CategoryController::delete" type="service" id=".service_locator.wNIwF8O"/>
@@ -5866,7 +5866,7 @@
         <argument key="App\Controller\Admin\ReservationController::delete" type="service" id=".service_locator.MpfsMse"/>
         <argument key="App\Controller\Admin\ReservationController::edit" type="service" id=".service_locator.MpfsMse"/>
         <argument key="App\Controller\Admin\ReservationController::index" type="service" id=".service_locator.XTxoajc"/>
-        <argument key="App\Controller\Admin\ReservationController::show" type="service" id=".service_locator.MpfsMse"/>
+        <argument key="App\Controller\Admin\ReservationController::show" type="service" id=".service_locator.XTxoajc"/>
         <argument key="App\Controller\Admin\SettingController::delete" type="service" id=".service_locator.m5TRjON"/>
         <argument key="App\Controller\Admin\SettingController::edit" type="service" id=".service_locator.m5TRjON"/>
         <argument key="App\Controller\Admin\SettingController::index" type="service" id=".service_locator.3p6kP69"/>
@@ -5901,6 +5901,7 @@
         <argument key="App\Controller\UserController::new" type="service" id=".service_locator.JZIeO2S"/>
         <argument key="App\Controller\UserController::newreservation" type="service" id=".service_locator.x6b22Se"/>
         <argument key="App\Controller\UserController::reservations" type="service" id=".service_locator.viEr1QG"/>
+        <argument key="App\Controller\UserController::reservationshow" type="service" id=".service_locator.viEr1QG"/>
         <argument key="App\Controller\UserController::show" type="service" id=".service_locator..WwnQdy"/>
         <argument key="App\Kernel::loadRoutes" type="service" id=".service_locator.C9JCBPC"/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service" id=".service_locator.C9JCBPC"/>
@@ -5937,7 +5938,7 @@
         <argument key="App\Controller\Admin\ReservationController:delete" type="service" id=".service_locator.MpfsMse"/>
         <argument key="App\Controller\Admin\ReservationController:edit" type="service" id=".service_locator.MpfsMse"/>
         <argument key="App\Controller\Admin\ReservationController:index" type="service" id=".service_locator.XTxoajc"/>
-        <argument key="App\Controller\Admin\ReservationController:show" type="service" id=".service_locator.MpfsMse"/>
+        <argument key="App\Controller\Admin\ReservationController:show" type="service" id=".service_locator.XTxoajc"/>
         <argument key="App\Controller\Admin\SettingController:delete" type="service" id=".service_locator.m5TRjON"/>
         <argument key="App\Controller\Admin\SettingController:edit" type="service" id=".service_locator.m5TRjON"/>
         <argument key="App\Controller\Admin\SettingController:index" type="service" id=".service_locator.3p6kP69"/>
@@ -5972,6 +5973,7 @@
         <argument key="App\Controller\UserController:new" type="service" id=".service_locator.JZIeO2S"/>
         <argument key="App\Controller\UserController:newreservation" type="service" id=".service_locator.x6b22Se"/>
         <argument key="App\Controller\UserController:reservations" type="service" id=".service_locator.viEr1QG"/>
+        <argument key="App\Controller\UserController:reservationshow" type="service" id=".service_locator.viEr1QG"/>
         <argument key="App\Controller\UserController:show" type="service" id=".service_locator..WwnQdy"/>
         <argument key="kernel:loadRoutes" type="service" id=".service_locator.C9JCBPC"/>
         <argument key="kernel:registerContainerConfiguration" type="service" id=".service_locator.C9JCBPC"/>
@@ -6549,12 +6551,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.nyZonyv"/>
+      <argument type="service" id=".service_locator.5DlpHST"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.nyZonyv"/>
+      <argument type="service" id=".service_locator.5DlpHST"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -6970,7 +6972,7 @@
     <service id="SymfonyCasts\Bundle\VerifyEmail\VerifyEmailHelperInterface" alias="symfonycasts.verify_email.helper"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.WaGDpDt" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.nyZonyv"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.5DlpHST"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

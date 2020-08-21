@@ -28,11 +28,6 @@
                 <div class="price-box">
                     <span>Price:{{ev.price}}₺</span>
                 </div>
-                <form action="{{ path('user_reservation_new', {'id':ev.id}) }}" method="post">
-                    <span>Qty</span>
-                    <input id="qty" class="input-text qty" name="amount" min="1" value="1" title="Qty" type="number">
-
-                </form>
 </table>
                 <hr>
                 {{ include('messages.html.twig') }}

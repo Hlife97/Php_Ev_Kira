@@ -16,12 +16,13 @@ use Symfony\Component\Routing\Annotation\Route;
 class ReservationController extends AbstractController
 {
     /**
-     * @Route("/", name="admin_reservation_index", methods={"GET"})
+     * @Route("/{slug}", name="admin_reservation_index", methods={"GET"})
      */
-    public function index(ReservationRepository $reservationRepository): Response
+    public function index( $slug, ReservationRepository $reservationRepository): Response
     {
+        $reservations = $reservationRepository->getReservations($slug);
         return $this->render('admin/reservation/index.html.twig', [
-            'reservations' => $reservationRepository->findAll(),
+            'reservations' => $reservations,
         ]);
     }
 
@@ -49,10 +50,12 @@ class ReservationController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="admin_reservation_show", methods={"GET"})
+     * @Route("/show/{id}", name="admin_reservation_show", methods={"GET"})
      */
-    public function show(Reservation $reservation): Response
+    public function show($id, ReservationRepository $reservationRepository): Response
     {
+        $reservation=$reservationRepository->getUserReservation($id);
+
         return $this->render('admin/reservation/show.html.twig', [
             'reservation' => $reservation,
         ]);
@@ -69,7 +72,8 @@ class ReservationController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('admin_reservation_index');
+            $status= $form['status']->getData();
+            return $this->redirectToRoute('admin_reservation_index', ['slug'=>$status]);
         }
 
         return $this->render('admin/reservation/edit.html.twig', [

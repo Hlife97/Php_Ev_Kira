@@ -30,8 +30,12 @@ class HomeController extends AbstractController
     public function index(SettingRepository $settingRepository, EvRepository $evRepository,CategoryRepository $categoryRepository)
     {
         $setting=$settingRepository->findAll();
-        $slider= $evRepository->findBy(['status'=>'True'], ['title'=>'ASC'], 5);
+        $slider= $evRepository->findBy(['status'=>'True'], ['title'=>'ASC'], 6);
         $evs= $evRepository->findBy(['status'=>'True'], ['title'=>'DESC'], 8);
+        //$lastrent= $evRepository->findBy(['status'=>'True'], ['title'=>'ASC'], 6);
+        //dump($lastrent);
+        //die();
+
         //$newevs= $evRepository->findBy([], ['title'=>'DESC'], 8);
         //dump($slider);
         //die();
@@ -40,6 +44,7 @@ class HomeController extends AbstractController
             'setting'=>$setting,
             'slider'=>$slider,
             'evs'=>$evs,
+            //'lastrent'=>'$lastrent',
             'categori'=>$categoryRepository->findBy(['status'=>'True']),
         ]);
     }

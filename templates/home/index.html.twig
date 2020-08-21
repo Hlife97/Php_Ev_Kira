@@ -14,7 +14,7 @@
         <div class="row">
         {% for rs in evs%}
 
-            <div class="col-xs-12 col-sm-4 col-md-3" style="margin-bottom: 10px;">
+            <div class="col-xs-12 col-sm-3 col-md-3" style="margin-bottom: 10px;">
                 <div class="recent-work-wrap">
                     <img class="img-responsive" src="{{ asset ('uploads/images/' ~ rs.image) }}"  style="height: 200px">
                     <div class="overlay">
@@ -39,11 +39,11 @@
             <h2>Son Eklenen İlanlar</h2>
         </div>
         <div class="row">
-            {% for rs in evs%}
+            {% for rs in slider %}
 
-                <div class="col-xs-12 col-sm-4 col-md-3" style="margin-left: 10px; margin-bottom: 10px;">
+                <div class="col-xs-12 col-sm-4 col-md-3" style="margin-left: 10px; margin-bottom: 10px;" >
                     <div class="recent-work-wrap">
-                        <img class="img-responsive" src="{{ asset ('uploads/images/' ~ rs.image) }}"  style="height: 200px">
+                        <img class="img-responsive" src="{{ asset ('uploads/images/' ~ rs.image) }}" style="height: 200px">
                         <div class="overlay">
                             <div class="recent-work-inner">
                                 <h3><a href="{{ path ('ev_show', {'id': rs.id})}}">{{ rs.title }}</a> </h3>

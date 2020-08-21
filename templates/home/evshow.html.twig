@@ -26,10 +26,8 @@
                                         <div class="col-sm-3">
                                             <div class="carousel-content">
                                                 <h1 class="animation animated-item-1">{{ ev.title}}</h1>
-                                                <h2 class="animation animated-item-2">{{ ev.description }}</h2>
                                                 <a class="preview" href="{{ asset ('uploads/images/' ~ ev.image) }}"
                                                     rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                                                <a class="btn-slide animation animated-item-3" href="#">Read More</a>
                                             </div>
                                         </div>
 
@@ -52,8 +50,6 @@
                                                 <a class="preview" href="{{ asset ('uploads/images/' ~ rs.image) }}"
                                                     rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
                                                 <h1 class="animation animated-item-1">{{ ev.title}}</h1>
-                                                <h2 class="animation animated-item-2">{{ ev.description }}</h2>
-                                                <a class="btn-slide animation animated-item-3" href="#">Read More</a>
                                             </div>
                                         </div>
 
@@ -170,7 +166,7 @@
                                             style="width:80px;height:80px">
                                     </div>
                                     <div class="media-body">
-                                        <h4>Price: {{ ev.price }} TRY</h4>
+                                        <h4>Price: {{ ev.price }}₺</h4>
                                             <a href="{{ path('user_reservation_new', {'id': ev.id}) }}"><button class="btn btn-info">Rent Home</button></a>
                                     </div>
                                 </div>

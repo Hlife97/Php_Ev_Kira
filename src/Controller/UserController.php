@@ -69,6 +69,24 @@ class UserController extends AbstractController
 
             ]);
     }
+
+    /**
+     * @Route("/reservations/{id}", name="user_reservation_show", methods={"GET"})
+     */
+    public function reservationshow($id, ReservationRepository $reservationRepository,CategoryRepository $categoryRepository): Response
+    {
+        $user = $this->getUser();
+        //$reservations = $reservationRepository->findBy(['userid'=>$user->getId()]);
+        $reservation = $reservationRepository->getReservation($id);
+        //dump($reservations);
+        //die();
+        return $this->render('user/reservation_show.html.twig',[
+            'reservation'=>$reservation,
+            'categori'=>$categoryRepository->findBy(['status'=>'True']),
+
+        ]);
+    }
+
     /**
      * @Route("/ev", name="user_ev", methods={"GET"})
      */

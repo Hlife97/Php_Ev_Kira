@@ -40,8 +40,8 @@
                     <tbody>
                     {% for reservation in reservations %}
                         <tr>
-                            <td>{{ reservation.rname }}</td>
-                            <td>{{ reservation.name }}</td>
+                            <td><a href="{{ path('user_show', {'id': reservation.userid}) }}">{{ reservation.name }}</a></td>
+                            <td><a href="{{ path('ev_show', {'id': reservation.evid}) }}">{{ reservation.hname }}</a></td>
                             <td>{{ reservation.surname }}</td>
                             <td>{{ reservation.email }}</td>
                             <td>{{ reservation.phone }}</td>
@@ -51,7 +51,7 @@
                             <td>{{ reservation.status }}</td>
                             <td>{{ reservation.created_at }}</td>
                             <td>
-                                <a href="{{ path('admin_reservation_show', {'id': reservation.id}) }}">show</a>
+                                <a href="{{ path('user_reservation_show', {'id': reservation.id}) }}">show</a>
                             </td>
                         </tr>
                     {% else %}

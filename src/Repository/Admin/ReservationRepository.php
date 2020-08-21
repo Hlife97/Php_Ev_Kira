@@ -53,7 +53,7 @@ class ReservationRepository extends ServiceEntityRepository
     {
         $conn = $this->getEntityManager()->getConnection();
         $sql= '
-        SELECT r.*,h.title as rname FROM reservation r
+        SELECT r.*,h.title as hname FROM reservation r
         JOIN ev h ON h.id = r.evid
         WHERE r.userid = :userid
         ORDER BY r.id DESC
@@ -66,5 +66,48 @@ class ReservationRepository extends ServiceEntityRepository
         return $stmt->fetchAll();
 
 
+    }
+    // *** LEFT JOIN WITH SQL ******
+    public function getReservation($id): array
+    {
+        $conn = $this->getEntityManager()->getConnection();
+        $sql= '
+        SELECT r.*,h.title as hname, usr.name as rname FROM reservation r
+        JOIN ev h ON h.id = r.evid
+        JOIN user usr ON usr.id = r.userid
+        WHERE r.id = :id
+        ';
+        $stmt = $conn->prepare($sql);
+        $stmt->execute(['id'=>$id]);
+
+        // return an array of arrays (i.e a raw data set)
+
+        return $stmt->fetchAll();
+
+
+    }
+
+    // *** LEFT JOIN WITH SQL ******
+    public function getReservations($status): array
+    {
+        $conn = $this->getEntityManager()->getConnection();
+        $sql= '
+        SELECT r.*,h.title as hname, usr.name as rname FROM reservation r
+        JOIN ev h ON h.id = r.evid
+        JOIN user usr ON usr.id = r.userid
+        WHERE r.status= :status
+        ';
+        $stmt = $conn->prepare($sql);
+        $stmt->execute(['status'=>$status]);
+
+        // return an array of arrays (i.e a raw data set)
+
+        return $stmt->fetchAll();
+
+
+    }
+
+    public function getUserReservations()
+    {
     }
 }

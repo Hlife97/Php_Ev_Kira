@@ -38,7 +38,8 @@ function openWin( windowURL, windowName, windowFeatures ) { window.open( windowU
                             <th>City</th>
                             <th>Status</th>
                             <th>Gallery</th>
-                            <th>actions</th>
+                            <th>Show</th>
+                            <th>Edit</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -60,6 +61,8 @@ function openWin( windowURL, windowName, windowFeatures ) { window.open( windowU
                             <td>
                                 <a href="{{ path('user_ev_show', {'id': ev.id}) }}"><button type="button"
                                         class="btn btn-info">show</button></a>
+                            </td>
+                            <td>
                                 <a href="{{ path('user_ev_edit', {'id': ev.id}) }}"><button type="button"
                                         class="btn btn-info">edit</button></a>
                             </td>

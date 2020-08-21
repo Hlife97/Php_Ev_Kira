@@ -142,10 +142,12 @@ function openWin( windowURL, windowName, windowFeatures ) { window.open( windowU
             // line 53
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ev"], "id", [], "any", false, false, false, 53), "html", null, true);
             echo "</td>
-                                        <td>";
+                                        <td><a href=\"";
             // line 54
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_ev_show", ["id" => twig_get_attribute($this->env, $this->source, $context["ev"], "id", [], "any", false, false, false, 54)]), "html", null, true);
+            echo "\">";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ev"], "catname", [], "any", false, false, false, 54), "html", null, true);
-            echo "</td>
+            echo "</a></td>
                                         <td><a href=\"";
             // line 55
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user_show", ["id" => twig_get_attribute($this->env, $this->source, $context["ev"], "userid", [], "any", false, false, false, 55)]), "html", null, true);
@@ -244,7 +246,7 @@ function openWin( windowURL, windowName, windowFeatures ) { window.open( windowU
 
     public function getDebugInfo()
     {
-        return array (  216 => 80,  212 => 78,  203 => 74,  193 => 69,  186 => 65,  180 => 62,  176 => 61,  171 => 59,  167 => 58,  163 => 57,  159 => 56,  151 => 55,  147 => 54,  143 => 53,  140 => 52,  135 => 51,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  218 => 80,  214 => 78,  205 => 74,  195 => 69,  188 => 65,  182 => 62,  178 => 61,  173 => 59,  169 => 58,  165 => 57,  161 => 56,  153 => 55,  147 => 54,  143 => 53,  140 => 52,  135 => 51,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -302,7 +304,7 @@ function openWin( windowURL, windowName, windowFeatures ) { window.open( windowU
                                     {% for ev in evs %}
                                     <tr>
                                         <td>{{ ev.id }}</td>
-                                        <td>{{ ev.catname }}</td>
+                                        <td><a href=\"{{ path('admin_ev_show', {'id': ev.id}) }}\">{{ ev.catname }}</a></td>
                                         <td><a href=\"{{ path('admin_user_show', {'id': ev.userid}) }}\"> {{ ev.name }} {{ ev.surname }}</a></td>
                                         <td><img src=\"{{ asset ('uploads/images/' ~ ev.image) }}\" height=\"40\"></td>
                                         <td>{{ ev.star }}</td>

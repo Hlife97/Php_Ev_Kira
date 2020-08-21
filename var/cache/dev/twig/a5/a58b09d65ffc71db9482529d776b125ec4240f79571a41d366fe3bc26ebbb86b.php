@@ -124,10 +124,10 @@ class __TwigTemplate_9add630cb6a71c9b1d7a59b506e05ed0f14001adefcc0b26c7e5df75ea5
             echo "                        <li><a href=\"/user\"><img src=\"";
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 62, $this->source); })()), "user", [], "any", false, false, false, 62), "image", [], "any", false, false, false, 62))), "html", null, true);
             echo "\" alt=\"user\"
-                                    class=\"rounded-circle\" width=\"31\">";
+                                    class=\"rounded-circle\" width=\"20\"> ";
             // line 63
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 63, $this->source); })()), "user", [], "any", false, false, false, 63), "name", [], "any", false, false, false, 63), "html", null, true);
-            echo "</a></li>
+            echo " </a></li>
                         <li><a href=\"/logout\">Logout</a></li>
                         ";
         } else {
@@ -234,7 +234,7 @@ class __TwigTemplate_9add630cb6a71c9b1d7a59b506e05ed0f14001adefcc0b26c7e5df75ea5
                         <li><a href=\"/contact\">İletişim</a></li>
                         {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                         <li><a href=\"/user\"><img src=\"{{ asset('uploads/images/' ~ app.user.image) }}\" alt=\"user\"
-                                    class=\"rounded-circle\" width=\"31\">{{ app.user.name }}</a></li>
+                                    class=\"rounded-circle\" width=\"20\"> {{ app.user.name }} </a></li>
                         <li><a href=\"/logout\">Logout</a></li>
                         {% else  %}
                         <li><a href=\"/loginuser\"><i class=\"icon-lock\"></i>Login</a></li>

@@ -60,7 +60,7 @@
                         <li><a href="/contact">İletişim</a></li>
                         {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                         <li><a href="/user"><img src="{{ asset('uploads/images/' ~ app.user.image) }}" alt="user"
-                                    class="rounded-circle" width="31">{{ app.user.name }}</a></li>
+                                    class="rounded-circle" width="20"> {{ app.user.name }} </a></li>
                         <li><a href="/logout">Logout</a></li>
                         {% else  %}
                         <li><a href="/loginuser"><i class="icon-lock"></i>Login</a></li>

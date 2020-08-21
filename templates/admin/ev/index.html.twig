@@ -51,7 +51,7 @@ function openWin( windowURL, windowName, windowFeatures ) { window.open( windowU
                                     {% for ev in evs %}
                                     <tr>
                                         <td>{{ ev.id }}</td>
-                                        <td>{{ ev.catname }}</td>
+                                        <td><a href="{{ path('admin_ev_show', {'id': ev.id}) }}">{{ ev.catname }}</a></td>
                                         <td><a href="{{ path('admin_user_show', {'id': ev.userid}) }}"> {{ ev.name }} {{ ev.surname }}</a></td>
                                         <td><img src="{{ asset ('uploads/images/' ~ ev.image) }}" height="40"></td>
                                         <td>{{ ev.star }}</td>
